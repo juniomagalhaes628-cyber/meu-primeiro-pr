@@ -1,5 +1,5 @@
-// Dados dos produtos com IMAGENS LOCAIS
-// 294 produtos | 872 imagens reais do melosnoivas.pt
+// Dados dos produtos com IMAGENS LOCAIS (CAMINHOS CORRIGIDOS)
+// 294 produtos | 731 imagens reais
 const PRODUTOS_FALLBACK = {
   "Acessórios": {
     "Galeria": [
@@ -56,7 +56,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "images/Galeria/63136_10228_08568_18BE191B-FA7C-441F-A028-E8803B7F14FE_720X_1.JPG",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -64,7 +64,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "images/Galeria/63152_10228_07415_979AB2BC-C449-4463-80B3-FEA433EC5620_720X_1.JPG",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -72,7 +72,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "images/Galeria/63152_10228_07464_42A076FB-7B5D-491F-8ADC-B5BE9BC94B59_720X_1.JPG",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -144,56 +144,56 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "1780 €",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "images/Galeria/LN26JAILA_1.jpg",
-        "TOTAL_FOTOS": "1"
+        "URLs_IMAGENS": "images/Galeria/LN26JAILA_1.jpg|images/LN26JAILA_1.jpg|images/LN26JAILA_2.jpg|images/LN26JAILA_3.jpg|images/LN26JAILA_4.jpg",
+        "TOTAL_FOTOS": "5"
       },
       {
         "REFERÊNCIA/NOME": "LN26JALISA",
         "PREÇO_EUR": "1910 €",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "images/Galeria/LN26JALISA_1.jpg|images/Galeria/LN26JALISA_2.jpg",
-        "TOTAL_FOTOS": "2"
+        "URLs_IMAGENS": "images/Galeria/LN26JALISA_1.jpg|images/Galeria/LN26JALISA_2.jpg|images/LN26JALISA_1.jpg|images/LN26JALISA_2.jpg|images/LN26JALISA_3.jpg|images/LN26JALISA_4.jpg",
+        "TOTAL_FOTOS": "6"
       },
       {
         "REFERÊNCIA/NOME": "LN26JANEK",
         "PREÇO_EUR": "1670 €",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "images/Galeria/LN26JANEK_1.jpg",
-        "TOTAL_FOTOS": "1"
+        "URLs_IMAGENS": "images/Galeria/LN26JANEK_1.jpg|images/LN26JANEK_1.jpg|images/LN26JANEK_2.jpg|images/LN26JANEK_3.jpg|images/LN26JANEK_4.jpg",
+        "TOTAL_FOTOS": "5"
       },
       {
         "REFERÊNCIA/NOME": "LN26JARETT",
         "PREÇO_EUR": "2380 €",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "images/Galeria/LN26JARETT_1.jpg",
-        "TOTAL_FOTOS": "1"
+        "URLs_IMAGENS": "images/Galeria/LN26JARETT_1.jpg|images/LN26JARETT_1.jpg|images/LN26JARETT_2.jpg|images/LN26JARETT_3.jpg|images/LN26JARETT_4.jpg|images/LN26JARETT_5.jpg",
+        "TOTAL_FOTOS": "6"
       },
       {
         "REFERÊNCIA/NOME": "LN26JAYDE",
         "PREÇO_EUR": "2170 €",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "images/Galeria/LN26JAYDE_1.jpg|images/Galeria/LN26JAYDE_2.jpg|images/Galeria/LN26JAYDE_3.jpg",
-        "TOTAL_FOTOS": "3"
+        "URLs_IMAGENS": "images/Galeria/LN26JAYDE_1.jpg|images/Galeria/LN26JAYDE_2.jpg|images/Galeria/LN26JAYDE_3.jpg|images/LN26JAYDE_1.jpg|images/LN26JAYDE_2.jpg|images/LN26JAYDE_3.jpg|images/LN26JAYDE_4.jpg|images/LN26JAYDE_5.jpg",
+        "TOTAL_FOTOS": "8"
       },
       {
         "REFERÊNCIA/NOME": "LN26JOVAN",
         "PREÇO_EUR": "1940 €",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "images/Galeria/LN26JOVAN_1.jpg|images/Galeria/LN26JOVAN_2.jpg",
-        "TOTAL_FOTOS": "2"
+        "URLs_IMAGENS": "images/Galeria/LN26JOVAN_1.jpg|images/Galeria/LN26JOVAN_2.jpg|images/LN26JOVAN_1.jpg|images/LN26JOVAN_2.jpg|images/LN26JOVAN_3.jpg|images/LN26JOVAN_4.jpg",
+        "TOTAL_FOTOS": "6"
       },
       {
         "REFERÊNCIA/NOME": "MT3530FVCAPE63",
         "PREÇO_EUR": "325 €",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "images/Galeria/MT3530FVCAPE63_1.jpeg|images/Galeria/MT3530FVCAPE63_2.jpeg",
-        "TOTAL_FOTOS": "2"
+        "URLs_IMAGENS": "images/Galeria/MT3530FVCAPE63_1.jpeg|images/Galeria/MT3530FVCAPE63_2.jpeg|images/MT3530FVCAPE63_1.jpeg|images/MT3530FVCAPE63_2.jpeg",
+        "TOTAL_FOTOS": "4"
       },
       {
         "REFERÊNCIA/NOME": "S435-350--1--MED_002_S435-350_002X_001",
@@ -288,7 +288,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "images/Galeria/VI10207A_1.JPG",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -296,7 +296,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "images/Galeria/VI10207B_1.JPG",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -304,7 +304,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "images/Galeria/VI10207C_1.JPG",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       }
     ]
@@ -364,8 +364,8 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "3124 €",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Cerimónia",
-        "URLs_IMAGENS": "images/Galeria/1A_18.webp|images/Galeria/1A_2.jpg|images/Galeria/1A_3.jpg|images/Galeria/1A_4.jpg|images/Galeria/1A_5.jpg|images/Galeria/1A_6.jpg|images/Galeria/1A_7.jpg|images/Galeria/1A_8.jpg|images/Galeria/1A_9.jpg|images/Galeria/1A_10.jpg|images/Galeria/1A_11.jpg|images/Galeria/1A_12.webp|images/Galeria/1A_13.webp|images/Galeria/1A_14.webp|images/Galeria/1A_15.jpg|images/Galeria/1A_16.jpg|images/Galeria/1A_17.webp|images/Galeria/1A_18.webp|images/Galeria/1A_19.webp|images/Galeria/1A_20.webp|images/Galeria/1A_21.webp|images/Galeria/1A_22.webp|images/Galeria/1A_23.jpg",
-        "TOTAL_FOTOS": "23"
+        "URLs_IMAGENS": "images/Galeria/1A_10.jpg|images/Galeria/1A_11.jpg|images/Galeria/1A_15.jpg|images/Galeria/1A_16.jpg|images/Galeria/1A_2.jpg|images/Galeria/1A_23.jpg|images/Galeria/1A_3.jpg|images/Galeria/1A_4.jpg|images/Galeria/1A_5.jpg|images/Galeria/1A_6.jpg|images/Galeria/1A_7.jpg|images/Galeria/1A_8.jpg|images/Galeria/1A_9.jpg",
+        "TOTAL_FOTOS": "13"
       },
       {
         "REFERÊNCIA/NOME": "29733-TEAL",
@@ -412,7 +412,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Cerimónia",
-        "URLs_IMAGENS": "images/Galeria/314159-SCALED_1.webp",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -444,7 +444,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Cerimónia",
-        "URLs_IMAGENS": "images/Galeria/9059_F_1.JPG",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -524,7 +524,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Cerimónia",
-        "URLs_IMAGENS": "images/Galeria/Z_10.jpg|images/Galeria/Z_2.jpg|images/Galeria/Z_3.jpg|images/Galeria/Z_4.jpg|images/Galeria/Z_5.jpg|images/Galeria/Z_6.jpg|images/Galeria/Z_7.jpg|images/Galeria/Z_8.jpg|images/Galeria/Z_9.jpg|images/Galeria/Z_10.jpg|images/Galeria/Z_11.jpg|images/Galeria/Z_12.jpg",
+        "URLs_IMAGENS": "images/Galeria/Z_1.jpg|images/Galeria/Z_10.jpg|images/Galeria/Z_11.jpg|images/Galeria/Z_12.jpg|images/Galeria/Z_2.jpg|images/Galeria/Z_3.jpg|images/Galeria/Z_4.jpg|images/Galeria/Z_5.jpg|images/Galeria/Z_6.jpg|images/Galeria/Z_7.jpg|images/Galeria/Z_8.jpg|images/Galeria/Z_9.jpg",
         "TOTAL_FOTOS": "12"
       }
     ]
@@ -656,7 +656,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Criança",
-        "URLs_IMAGENS": "images/Galeria/IMG_2232-CROP_1.JPG",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -664,7 +664,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Criança",
-        "URLs_IMAGENS": "images/Galeria/IMG_2235_1.JPG",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -672,7 +672,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Criança",
-        "URLs_IMAGENS": "images/Galeria/IMG_2236_1.JPG",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -680,7 +680,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Criança",
-        "URLs_IMAGENS": "images/Galeria/IMG_2243_1.JPG",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -688,7 +688,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Criança",
-        "URLs_IMAGENS": "images/Galeria/IMG_2261_1.JPG",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -696,7 +696,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Criança",
-        "URLs_IMAGENS": "images/Galeria/IMG_2277_1.JPG",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -704,7 +704,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Criança",
-        "URLs_IMAGENS": "images/Galeria/IMG_2285_1.JPG",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -972,7 +972,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "1675 €",
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/ML2902_12.jpg|images/ML2902_2.jpg|images/ML2902_3.jpg|images/ML2902_4.jpg|images/ML2902_5.jpg|images/ML2902_6.jpg|images/ML2902_7.jpg|images/ML2902_8.jpg|images/ML2902_9.jpg|images/ML2902_10.jpg|images/ML2902_11.jpg|images/ML2902_12.jpg|images/ML2902_13.jpg|images/ML2902_14.jpg",
+        "URLs_IMAGENS": "images/ML2902_1.jpg|images/ML2902_10.jpg|images/ML2902_11.jpg|images/ML2902_12.jpg|images/ML2902_13.jpg|images/ML2902_14.jpg|images/ML2902_2.jpg|images/ML2902_3.jpg|images/ML2902_4.jpg|images/ML2902_5.jpg|images/ML2902_6.jpg|images/ML2902_7.jpg|images/ML2902_8.jpg|images/ML2902_9.jpg",
         "TOTAL_FOTOS": "14"
       },
       {
@@ -1044,7 +1044,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "1680 €",
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/ML3471W_1.jpg|images/ML3471W_20920_1.jpg|images/ML3471W_3.jpg",
+        "URLs_IMAGENS": "images/ML3471W_1.jpg|images/ML3471W_2.jpg|images/ML3471W_3.jpg",
         "TOTAL_FOTOS": "3"
       },
       {
@@ -1068,8 +1068,8 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "325 €",
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/Galeria/MT3530FVCAPE63_1.jpeg|images/Galeria/MT3530FVCAPE63_2.jpeg",
-        "TOTAL_FOTOS": "2"
+        "URLs_IMAGENS": "images/Galeria/MT3530FVCAPE63_1.jpeg|images/Galeria/MT3530FVCAPE63_2.jpeg|images/MT3530FVCAPE63_1.jpeg|images/MT3530FVCAPE63_2.jpeg",
+        "TOTAL_FOTOS": "4"
       },
       {
         "REFERÊNCIA/NOME": "MT3537",
@@ -1108,7 +1108,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "1375 €",
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/MT8295A_1.webp|images/MT8295A_2.webp",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "2"
       },
       {
@@ -1116,7 +1116,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "1375 €",
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/MT8324_1.webp|images/MT8324_2.webp",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "2"
       },
       {
@@ -1124,7 +1124,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "1125 €",
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/MT8334_1.webp|images/MT8334_2.webp",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "2"
       },
       {
@@ -1132,7 +1132,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "1125 €",
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/MT8334C_1.webp",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -1140,7 +1140,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "1125 €",
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/MT8336A_1.webp|images/MT8336A_2.webp",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "2"
       },
       {
@@ -1148,7 +1148,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "1125 €",
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/MT8336C_1.webp",
+        "URLs_IMAGENS": "",
         "TOTAL_FOTOS": "1"
       },
       {
@@ -1252,7 +1252,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/VI53059_0015_1.jpg|images/VI53059_0015_2.jpg|images/VI53059_0015_3.jpg|images/VI53059_0015_4.jpg|images/VI53059_0015_5.jpg|images/VI53059_0015_6.jpg|images/VI53059_0015_7.jpg|images/VI53059_0015_8.jpg|images/VI53059_0015_9.jpg|images/VI53059_0015_10.jpg",
+        "URLs_IMAGENS": "images/VI53059_0015_1.jpg|images/VI53059_0015_10.jpg|images/VI53059_0015_2.jpg|images/VI53059_0015_3.jpg|images/VI53059_0015_4.jpg|images/VI53059_0015_5.jpg|images/VI53059_0015_6.jpg|images/VI53059_0015_7.jpg|images/VI53059_0015_8.jpg|images/VI53059_0015_9.jpg",
         "TOTAL_FOTOS": "10"
       },
       {
@@ -1364,7 +1364,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/Z02_1.jpg|images/Z02_2.jpg|images/Z02_3.jpg|images/Z02_4.jpg|images/Z02_5.jpeg|images/Z02_6.jpg|images/Z02_7.jpeg|images/Z02_8.jpg|images/Z02_9.jpeg|images/Z02_10.jpg|images/Z02_11.jpg",
+        "URLs_IMAGENS": "images/Z02_1.jpg|images/Z02_10.jpg|images/Z02_11.jpg|images/Z02_2.jpg|images/Z02_3.jpg|images/Z02_4.jpg|images/Z02_5.jpeg|images/Z02_6.jpg|images/Z02_7.jpeg|images/Z02_8.jpg|images/Z02_9.jpeg",
         "TOTAL_FOTOS": "11"
       },
       {
@@ -1558,24 +1558,24 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "1780.00 €",
         "COLEÇÃO": "Coleção 2",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/Galeria/LN26JAILA_1.jpg|images/LN26JAILA_2.jpg|images/LN26JAILA_3.jpg|images/LN26JAILA_4.jpg",
-        "TOTAL_FOTOS": "4"
+        "URLs_IMAGENS": "images/Galeria/LN26JAILA_1.jpg|images/LN26JAILA_1.jpg|images/LN26JAILA_2.jpg|images/LN26JAILA_3.jpg|images/LN26JAILA_4.jpg",
+        "TOTAL_FOTOS": "5"
       },
       {
         "REFERÊNCIA/NOME": "LN26JALISA",
         "PREÇO_EUR": "1910 €",
         "COLEÇÃO": "Coleção 2",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/Galeria/LN26JALISA_1.jpg|images/Galeria/LN26JALISA_2.jpg|images/LN26JALISA_3.jpg|images/LN26JALISA_4.jpg",
-        "TOTAL_FOTOS": "4"
+        "URLs_IMAGENS": "images/Galeria/LN26JALISA_1.jpg|images/Galeria/LN26JALISA_2.jpg|images/LN26JALISA_1.jpg|images/LN26JALISA_2.jpg|images/LN26JALISA_3.jpg|images/LN26JALISA_4.jpg",
+        "TOTAL_FOTOS": "6"
       },
       {
         "REFERÊNCIA/NOME": "LN26JANEK",
         "PREÇO_EUR": "1670 €",
         "COLEÇÃO": "Coleção 2",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/Galeria/LN26JANEK_1.jpg|images/LN26JANEK_2.jpg|images/LN26JANEK_3.jpg|images/LN26JANEK_4.jpg",
-        "TOTAL_FOTOS": "4"
+        "URLs_IMAGENS": "images/Galeria/LN26JANEK_1.jpg|images/LN26JANEK_1.jpg|images/LN26JANEK_2.jpg|images/LN26JANEK_3.jpg|images/LN26JANEK_4.jpg",
+        "TOTAL_FOTOS": "5"
       },
       {
         "REFERÊNCIA/NOME": "LN26JANIAH",
@@ -1598,16 +1598,16 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "2380 €",
         "COLEÇÃO": "Coleção 2",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/Galeria/LN26JARETT_1.jpg|images/LN26JARETT_2.jpg|images/LN26JARETT_3.jpg|images/LN26JARETT_4.jpg|images/LN26JARETT_5.jpg",
-        "TOTAL_FOTOS": "5"
+        "URLs_IMAGENS": "images/Galeria/LN26JARETT_1.jpg|images/LN26JARETT_1.jpg|images/LN26JARETT_2.jpg|images/LN26JARETT_3.jpg|images/LN26JARETT_4.jpg|images/LN26JARETT_5.jpg",
+        "TOTAL_FOTOS": "6"
       },
       {
         "REFERÊNCIA/NOME": "LN26JAYDE",
         "PREÇO_EUR": "2170 €",
         "COLEÇÃO": "Coleção 2",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/Galeria/LN26JAYDE_1.jpg|images/Galeria/LN26JAYDE_2.jpg|images/Galeria/LN26JAYDE_3.jpg|images/LN26JAYDE_4.jpg|images/LN26JAYDE_5.jpg",
-        "TOTAL_FOTOS": "5"
+        "URLs_IMAGENS": "images/Galeria/LN26JAYDE_1.jpg|images/Galeria/LN26JAYDE_2.jpg|images/Galeria/LN26JAYDE_3.jpg|images/LN26JAYDE_1.jpg|images/LN26JAYDE_2.jpg|images/LN26JAYDE_3.jpg|images/LN26JAYDE_4.jpg|images/LN26JAYDE_5.jpg",
+        "TOTAL_FOTOS": "8"
       },
       {
         "REFERÊNCIA/NOME": "LN26JENDRI",
@@ -1654,8 +1654,8 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "1940 €",
         "COLEÇÃO": "Coleção 2",
         "CATEGORIA": "Noivas",
-        "URLs_IMAGENS": "images/Galeria/LN26JOVAN_1.jpg|images/Galeria/LN26JOVAN_2.jpg|images/LN26JOVAN_3.jpg|images/LN26JOVAN_4.jpg",
-        "TOTAL_FOTOS": "4"
+        "URLs_IMAGENS": "images/Galeria/LN26JOVAN_1.jpg|images/Galeria/LN26JOVAN_2.jpg|images/LN26JOVAN_1.jpg|images/LN26JOVAN_2.jpg|images/LN26JOVAN_3.jpg|images/LN26JOVAN_4.jpg",
+        "TOTAL_FOTOS": "6"
       },
       {
         "REFERÊNCIA/NOME": "LN26JULEE",
@@ -1794,7 +1794,7 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivos",
-        "URLs_IMAGENS": "images/Cole#U00e7#U00e3o 1/1AJA101.260_18.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_20.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_3.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_4.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_5.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_6.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_7.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_8.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_9.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_10.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_11.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_12.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_13.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_14.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_15.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_16.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_17.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_18.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_19.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_20.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_21.jpg",
+        "URLs_IMAGENS": "images/Cole#U00e7#U00e3o 1/1AJA101.260_1.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_10.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_11.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_12.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_13.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_14.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_15.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_16.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_17.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_18.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_19.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_2.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_20.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_21.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_3.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_4.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_5.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_6.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_7.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_8.jpg|images/Cole#U00e7#U00e3o 1/1AJA101.260_9.jpg",
         "TOTAL_FOTOS": "21"
       },
       {
