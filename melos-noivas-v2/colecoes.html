@@ -132,6 +132,28 @@
       position: relative;
     }
 
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-base);
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .image-placeholder {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #fae8e8, #f5e6e6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      z-index: 1;
+    }
+
     .product-image::after {
       content: '';
       position: absolute;
@@ -291,251 +313,14 @@
   <main class="container">
     <!-- NOIVAS -->
     <section class="collection-section" id="noivas">
-      <h2 class="collection-title">Vestidos de Noiva</h2>
-      <p class="collection-subtitle">Elegância e sofisticação para o dia mais importante da sua vida</p>
-
-      <div class="products-grid">
-        <div class="product-card" data-category="premium" data-aos="fade-up">
-          <div class="product-image">👰</div>
-          <div class="product-info">
-            <div>
-              <p class="product-ref">Coleção Premium • ML2902</p>
-              <h3 class="product-name">ML2902</h3>
-              <p class="product-description">Vestido clássico com detalhes em renda fina e cauda elegante</p>
-            </div>
-            <div>
-              <div class="product-price">1.675 €</div>
-              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="premium" data-aos="fade-up">
-          <div class="product-image">💍</div>
-          <div class="product-info">
-            <div>
-              <p class="product-ref">Coleção Premium • ML2905</p>
-              <h3 class="product-name">ML2905</h3>
-              <p class="product-description">Design moderno com decote em V e apliques em cristal Swarovski</p>
-            </div>
-            <div>
-              <div class="product-price">1.957,50 €</div>
-              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="premium" data-aos="fade-up">
-          <div class="product-image">✨</div>
-          <div class="product-info">
-            <div>
-              <p class="product-ref">Coleção Premium • ML2923</p>
-              <h3 class="product-name">ML2923</h3>
-              <p class="product-description">Silhueta esbelta com bordados florais e manga comprida elegante</p>
-            </div>
-            <div>
-              <div class="product-price">1.397 €</div>
-              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="sofisticado" data-aos="fade-up">
-          <div class="product-image">👰</div>
-          <div class="product-info">
-            <div>
-              <p class="product-ref">Coleção Sofisticada • AC441</p>
-              <h3 class="product-name">AC441</h3>
-              <p class="product-description">Vestido minimalista com corte perfeito e detalhes subtis</p>
-            </div>
-            <div>
-              <div class="product-price">975 €</div>
-              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="elegante" data-aos="fade-up">
-          <div class="product-image">🌹</div>
-          <div class="product-info">
-            <div>
-              <p class="product-ref">Coleção Elegante • DR2415</p>
-              <h3 class="product-name">DR2415</h3>
-              <p class="product-description">Design longo com cauda em sereia e detalhe em renda francesa</p>
-            </div>
-            <div>
-              <div class="product-price">1.825 €</div>
-              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="elegante" data-aos="fade-up">
-          <div class="product-image">✨</div>
-          <div class="product-info">
-            <div>
-              <p class="product-ref">Coleção Elegante • EK1619</p>
-              <h3 class="product-name">EK1619</h3>
-              <p class="product-description">Estilo A-line com costas abertas e detalhes em pedraria</p>
-            </div>
-            <div>
-              <div class="product-price">1.650 €</div>
-              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- NOIVOS -->
     <section class="collection-section" id="noivos">
-      <h2 class="collection-title">Ternos de Noivo</h2>
-      <p class="collection-subtitle">Sofisticação e conforto para o homem moderno</p>
-
-      <div class="products-grid">
-        <div class="product-card" data-category="premium" data-aos="fade-up">
-          <div class="product-image">🤵</div>
-          <div class="product-info">
-            <div>
-              <p class="product-ref">Ternos Clássicos</p>
-              <h3 class="product-name">Fato Preto Premium</h3>
-              <p class="product-description">Corte clássico em tecido 100% lã com ajustes profissionais</p>
-            </div>
-            <div>
-              <div class="product-price">Sob Consulta</div>
-              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="moderno" data-aos="fade-up">
-          <div class="product-image">🎩</div>
-          <div class="product-info">
-            <div>
-              <p class="product-ref">Ternos Descolados</p>
-              <h3 class="product-name">Fato Cinzento Moderno</h3>
-              <p class="product-description">Design contemporâneo com padrão sutil e lapelas modernas</p>
-            </div>
-            <div>
-              <div class="product-price">Sob Consulta</div>
-              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="elegante" data-aos="fade-up">
-          <div class="product-image">🕴️</div>
-          <div class="product-info">
-            <div>
-              <p class="product-ref">Ternos Sofisticados</p>
-              <h3 class="product-name">Fato Azul Marinho Premium</h3>
-              <p class="product-description">Elegância intemporável em azul marinho com costura impecável</p>
-            </div>
-            <div>
-              <div class="product-price">Sob Consulta</div>
-              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- ACESSÓRIOS -->
     <section class="collection-section" id="acessorios">
-      <h2 class="collection-title">Acessórios Premium</h2>
-      <p class="collection-subtitle">Detalhes que completam o look perfeito</p>
-
-      <div class="products-grid">
-        <div class="product-card" data-category="premium" data-aos="fade-up">
-          <div class="product-image">💎</div>
-          <div class="product-info">
-            <div>
-              <p class="product-ref">Joias • Coleção Exclusive</p>
-              <h3 class="product-name">Tiara de Cristal</h3>
-              <p class="product-description">Tiara elegante com cristais Swarovski e base em metal nobre</p>
-            </div>
-            <div>
-              <div class="product-price">420 €</div>
-              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="elegante" data-aos="fade-up">
-          <div class="product-image">👠</div>
-          <div class="product-info">
-            <div>
-              <p class="product-ref">Sapatos • Coleção Bride</p>
-              <h3 class="product-name">Sapatos Branco Marfim</h3>
-              <p class="product-description">Sapatos de noiva confortáveis com salto regulável</p>
-            </div>
-            <div>
-              <div class="product-price">185 €</div>
-              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="sofisticado" data-aos="fade-up">
-          <div class="product-image">👜</div>
-          <div class="product-info">
-            <div>
-              <p class="product-ref">Acessórios • Detalhes Exclusivos</p>
-              <h3 class="product-name">Bolsa de Mão Elegante</h3>
-              <p class="product-description">Bolsa em seda com fecho em ouro e detalhes em pérola</p>
-            </div>
-            <div>
-              <div class="product-price">280 €</div>
-              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="premium" data-aos="fade-up">
-          <div class="product-image">✨</div>
-          <div class="product-info">
-            <div>
-              <p class="product-ref">Acessórios • Noivo</p>
-              <h3 class="product-name">Gravata Noivo Premium</h3>
-              <p class="product-description">Gravata em seda com padrão exclusivo ou customização</p>
-            </div>
-            <div>
-              <div class="product-price">A partir de 95 €</div>
-              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="elegante" data-aos="fade-up">
-          <div class="product-image">🎀</div>
-          <div class="product-info">
-            <div>
-              <p class="product-ref">Acessórios • Véu</p>
-              <h3 class="product-name">Véu de Noiva Tradicional</h3>
-              <p class="product-description">Véu em tule com bordado delicado e aplicações de cristal</p>
-            </div>
-            <div>
-              <div class="product-price">320 €</div>
-              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="sofisticado" data-aos="fade-up">
-          <div class="product-image">💍</div>
-          <div class="product-info">
-            <div>
-              <p class="product-ref">Acessórios • Joalharia</p>
-              <h3 class="product-name">Colar de Noiva</h3>
-              <p class="product-description">Colar em ouro 18k com pérolas e cristais Swarovski</p>
-            </div>
-            <div>
-              <div class="product-price">550 €</div>
-              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   </main>
 
@@ -580,30 +365,6 @@
   </footer>
 
   <script src="app.js"></script>
-  <script>
-    // Filter products
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-
-        productCards.forEach(card => {
-          const category = card.dataset.category;
-          if (filter === 'todos' || category === filter) {
-            card.style.display = 'flex';
-            setTimeout(() => card.style.opacity = '1', 10);
-          } else {
-            card.style.opacity = '0';
-            setTimeout(() => card.style.display = 'none', 300);
-          }
-        });
-      });
-    });
-  </script>
+  <script src="colecoes-data.js"></script>
 </body>
 </html>
