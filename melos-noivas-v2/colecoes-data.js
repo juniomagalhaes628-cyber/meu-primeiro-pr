@@ -173,15 +173,17 @@ class ProductLoader {
   }
 
   renderAllCategories() {
-    // Render todas as categorias que existem
-    for (const category of Object.keys(this.categories)) {
-      const containerId = category.toLowerCase().replace(/\s+/g, '').replace(/ã/g, 'a').replace(/ç/g, 'c');
-      const container = document.getElementById(containerId);
+    const categoryMapping = {
+      'Noivas': 'noivas',
+      'Noivos': 'noivos',
+      'Acessórios': 'acessorios'
+    };
 
-      if (container) {
-        this.renderCategory(containerId, category);
+    Object.entries(categoryMapping).forEach(([categoryName, containerId]) => {
+      if (this.categories[categoryName]) {
+        this.renderCategory(containerId, categoryName);
       }
-    }
+    });
 
     // Setup global filters
     this.setupGlobalFilters();
