@@ -122,13 +122,22 @@ class ProductLoader {
 
     const emoji = categoryEmoji[category] || '✨';
 
+    // Fallback images por categoria
+    const fallbackImages = {
+      'noivas': 'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=500&fit=crop',
+      'noivos': 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400&h=500&fit=crop',
+      'acessórios': 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=500&fit=crop'
+    };
+
+    const displayImage = mainImage || fallbackImages[categoryClass] || fallbackImages['acessórios'];
+
     return `
       <div class="product-card" data-category="${categoryClass}" data-aos="fade-up">
         <div class="product-image">
-          ${mainImage
-            ? `<img src="${mainImage}" alt="${name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">`
-            : ''}
-          <div class="image-placeholder" style="display:${mainImage ? 'none' : 'flex'};">
+          <img src="${displayImage}" alt="${name}" loading="lazy"
+               onerror="this.src='${fallbackImages[categoryClass] || fallbackImages['acessórios']}'; this.style.display='block';"
+               style="width:100%;height:100%;object-fit:cover;">
+          <div class="image-placeholder" id="placeholder-${name.replace(/\s+/g, '-')}" style="display:none; position:absolute; inset:0;">
             <span>${emoji}</span>
           </div>
         </div>
