@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Coleções de vestidos de noiva e ternos de noivo premium em Melos Noivas">
+  <title>Coleções — Melos Noivas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lora:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .collections-hero {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      padding: 120px 32px 60px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .collections-hero h1 {
+      font-size: clamp(40px, 8vw, 60px);
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .collections-hero p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .filter-section {
+      padding: 40px 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 60px;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .filter-btn {
+      padding: 10px 24px;
+      border: 2px solid var(--border);
+      border-radius: 25px;
+      background: #fff;
+      color: var(--text);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition-base);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .collection-section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .collection-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .collection-title {
+      font-size: 44px;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+
+    .collection-subtitle {
+      color: var(--text-light);
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .product-card {
+      background: linear-gradient(135deg, #f9f7f4, #faf8f3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all var(--transition-base);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      animation: fadeInUp 0.6s ease-out backwards;
+    }
+
+    .product-card:nth-child(1) { animation-delay: 0s; }
+    .product-card:nth-child(2) { animation-delay: 0.1s; }
+    .product-card:nth-child(3) { animation-delay: 0.2s; }
+    .product-card:nth-child(4) { animation-delay: 0.3s; }
+    .product-card:nth-child(5) { animation-delay: 0.4s; }
+    .product-card:nth-child(6) { animation-delay: 0.5s; }
+
+    .product-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+      border-color: var(--primary);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 320px;
+      background: linear-gradient(135deg, #fae8e8, #f5e6e6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent, rgba(139, 46, 46, 0.1));
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+
+    .product-card:hover .product-image::after {
+      opacity: 1;
+    }
+
+    .product-info {
+      padding: 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-ref {
+      font-size: 12px;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .product-name {
+      font-size: 20px;
+      color: var(--dark);
+      margin-bottom: 12px;
+      transition: color var(--transition-fast);
+    }
+
+    .product-card:hover .product-name {
+      color: var(--primary);
+    }
+
+    .product-description {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .product-price {
+      font-size: 20px;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 16px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .product-action {
+      display: inline-block;
+    }
+
+    .btn-small {
+      padding: 10px 20px;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-light);
+    }
+
+    .empty-state h3 {
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+
+    @media (max-width: 768px) {
+      .collections-hero {
+        padding: 80px 20px 40px;
+      }
+
+      .collections-hero h1 {
+        font-size: 32px;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .product-image {
+        height: 240px;
+        font-size: 60px;
+      }
+
+      .filter-group {
+        gap: 8px;
+      }
+
+      .filter-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-main">Melos</span>
+        <span class="logo-sub">NOIVAS</span>
+      </div>
+      <button class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link dropdown-trigger">Coleções</a>
+          <ul class="dropdown-menu">
+            <li><a href="#noivas">Noivas</a></li>
+            <li><a href="#noivos">Noivos</a></li>
+            <li><a href="#acessorios">Acessórios</a></li>
+          </ul>
+        </li>
+        <li><a href="galeria.html" class="nav-link">Galeria</a></li>
+        <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+        <li><a href="contacto.html" class="nav-link btn-cta">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="collections-hero">
+    <h1>Nossas Coleções</h1>
+    <p>Descubra os designs premium que transformarão seu grande dia</p>
+  </section>
+
+  <!-- FILTERS -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="premium">Premium</button>
+        <button class="filter-btn" data-filter="sofisticado">Sofisticado</button>
+        <button class="filter-btn" data-filter="elegante">Elegante</button>
+        <button class="filter-btn" data-filter="moderno">Moderno</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <main class="container">
+    <!-- NOIVAS -->
+    <section class="collection-section" id="noivas">
+      <h2 class="collection-title">Vestidos de Noiva</h2>
+      <p class="collection-subtitle">Elegância e sofisticação para o dia mais importante da sua vida</p>
+
+      <div class="products-grid">
+        <div class="product-card" data-category="premium" data-aos="fade-up">
+          <div class="product-image">👰</div>
+          <div class="product-info">
+            <div>
+              <p class="product-ref">Coleção Premium • ML2902</p>
+              <h3 class="product-name">ML2902</h3>
+              <p class="product-description">Vestido clássico com detalhes em renda fina e cauda elegante</p>
+            </div>
+            <div>
+              <div class="product-price">1.675 €</div>
+              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="premium" data-aos="fade-up">
+          <div class="product-image">💍</div>
+          <div class="product-info">
+            <div>
+              <p class="product-ref">Coleção Premium • ML2905</p>
+              <h3 class="product-name">ML2905</h3>
+              <p class="product-description">Design moderno com decote em V e apliques em cristal Swarovski</p>
+            </div>
+            <div>
+              <div class="product-price">1.957,50 €</div>
+              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="premium" data-aos="fade-up">
+          <div class="product-image">✨</div>
+          <div class="product-info">
+            <div>
+              <p class="product-ref">Coleção Premium • ML2923</p>
+              <h3 class="product-name">ML2923</h3>
+              <p class="product-description">Silhueta esbelta com bordados florais e manga comprida elegante</p>
+            </div>
+            <div>
+              <div class="product-price">1.397 €</div>
+              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="sofisticado" data-aos="fade-up">
+          <div class="product-image">👰</div>
+          <div class="product-info">
+            <div>
+              <p class="product-ref">Coleção Sofisticada • AC441</p>
+              <h3 class="product-name">AC441</h3>
+              <p class="product-description">Vestido minimalista com corte perfeito e detalhes subtis</p>
+            </div>
+            <div>
+              <div class="product-price">975 €</div>
+              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="elegante" data-aos="fade-up">
+          <div class="product-image">🌹</div>
+          <div class="product-info">
+            <div>
+              <p class="product-ref">Coleção Elegante • DR2415</p>
+              <h3 class="product-name">DR2415</h3>
+              <p class="product-description">Design longo com cauda em sereia e detalhe em renda francesa</p>
+            </div>
+            <div>
+              <div class="product-price">1.825 €</div>
+              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="elegante" data-aos="fade-up">
+          <div class="product-image">✨</div>
+          <div class="product-info">
+            <div>
+              <p class="product-ref">Coleção Elegante • EK1619</p>
+              <h3 class="product-name">EK1619</h3>
+              <p class="product-description">Estilo A-line com costas abertas e detalhes em pedraria</p>
+            </div>
+            <div>
+              <div class="product-price">1.650 €</div>
+              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOIVOS -->
+    <section class="collection-section" id="noivos">
+      <h2 class="collection-title">Ternos de Noivo</h2>
+      <p class="collection-subtitle">Sofisticação e conforto para o homem moderno</p>
+
+      <div class="products-grid">
+        <div class="product-card" data-category="premium" data-aos="fade-up">
+          <div class="product-image">🤵</div>
+          <div class="product-info">
+            <div>
+              <p class="product-ref">Ternos Clássicos</p>
+              <h3 class="product-name">Fato Preto Premium</h3>
+              <p class="product-description">Corte clássico em tecido 100% lã com ajustes profissionais</p>
+            </div>
+            <div>
+              <div class="product-price">Sob Consulta</div>
+              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="moderno" data-aos="fade-up">
+          <div class="product-image">🎩</div>
+          <div class="product-info">
+            <div>
+              <p class="product-ref">Ternos Descolados</p>
+              <h3 class="product-name">Fato Cinzento Moderno</h3>
+              <p class="product-description">Design contemporâneo com padrão sutil e lapelas modernas</p>
+            </div>
+            <div>
+              <div class="product-price">Sob Consulta</div>
+              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="elegante" data-aos="fade-up">
+          <div class="product-image">🕴️</div>
+          <div class="product-info">
+            <div>
+              <p class="product-ref">Ternos Sofisticados</p>
+              <h3 class="product-name">Fato Azul Marinho Premium</h3>
+              <p class="product-description">Elegância intemporável em azul marinho com costura impecável</p>
+            </div>
+            <div>
+              <div class="product-price">Sob Consulta</div>
+              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACESSÓRIOS -->
+    <section class="collection-section" id="acessorios">
+      <h2 class="collection-title">Acessórios Premium</h2>
+      <p class="collection-subtitle">Detalhes que completam o look perfeito</p>
+
+      <div class="products-grid">
+        <div class="product-card" data-category="premium" data-aos="fade-up">
+          <div class="product-image">💎</div>
+          <div class="product-info">
+            <div>
+              <p class="product-ref">Joias • Coleção Exclusive</p>
+              <h3 class="product-name">Tiara de Cristal</h3>
+              <p class="product-description">Tiara elegante com cristais Swarovski e base em metal nobre</p>
+            </div>
+            <div>
+              <div class="product-price">420 €</div>
+              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="elegante" data-aos="fade-up">
+          <div class="product-image">👠</div>
+          <div class="product-info">
+            <div>
+              <p class="product-ref">Sapatos • Coleção Bride</p>
+              <h3 class="product-name">Sapatos Branco Marfim</h3>
+              <p class="product-description">Sapatos de noiva confortáveis com salto regulável</p>
+            </div>
+            <div>
+              <div class="product-price">185 €</div>
+              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="sofisticado" data-aos="fade-up">
+          <div class="product-image">👜</div>
+          <div class="product-info">
+            <div>
+              <p class="product-ref">Acessórios • Detalhes Exclusivos</p>
+              <h3 class="product-name">Bolsa de Mão Elegante</h3>
+              <p class="product-description">Bolsa em seda com fecho em ouro e detalhes em pérola</p>
+            </div>
+            <div>
+              <div class="product-price">280 €</div>
+              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="premium" data-aos="fade-up">
+          <div class="product-image">✨</div>
+          <div class="product-info">
+            <div>
+              <p class="product-ref">Acessórios • Noivo</p>
+              <h3 class="product-name">Gravata Noivo Premium</h3>
+              <p class="product-description">Gravata em seda com padrão exclusivo ou customização</p>
+            </div>
+            <div>
+              <div class="product-price">A partir de 95 €</div>
+              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="elegante" data-aos="fade-up">
+          <div class="product-image">🎀</div>
+          <div class="product-info">
+            <div>
+              <p class="product-ref">Acessórios • Véu</p>
+              <h3 class="product-name">Véu de Noiva Tradicional</h3>
+              <p class="product-description">Véu em tule com bordado delicado e aplicações de cristal</p>
+            </div>
+            <div>
+              <div class="product-price">320 €</div>
+              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="sofisticado" data-aos="fade-up">
+          <div class="product-image">💍</div>
+          <div class="product-info">
+            <div>
+              <p class="product-ref">Acessórios • Joalharia</p>
+              <h3 class="product-name">Colar de Noiva</h3>
+              <p class="product-description">Colar em ouro 18k com pérolas e cristais Swarovski</p>
+            </div>
+            <div>
+              <div class="product-price">550 €</div>
+              <a href="contacto.html" class="btn btn-primary btn-small">Consulta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Melos Noivas</h4>
+          <p>Loja de vestidos de noiva premium, ternos de noivo sofisticados e acessórios exclusivos desde 2008.</p>
+          <div class="social-links">
+            <a href="https://instagram.com/melosnoivas" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://facebook.com/melosnoivas" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Links Rápidos</h4>
+          <ul>
+            <li><a href="colecoes.html">Coleções</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contacte-nos</h4>
+          <p>
+            <strong>Morada:</strong><br>
+            Avenida São Miguel Nº 601<br>
+            4575-302 Termas de São Vicente, Penafiel
+          </p>
+          <p>
+            <strong>Telefone:</strong><br>
+            <a href="tel:+351916182677">+351 916 182 677</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Melos Noivas. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Filter products
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        productCards.forEach(card => {
+          const category = card.dataset.category;
+          if (filter === 'todos' || category === filter) {
+            card.style.display = 'flex';
+            setTimeout(() => card.style.opacity = '1', 10);
+          } else {
+            card.style.opacity = '0';
+            setTimeout(() => card.style.display = 'none', 300);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

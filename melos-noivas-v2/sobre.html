@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça a história de Melos Noivas — quase 20 anos de excelência">
+  <title>Sobre — Melos Noivas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lora:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .about-hero {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      padding: 120px 32px 60px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .about-hero h1 {
+      font-size: clamp(40px, 8vw, 60px);
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .about-hero p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .about-section {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size: 42px;
+      margin-bottom: 24px;
+      color: var(--dark);
+    }
+
+    .about-text p {
+      font-size: 16px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .about-image {
+      height: 450px;
+      background: linear-gradient(135deg, var(--primary-light), rgba(212, 175, 55, 0.1));
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 120px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+      margin: 40px 0;
+    }
+
+    .value-card {
+      background: var(--cream);
+      padding: 32px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: all var(--transition-base);
+    }
+
+    .value-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+      border-color: var(--primary);
+    }
+
+    .value-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .value-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+
+    .value-card p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .timeline {
+      position: relative;
+      padding: 40px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, var(--primary), transparent);
+    }
+
+    .timeline-item {
+      margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+      order: -1;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background: var(--primary);
+      border: 4px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px var(--primary-light);
+      z-index: 1;
+    }
+
+    .timeline-content {
+      background: var(--cream);
+      padding: 32px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .timeline-year {
+      font-size: 24px;
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 8px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .timeline-title {
+      font-size: 18px;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .timeline-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .team-card {
+      background: linear-gradient(135deg, #f9f7f4, #faf8f3);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all var(--transition-base);
+      text-align: center;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    .team-image {
+      width: 100%;
+      height: 280px;
+      background: linear-gradient(135deg, var(--primary-light), rgba(212, 175, 55, 0.1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+    }
+
+    .team-info {
+      padding: 24px;
+    }
+
+    .team-info h3 {
+      font-size: 18px;
+      margin-bottom: 4px;
+      color: var(--dark);
+    }
+
+    .team-info p {
+      font-size: 14px;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .team-bio {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .timeline::before {
+        left: 0;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content {
+        order: 0;
+      }
+
+      .timeline-dot {
+        left: 0;
+      }
+
+      .timeline-content {
+        margin-left: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-hero {
+        padding: 80px 20px 40px;
+      }
+
+      .about-hero h1 {
+        font-size: 32px;
+      }
+
+      .about-text h2 {
+        font-size: 28px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-main">Melos</span>
+        <span class="logo-sub">NOIVAS</span>
+      </div>
+      <button class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link dropdown-trigger">Coleções</a>
+          <ul class="dropdown-menu">
+            <li><a href="colecoes.html#noivas">Noivas</a></li>
+            <li><a href="colecoes.html#noivos">Noivos</a></li>
+            <li><a href="colecoes.html#acessorios">Acessórios</a></li>
+          </ul>
+        </li>
+        <li><a href="galeria.html" class="nav-link">Galeria</a></li>
+        <li><a href="#" class="nav-link">Sobre</a></li>
+        <li><a href="contacto.html" class="nav-link btn-cta">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="about-hero">
+    <h1>Sobre Nós</h1>
+    <p>Quase duas décadas de excelência ao serviço dos seus sonhos</p>
+  </section>
+
+  <!-- ABOUT CONTENT -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text" data-aos="fade-up">
+          <h2>A História de Melos Noivas</h2>
+          <p>Desde 2008, Melos Noivas é muito mais que uma loja. Somos um espaço onde sonhos se transformam em realidade e memórias inesquecíveis são criadas.</p>
+          <p>Fundada com a paixão por fazer de cada noiva e noivo os verdadeiros protagonistas do seu grande dia, evoluímos através dos anos, sempre mantendo o compromisso com qualidade, excelência e atendimento personalizado.</p>
+          <p>Cada cliente é único, e cada grande dia é especial. Por isso, dedicamo-nos a entender as suas expectativas, desejos e sonhos, oferecendo soluções personalizadas que reflectem verdadeiramente quem é.</p>
+        </div>
+
+        <div class="about-image" data-aos="fade-up" data-aos-delay="200">
+          👰‍♀️
+        </div>
+      </div>
+
+      <!-- VALUES -->
+      <div style="margin-top: 80px;" data-aos="fade-up">
+        <h2 style="text-align: center; font-size: 36px; margin-bottom: 40px; color: var(--dark);">Nossos Valores</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <span class="value-icon">✨</span>
+            <h3>Excelência</h3>
+            <p>Qualidade inegociável em cada detalhe, desde a seleção de materiais até o ajuste perfeito.</p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-icon">💝</span>
+            <h3>Personalização</h3>
+            <p>Cada cliente merece um atendimento única e customização que reflita sua personalidade.</p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-icon">🤝</span>
+            <h3>Confiança</h3>
+            <p>Baseada em transparência, ética profissional e compromisso com prazos e qualidade.</p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-icon">🎁</span>
+            <h3>Experiência</h3>
+            <p>19 anos cuidando de mais de 500 casamentos e gerando milhares de bons momentos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="about-section" style="background: var(--cream);">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 36px; margin-bottom: 60px; color: var(--dark);">Nossa Jornada</h2>
+
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-content">
+            <div class="timeline-year">2008</div>
+            <div class="timeline-title">O Início</div>
+            <div class="timeline-desc">Fundação de Melos Noivas com o sonho de oferecer vestidos de noiva e ternos de qualidade premium em Penafiel.</div>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-content">
+            <div class="timeline-year">2012</div>
+            <div class="timeline-title">Expansão de Coleções</div>
+            <div class="timeline-desc">Incorporamos marcas internacionais de prestígio e ampliamos nossa oferta de ternos de noivo e acessórios premium.</div>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-content">
+            <div class="timeline-year">2015</div>
+            <div class="timeline-title">Serviço de Customização</div>
+            <div class="timeline-desc">Lançamos nosso serviço de customização e ajustes profissionais, oferecendo soluções totalmente personalizadas.</div>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-content">
+            <div class="timeline-year">2018</div>
+            <div class="timeline-title">Reconhecimento</div>
+            <div class="timeline-desc">Atingimos a marca de 400 casamentos realizados e conquistamos avaliação 4.8 de clientes satisfeitos.</div>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-content">
+            <div class="timeline-year">2021</div>
+            <div class="timeline-title">Modernização Digital</div>
+            <div class="timeline-desc">Expandimos nossa presença online mantendo a essência do atendimento personalizado e presencial.</div>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-content">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-title">Presente e Futuro</div>
+            <div class="timeline-desc">Continuamos inovando, com 19 anos de experiência e 500+ casamentos que marcaram histórias de amor.</div>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="about-section">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 36px; margin-bottom: 60px; color: var(--dark);">Nossa Equipa</h2>
+
+      <div class="team-grid">
+        <div class="team-card" data-aos="fade-up">
+          <div class="team-image">👩‍💼</div>
+          <div class="team-info">
+            <h3>Maria Silva</h3>
+            <p>Fundadora & Diretora Executiva</p>
+            <div class="team-bio">19 anos de experiência em moda nupcial e consultoria de estilo. Apaixonada por transformar sonhos em realidade.</div>
+          </div>
+        </div>
+
+        <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="team-image">👨‍💼</div>
+          <div class="team-info">
+            <h3>João Santos</h3>
+            <p>Especialista em Ternos</p>
+            <div class="team-bio">Especializado em ajustes e customização de ternos. Garante que cada noivo se sinta confiante e elegante.</div>
+          </div>
+        </div>
+
+        <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="team-image">👩‍🔧</div>
+          <div class="team-info">
+            <h3>Ana Costa</h3>
+            <p>Costureira Master</p>
+            <div class="team-bio">Artesã com 15 anos de experiência em alterações finas. Seus ajustes são verdadeira obra de arte.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Melos Noivas</h4>
+          <p>Loja de vestidos de noiva premium, ternos de noivo sofisticados e acessórios exclusivos desde 2008.</p>
+          <div class="social-links">
+            <a href="https://instagram.com/melosnoivas" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://facebook.com/melosnoivas" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Links Rápidos</h4>
+          <ul>
+            <li><a href="colecoes.html">Coleções</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contacte-nos</h4>
+          <p>
+            <strong>Telefone:</strong><br>
+            <a href="tel:+351916182677">+351 916 182 677</a>
+          </p>
+          <p style="margin-top: 12px;">
+            <strong>Email:</strong><br>
+            <a href="mailto:geral@melosnoivas.com">geral@melosnoivas.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Melos Noivas. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
