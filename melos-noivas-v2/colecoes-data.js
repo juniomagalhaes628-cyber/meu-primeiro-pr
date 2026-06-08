@@ -189,8 +189,12 @@ class ProductLoader {
     };
 
     Object.entries(categoryMapping).forEach(([categoryName, containerId]) => {
+      console.log(`  Renderizando ${categoryName} em #${containerId}`);
       if (this.categories[categoryName]) {
+        console.log(`    ✅ ${Object.keys(this.categories[categoryName]).join(', ')}`);
         this.renderCategory(containerId, categoryName);
+      } else {
+        console.warn(`    ❌ ${categoryName} não encontrada`);
       }
     });
 
@@ -276,18 +280,22 @@ class ProductLoader {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', async () => {
+  console.log('🚀 Iniciando ProductLoader...');
   const loader = new ProductLoader();
 
   // Tentar carregar do CSV local
   let products = [];
   try {
+    console.log('📄 Tentando carregar CSV...');
     products = await loader.loadCSV('./produtos.csv');
     if (products.length === 0) throw new Error('CSV vazio');
+    console.log(`✅ CSV carregado com ${products.length} produtos`);
   } catch (e) {
     console.warn('⚠️ CSV não disponível, usando dados fallback:', e.message);
 
     // Usar fallback com dados em JS
     if (typeof PRODUTOS_FALLBACK !== 'undefined') {
+      console.log('📦 Usando PRODUTOS_FALLBACK...');
       // Converter dados estruturados para formato esperado
       Object.entries(PRODUTOS_FALLBACK).forEach(([category, collections]) => {
         Object.entries(collections).forEach(([collection, items]) => {
@@ -299,14 +307,22 @@ document.addEventListener('DOMContentLoaded', async () => {
       loader.organizeByCategory();
       products = loader.products;
       console.log(`✅ Usando ${products.length} produtos fallback!`);
+    } else {
+      console.error('❌ PRODUTOS_FALLBACK não definido!');
     }
   }
 
+  console.log('📊 Categorias encontradas:', Object.keys(loader.categories));
+
   if (products.length > 0) {
+    console.log('🎨 Renderizando categorias...');
     loader.renderAllCategories();
+    console.log('✅ Categorias renderizadas!');
 
     // Setup filtering
     const filterBtns = document.querySelectorAll('.filter-btn');
+    console.log(`🔘 Encontrados ${filterBtns.length} botões de filtro`);
+
     filterBtns.forEach(btn => {
       btn.addEventListener('click', function() {
         const filter = this.dataset.filter;
