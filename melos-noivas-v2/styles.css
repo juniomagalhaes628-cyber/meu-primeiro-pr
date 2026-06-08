@@ -530,6 +530,50 @@ button {
   filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
 }
 
+/* ========== IMAGE CAROUSEL ========== */
+.image-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fae8e8, #f5e6e6);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-track {
+  display: flex;
+  height: 100%;
+  animation: slideCarousel 16s infinite linear;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.8s ease-in-out;
+}
+
+@keyframes slideCarousel {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(0); }
+  25.1% { transform: translateX(-100%); }
+  50% { transform: translateX(-100%); }
+  50.1% { transform: translateX(-200%); }
+  75% { transform: translateX(-200%); }
+  75.1% { transform: translateX(-300%); }
+  100% { transform: translateX(-300%); }
+}
+
+.carousel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(139, 46, 46, 0.15), rgba(212, 175, 55, 0.1));
+  pointer-events: none;
+  border-radius: 20px;
+}
+
 /* ========== STATS SECTION ========== */
 .stats-section {
   padding: 80px 0;
