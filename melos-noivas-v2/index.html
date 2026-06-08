@@ -18,9 +18,10 @@
   <!-- NAVIGATION -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="logo-link">
-        <img src="logo.svg" alt="Melos Noivas" class="logo-img">
-      </a>
+      <div class="logo">
+        <span class="logo-main">Melos</span>
+        <span class="logo-sub">NOIVAS</span>
+      </div>
 
       <button class="nav-toggle" id="navToggle">
         <span></span>
@@ -72,10 +73,16 @@
       <div class="hero-visual fade-in-down" style="animation-delay: 0.2s">
         <div class="image-carousel">
           <div class="carousel-track">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500&h=600&fit=crop" alt="Noivas 1" class="carousel-slide">
-            <img src="https://images.unsplash.com/photo-1545103365-b2d0c656dd7c?w=500&h=600&fit=crop" alt="Noivas 2" class="carousel-slide">
-            <img src="https://images.unsplash.com/photo-1530268729831-4d71bcdd2f8b?w=500&h=600&fit=crop" alt="Noivas 3" class="carousel-slide">
-            <img src="https://images.unsplash.com/photo-1580542579312-94651dfd596d?w=500&h=600&fit=crop" alt="Noivas 4" class="carousel-slide">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=800&fit=crop" alt="Noiva 1" class="carousel-slide">
+            <img src="https://images.unsplash.com/photo-1545103365-b2d0c656dd7c?w=600&h=800&fit=crop" alt="Noiva 2" class="carousel-slide">
+            <img src="https://images.unsplash.com/photo-1530268729831-4d71bcdd2f8b?w=600&h=800&fit=crop" alt="Noiva 3" class="carousel-slide">
+            <img src="https://images.unsplash.com/photo-1580542579312-94651dfd596d?w=600&h=800&fit=crop" alt="Noiva 4" class="carousel-slide">
+          </div>
+          <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
           </div>
         </div>
       </div>
@@ -106,6 +113,70 @@
     </div>
   </section>
 
+  <!-- FEATURED PRODUCTS SHOWCASE -->
+  <section class="featured-products">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Produtos em Destaque</h2>
+        <p>Seleção premium das nossas coleções mais procuradas</p>
+      </div>
+
+      <div class="products-showcase-grid">
+        <div class="product-showcase-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="showcase-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1520763185298-1b434c919eba?w=400&h=500&fit=crop" alt="Vestido de Noiva Clássico" class="showcase-image">
+            <div class="showcase-badge premium">⭐ Premium</div>
+          </div>
+          <div class="showcase-content">
+            <h3 class="showcase-name">Vestido Clássico</h3>
+            <p class="showcase-collection">Noivas - Coleção 1</p>
+            <p class="showcase-price">A partir de 1.500 €</p>
+            <a href="colecoes.html#noivas" class="btn btn-small">Ver Todos</a>
+          </div>
+        </div>
+
+        <div class="product-showcase-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="showcase-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1525862220556-4d5b4db27e68?w=400&h=500&fit=crop" alt="Vestido de Noiva Moderno" class="showcase-image">
+            <div class="showcase-badge modern">✨ Moderno</div>
+          </div>
+          <div class="showcase-content">
+            <h3 class="showcase-name">Vestido Sofisticado</h3>
+            <p class="showcase-collection">Noivas - Coleção 2</p>
+            <p class="showcase-price">A partir de 1.400 €</p>
+            <a href="colecoes.html#noivas" class="btn btn-small">Ver Todos</a>
+          </div>
+        </div>
+
+        <div class="product-showcase-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="showcase-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1508003516284-4ebf7f37a2c0?w=400&h=500&fit=crop" alt="Fato de Noivo Elegante" class="showcase-image">
+            <div class="showcase-badge elegant">💎 Elegante</div>
+          </div>
+          <div class="showcase-content">
+            <h3 class="showcase-name">Fato Premium</h3>
+            <p class="showcase-collection">Noivos - Customizado</p>
+            <p class="showcase-price">Sob Consulta</p>
+            <a href="colecoes.html#noivos" class="btn btn-small">Ver Todos</a>
+          </div>
+        </div>
+
+        <div class="product-showcase-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="showcase-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=500&fit=crop" alt="Acessórios de Casamento" class="showcase-image">
+            <div class="showcase-badge accent">🎀 Exclusivo</div>
+          </div>
+          <div class="showcase-content">
+            <h3 class="showcase-name">Acessórios Únicos</h3>
+            <p class="showcase-collection">Coleção Premium</p>
+            <p class="showcase-price">A partir de 185 €</p>
+            <a href="colecoes.html#acessorios" class="btn btn-small">Ver Todos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FEATURED COLLECTIONS -->
   <section class="featured-section">
     <div class="container">
@@ -117,7 +188,9 @@
       <div class="featured-grid">
         <a href="colecoes.html#noivas" class="featured-card" data-aos="fade-up" data-aos-delay="100">
           <div class="featured-image">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=400&fit=crop" alt="Vestidos de Noiva" style="width:100%;height:100%;object-fit:cover;">
+            <div class="placeholder-gradient" style="background: linear-gradient(135deg, #f5e6e6, #fae8e8);">
+              <span style="font-size: 80px;">👰</span>
+            </div>
           </div>
           <div class="featured-content">
             <h3>Vestidos de Noiva</h3>
@@ -128,7 +201,9 @@
 
         <a href="colecoes.html#noivos" class="featured-card" data-aos="fade-up" data-aos-delay="200">
           <div class="featured-image">
-            <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&h=400&fit=crop" alt="Ternos de Noivo" style="width:100%;height:100%;object-fit:cover;">
+            <div class="placeholder-gradient" style="background: linear-gradient(135deg, #e8d9c3, #dcc7aa);">
+              <span style="font-size: 80px;">🤵</span>
+            </div>
           </div>
           <div class="featured-content">
             <h3>Ternos de Noivo</h3>
@@ -139,7 +214,9 @@
 
         <a href="colecoes.html#acessorios" class="featured-card" data-aos="fade-up" data-aos-delay="300">
           <div class="featured-image">
-            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&h=400&fit=crop" alt="Acessórios Premium" style="width:100%;height:100%;object-fit:cover;">
+            <div class="placeholder-gradient" style="background: linear-gradient(135deg, #d4af37, #e8d9c3);">
+              <span style="font-size: 80px;">✨</span>
+            </div>
           </div>
           <div class="featured-content">
             <h3>Acessórios Premium</h3>
