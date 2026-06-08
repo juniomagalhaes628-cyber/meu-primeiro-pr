@@ -531,20 +531,26 @@ button {
 }
 
 /* ========== IMAGE CAROUSEL ========== */
+.carousel-container {
+  width: 100%;
+  height: 100%;
+  padding: 0 !important;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
 .image-carousel {
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
   overflow: hidden;
-  background: linear-gradient(135deg, #fae8e8, #f5e6e6);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-track {
   display: flex;
+  width: 100%;
   height: 100%;
-  animation: slideCarousel 16s infinite linear;
+  animation: slideCarousel 16s infinite ease-in-out;
 }
 
 .carousel-slide {
@@ -552,26 +558,14 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.8s ease-in-out;
 }
 
 @keyframes slideCarousel {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(0); }
-  25.1% { transform: translateX(-100%); }
-  50% { transform: translateX(-100%); }
-  50.1% { transform: translateX(-200%); }
-  75% { transform: translateX(-200%); }
-  75.1% { transform: translateX(-300%); }
-  100% { transform: translateX(-300%); }
-}
-
-.carousel-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(139, 46, 46, 0.15), rgba(212, 175, 55, 0.1));
-  pointer-events: none;
-  border-radius: 20px;
+  0%, 18% { transform: translateX(0); }
+  22%, 40% { transform: translateX(-100%); }
+  44%, 62% { transform: translateX(-200%); }
+  66%, 84% { transform: translateX(-300%); }
+  88%, 100% { transform: translateX(0); }
 }
 
 /* ========== STATS SECTION ========== */
