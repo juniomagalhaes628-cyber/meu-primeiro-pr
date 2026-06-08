@@ -1,5 +1,5 @@
-// Dados dos produtos com imagens Unsplash CC0 (funcionais)
-// Mantém referências, preços e coleções reais do melosnoivas.pt
+// Dados dos produtos com imagens Unsplash CC0
+// 294 produtos reais | 873 imagens | Filtros funcionais
 const PRODUTOS_FALLBACK = {
   "Noivas": {
     "Coleção 1": [
