@@ -173,17 +173,46 @@ class ProductLoader {
   }
 
   renderAllCategories() {
-    const categoryMapping = {
-      'Noivas': 'noivas',
-      'Noivos': 'noivos',
-      'Acessórios': 'acessorios'
-    };
+    // Render todas as categorias que existem
+    for (const category of Object.keys(this.categories)) {
+      const containerId = category.toLowerCase().replace(/\s+/g, '').replace(/ã/g, 'a').replace(/ç/g, 'c');
+      const container = document.getElementById(containerId);
 
-    Object.entries(categoryMapping).forEach(([categoryName, containerId]) => {
-      if (this.categories[categoryName]) {
-        this.renderCategory(containerId, categoryName);
-        this.setupFiltersForCategory(containerId);
+      if (container) {
+        this.renderCategory(containerId, category);
       }
+    }
+
+    // Setup global filters
+    this.setupGlobalFilters();
+  }
+
+  setupGlobalFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const filter = this.dataset.filter;
+        const allCards = document.querySelectorAll('.product-card');
+
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        allCards.forEach(card => {
+          if (filter === 'todos') {
+            card.style.display = 'flex';
+            card.style.opacity = '1';
+          } else {
+            const cardText = (card.textContent || '').toLowerCase();
+            if (cardText.includes(filter)) {
+              card.style.display = 'flex';
+              setTimeout(() => card.style.opacity = '1', 10);
+            } else {
+              card.style.opacity = '0';
+              setTimeout(() => card.style.display = 'none', 300);
+            }
+          }
+        });
+      });
     });
   }
 
