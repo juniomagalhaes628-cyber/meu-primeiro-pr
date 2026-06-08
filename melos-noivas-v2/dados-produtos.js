@@ -1,4 +1,4 @@
-// Dados dos produtos com imagens locais do CSV
+// Dados dos produtos com imagens locais
 const PRODUTOS_FALLBACK = {
   "Noivas": {
     "Coleção 1": [
@@ -1883,48 +1883,48 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/102709884_3038546729554716_3974454003091905416_O_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "104000072_3038546549554734_8705239338522328615_O",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/104000072_3038546549554734_8705239338522328615_O_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "104112423_3038546389554750_8047830891227677895_O",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/104112423_3038546389554750_8047830891227677895_O_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "2923-A005_20114",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/2923-A005_20114_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "3530HVCAPE63",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/3530HVCAPE63_1.jpeg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "3530JVCAPE63",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/3530JVCAPE63_1.jpeg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "63136_10228_08568_18BE191B-FA7C-441F-A028-E8803B7F14FE_720X",
@@ -1955,64 +1955,64 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/8092 COVER DRESS_1.jpeg|images/Acessórios/Acessórios/8092 COVER DRESS_2.jpeg|images/Acessórios/Acessórios/8092 COVER DRESS_3.jpeg|images/Acessórios/Acessórios/8092 COVER DRESS_4.jpeg|images/Acessórios/Acessórios/8092 COVER DRESS_5.jpeg|images/Acessórios/Acessórios/8092 COVER DRESS_6.jpeg|images/Acessórios/Acessórios/8092 COVER DRESS_7.jpeg",
+        "TOTAL_FOTOS": "7"
       },
       {
         "REFERÊNCIA/NOME": "ACCAPA616",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/ACCAPA616_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "ACCAPA636",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/ACCAPA636_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "DJ100170",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/DJ100170_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "DJ20786",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/DJ20786_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "DJ20793",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/DJ20793_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "DJ20993",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/DJ20993_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "HEADPIECES AND VEILS-5",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/HEADPIECES AND VEILS-5_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 17.24.38_31F65FE2",
@@ -2211,144 +2211,144 @@ const PRODUTOS_FALLBACK = {
         "PREÇO_EUR": "1780 €",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/LN26JAILA_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "LN26JALISA",
         "PREÇO_EUR": "1910 €",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/LN26JALISA_1.jpg|images/Acessórios/Acessórios/LN26JALISA_2.jpg",
+        "TOTAL_FOTOS": "2"
       },
       {
         "REFERÊNCIA/NOME": "LN26JANEK",
         "PREÇO_EUR": "1670 €",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/LN26JANEK_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "LN26JARETT",
         "PREÇO_EUR": "2380 €",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/LN26JARETT_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "LN26JAYDE",
         "PREÇO_EUR": "2170 €",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/LN26JAYDE_1.jpg|images/Acessórios/Acessórios/LN26JAYDE_2.jpg|images/Acessórios/Acessórios/LN26JAYDE_3.jpg",
+        "TOTAL_FOTOS": "3"
       },
       {
         "REFERÊNCIA/NOME": "LN26JOVAN",
         "PREÇO_EUR": "1940 €",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/LN26JOVAN_1.jpg|images/Acessórios/Acessórios/LN26JOVAN_2.jpg",
+        "TOTAL_FOTOS": "2"
       },
       {
         "REFERÊNCIA/NOME": "MT3530FVCAPE63",
         "PREÇO_EUR": "325 €",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/MT3530FVCAPE63_1.jpeg|images/Acessórios/Acessórios/MT3530FVCAPE63_2.jpeg",
+        "TOTAL_FOTOS": "2"
       },
       {
         "REFERÊNCIA/NOME": "S435-350--1--MED_002_S435-350_002X_001",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/S435-350--1--MED_002_S435-350_002X_001_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "S435-350--1--MED_002_S435-350_002_002",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/S435-350--1--MED_002_S435-350_002_002_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "S435-350--1--MED_002_S435-350_002_003",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/S435-350--1--MED_002_S435-350_002_003_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "S701-300--1--SOFT_002_S701-300--1--SOFT_002_05",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/S701-300--1--SOFT_002_S701-300--1--SOFT_002_05_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "S701-300--1--SOFT_002_S702-300--1--SOFT_002_04",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/S701-300--1--SOFT_002_S702-300--1--SOFT_002_04_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "S701_300_1_SOFT_002_S701_300_002_05",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/S701_300_1_SOFT_002_S701_300_002_05_1.jpg|images/Acessórios/Acessórios/S701_300_1_SOFT_002_S701_300_002_05_2.jpg",
+        "TOTAL_FOTOS": "2"
       },
       {
         "REFERÊNCIA/NOME": "S701_300_1_SOFT_002_S701_300_1_SOFT_002_03",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/S701_300_1_SOFT_002_S701_300_1_SOFT_002_03_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "S75516-300--1--SF_002_S75516-300_002_01",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/S75516-300--1--SF_002_S75516-300_002_01_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "S75516-300--1--SF_002_S75516-300_002_02",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/S75516-300--1--SF_002_S75516-300_002_02_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "S75516-300--1--SF_002_S75516-300_002_03",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/S75516-300--1--SF_002_S75516-300_002_03_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "S75516-300--1--SF_002_S75516-300_01",
         "PREÇO_EUR": "",
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
-        "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "0"
+        "URLs_IMAGENS": "images/Acessórios/Acessórios/S75516-300--1--SF_002_S75516-300_01_1.jpg",
+        "TOTAL_FOTOS": "1"
       },
       {
         "REFERÊNCIA/NOME": "VI10207A",
