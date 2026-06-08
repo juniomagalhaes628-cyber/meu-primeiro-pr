@@ -111,21 +111,32 @@ class ProductLoader {
 
     const categoryClass = category.toLowerCase().replace(/\s+/g, '-');
 
+    // Emoji por categoria
+    const categoryEmoji = {
+      'Noivas': '👰',
+      'Noivos': '🤵',
+      'Acessórios': '✨',
+      'Criança': '👧',
+      'Cerimónia': '💒'
+    };
+
+    const emoji = categoryEmoji[category] || '✨';
+
     return `
       <div class="product-card" data-category="${categoryClass}" data-aos="fade-up">
         <div class="product-image">
           ${mainImage
-            ? `<img src="${mainImage}" alt="${name}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">`
+            ? `<img src="${mainImage}" alt="${name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">`
             : ''}
-          <div class="image-placeholder">
-            <span>${category === 'Noivas' ? '👰' : category === 'Noivos' ? '🤵' : '✨'}</span>
+          <div class="image-placeholder" style="display:${mainImage ? 'none' : 'flex'};">
+            <span>${emoji}</span>
           </div>
         </div>
         <div class="product-info">
           <div>
             <p class="product-ref">${collection}</p>
             <h3 class="product-name">${name}</h3>
-            <p class="product-description">${images.length} foto(s) disponível(is)</p>
+            <p class="product-description">${images.length > 0 ? images.length + ' foto(s)' : 'Galeria disponível'}</p>
           </div>
           <div>
             <div class="product-price">${price}</div>
@@ -173,6 +184,72 @@ class ProductLoader {
         this.renderCategory(containerId, categoryName);
       }
     });
+
+    // Setup global filters
+    this.setupGlobalFilters();
+  }
+
+  setupGlobalFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const filter = this.dataset.filter;
+        const allCards = document.querySelectorAll('.product-card');
+
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        allCards.forEach(card => {
+          if (filter === 'todos') {
+            card.style.display = 'flex';
+            card.style.opacity = '1';
+          } else {
+            const cardText = (card.textContent || '').toLowerCase();
+            if (cardText.includes(filter)) {
+              card.style.display = 'flex';
+              setTimeout(() => card.style.opacity = '1', 10);
+            } else {
+              card.style.opacity = '0';
+              setTimeout(() => card.style.display = 'none', 300);
+            }
+          }
+        });
+      });
+    });
+  }
+
+  setupFiltersForCategory(containerId) {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const filter = this.dataset.filter;
+        const allCards = container.querySelectorAll('.product-card');
+
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        allCards.forEach(card => {
+          if (filter === 'todos') {
+            card.style.display = 'flex';
+            card.style.opacity = '1';
+          } else {
+            const cardName = card.querySelector('.product-name').textContent.toLowerCase();
+            const cardRef = card.querySelector('.product-ref').textContent.toLowerCase();
+
+            if (cardName.includes(filter) || cardRef.includes(filter)) {
+              card.style.display = 'flex';
+              setTimeout(() => card.style.opacity = '1', 10);
+            } else {
+              card.style.opacity = '0';
+              setTimeout(() => card.style.display = 'none', 300);
+            }
+          }
+        });
+      });
+    });
   }
 
   addProductFilter(products, filterValue) {
@@ -193,7 +270,28 @@ document.addEventListener('DOMContentLoaded', async () => {
   const loader = new ProductLoader();
 
   // Tentar carregar do CSV local
-  const products = await loader.loadCSV('./produtos.csv');
+  let products = [];
+  try {
+    products = await loader.loadCSV('./produtos.csv');
+    if (products.length === 0) throw new Error('CSV vazio');
+  } catch (e) {
+    console.warn('⚠️ CSV não disponível, usando dados fallback:', e.message);
+
+    // Usar fallback com dados em JS
+    if (typeof PRODUTOS_FALLBACK !== 'undefined') {
+      // Converter dados estruturados para formato esperado
+      Object.entries(PRODUTOS_FALLBACK).forEach(([category, collections]) => {
+        Object.entries(collections).forEach(([collection, items]) => {
+          items.forEach(item => {
+            loader.products.push(item);
+          });
+        });
+      });
+      loader.organizeByCategory();
+      products = loader.products;
+      console.log(`✅ Usando ${products.length} produtos fallback!`);
+    }
+  }
 
   if (products.length > 0) {
     loader.renderAllCategories();
@@ -208,26 +306,30 @@ document.addEventListener('DOMContentLoaded', async () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         this.classList.add('active');
 
+        let visibleCount = 0;
         allCards.forEach(card => {
           if (filter === 'todos') {
             card.style.display = 'flex';
-            setTimeout(() => card.style.opacity = '1', 10);
+            card.style.opacity = '1';
+            visibleCount++;
           } else {
-            const category = card.dataset.category;
-            if (category.includes(filter)) {
+            const cardText = (card.textContent || '').toLowerCase();
+            if (cardText.includes(filter)) {
               card.style.display = 'flex';
               setTimeout(() => card.style.opacity = '1', 10);
+              visibleCount++;
             } else {
               card.style.opacity = '0';
               setTimeout(() => card.style.display = 'none', 300);
             }
           }
         });
+        console.log(`🔍 Filtro "${filter}": ${visibleCount} produtos encontrados`);
       });
     });
 
-    console.log(`✅ Carregados ${products.length} produtos do CSV!`);
+    console.log(`✅ Carregados ${products.length} produtos!`);
   } else {
-    console.warn('⚠️ Não foi possível carregar o CSV. Usando produtos padrão.');
+    console.error('❌ Nenhum produto disponível');
   }
 });
