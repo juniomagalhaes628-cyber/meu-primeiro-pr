@@ -239,7 +239,28 @@ document.addEventListener('DOMContentLoaded', async () => {
   const loader = new ProductLoader();
 
   // Tentar carregar do CSV local
-  const products = await loader.loadCSV('./produtos.csv');
+  let products = [];
+  try {
+    products = await loader.loadCSV('./produtos.csv');
+    if (products.length === 0) throw new Error('CSV vazio');
+  } catch (e) {
+    console.warn('⚠️ CSV não disponível, usando dados fallback:', e.message);
+
+    // Usar fallback com dados em JS
+    if (typeof PRODUTOS_FALLBACK !== 'undefined') {
+      // Converter dados estruturados para formato esperado
+      Object.entries(PRODUTOS_FALLBACK).forEach(([category, collections]) => {
+        Object.entries(collections).forEach(([collection, items]) => {
+          items.forEach(item => {
+            loader.products.push(item);
+          });
+        });
+      });
+      loader.organizeByCategory();
+      products = loader.products;
+      console.log(`✅ Usando ${products.length} produtos fallback!`);
+    }
+  }
 
   if (products.length > 0) {
     loader.renderAllCategories();
@@ -254,26 +275,30 @@ document.addEventListener('DOMContentLoaded', async () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         this.classList.add('active');
 
+        let visibleCount = 0;
         allCards.forEach(card => {
           if (filter === 'todos') {
             card.style.display = 'flex';
-            setTimeout(() => card.style.opacity = '1', 10);
+            card.style.opacity = '1';
+            visibleCount++;
           } else {
-            const category = card.dataset.category;
-            if (category.includes(filter)) {
+            const cardText = (card.textContent || '').toLowerCase();
+            if (cardText.includes(filter)) {
               card.style.display = 'flex';
               setTimeout(() => card.style.opacity = '1', 10);
+              visibleCount++;
             } else {
               card.style.opacity = '0';
               setTimeout(() => card.style.display = 'none', 300);
             }
           }
         });
+        console.log(`🔍 Filtro "${filter}": ${visibleCount} produtos encontrados`);
       });
     });
 
-    console.log(`✅ Carregados ${products.length} produtos do CSV!`);
+    console.log(`✅ Carregados ${products.length} produtos!`);
   } else {
-    console.warn('⚠️ Não foi possível carregar o CSV. Usando produtos padrão.');
+    console.error('❌ Nenhum produto disponível');
   }
 });
