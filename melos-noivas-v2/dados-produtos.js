@@ -1,8 +1,15 @@
-// Dados dos produtos com IMAGENS LOCAIS (CAMINHOS CORRIGIDOS)
-// 294 produtos | 731 imagens reais
+// Dados dos produtos com IMAGENS LOCAIS
 const PRODUTOS_FALLBACK = {
   "Acessórios": {
     "Galeria": [
+      {
+        "REFERÊNCIA/NOME": "(sem referência identificável)",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
       {
         "REFERÊNCIA/NOME": "102709884_3038546729554716_3974454003091905416_O",
         "PREÇO_EUR": "",
@@ -57,7 +64,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "63152_10228_07415_979AB2BC-C449-4463-80B3-FEA433EC5620_720X",
@@ -65,7 +72,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "63152_10228_07464_42A076FB-7B5D-491F-8ADC-B5BE9BC94B59_720X",
@@ -73,7 +80,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "8092 COVER DRESS",
@@ -138,6 +145,198 @@ const PRODUTOS_FALLBACK = {
         "CATEGORIA": "Acessórios",
         "URLs_IMAGENS": "images/Galeria/HEADPIECES AND VEILS-5_1.jpg",
         "TOTAL_FOTOS": "1"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 17.24.38_2760D546",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 17.24.38_31F65FE2",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 17.24.38_69279442",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 17.24.38_976441B4",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 17.24.39_2760D546",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 17.24.39_6E670529",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 17.24.40_0BDF04C9",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 17.26.56_7D98FC15",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 17.26.57_6BD7F4DE",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 17.26.58_18B69492",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 17.26.58_541A37D4",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 17.26.58_9F3CFED5",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 17.26.59_3293A977",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 17.54.14_320395B8",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 18.01.10_C1DF74D5",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 18.01.11_E8C16E8F",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 18.01.11_F6241FE0",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 18.01.12_7F0969F3",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 18.01.12_C8FF163E",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 18.01.13_6AD9BC02",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 18.04.23_32486C30",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 18.04.24_30A31BD6",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 18.06.34_DDF4336D",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "IMAGEM WHATSAPP 2025-06-21 ÀS 18.06.58_13B503C9",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Acessórios",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "LN26JAILA",
@@ -289,7 +488,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "VI10207B",
@@ -297,7 +496,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "VI10207C",
@@ -305,12 +504,20 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Acessórios",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       }
     ]
   },
   "Cerimónia": {
     "Galeria": [
+      {
+        "REFERÊNCIA/NOME": "(sem referência identificável)",
+        "PREÇO_EUR": "1324 €",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Cerimónia",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
       {
         "REFERÊNCIA/NOME": "1-EXPERTO-1",
         "PREÇO_EUR": "",
@@ -413,7 +620,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Cerimónia",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "3646C_FRONT",
@@ -445,7 +652,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Cerimónia",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "D16557 BACK",
@@ -531,6 +738,14 @@ const PRODUTOS_FALLBACK = {
   },
   "Criança": {
     "Galeria": [
+      {
+        "REFERÊNCIA/NOME": "(sem referência identificável)",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Galeria",
+        "CATEGORIA": "Criança",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
       {
         "REFERÊNCIA/NOME": "84687533_477923049568342_6842089932836569088_O",
         "PREÇO_EUR": "",
@@ -657,7 +872,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Criança",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "IMG_2235",
@@ -665,7 +880,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Criança",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "IMG_2236",
@@ -673,7 +888,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Criança",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "IMG_2243",
@@ -681,7 +896,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Criança",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "IMG_2261",
@@ -689,7 +904,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Criança",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "IMG_2277",
@@ -697,7 +912,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Criança",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "IMG_2285",
@@ -705,7 +920,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Galeria",
         "CATEGORIA": "Criança",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "MF07.345",
@@ -1109,7 +1324,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "2"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "MT8324",
@@ -1117,7 +1332,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "2"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "MT8334",
@@ -1125,7 +1340,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "2"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "MT8334C",
@@ -1133,7 +1348,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "MT8336A",
@@ -1141,7 +1356,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "2"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "MT8336C",
@@ -1149,7 +1364,7 @@ const PRODUTOS_FALLBACK = {
         "COLEÇÃO": "Coleção 1",
         "CATEGORIA": "Noivas",
         "URLs_IMAGENS": "",
-        "TOTAL_FOTOS": "1"
+        "TOTAL_FOTOS": "0"
       },
       {
         "REFERÊNCIA/NOME": "MT8357",
@@ -1737,10 +1952,84 @@ const PRODUTOS_FALLBACK = {
         "URLs_IMAGENS": "images/VALETE_1.jpg|images/VALETE_2.jpg|images/VALETE_3.jpg",
         "TOTAL_FOTOS": "3"
       }
+    ],
+    "Coleção 3": [
+      {
+        "REFERÊNCIA/NOME": "(sem referência identificável)",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Coleção 3",
+        "CATEGORIA": "Noivas",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "DR2415",
+        "PREÇO_EUR": "1825 €",
+        "COLEÇÃO": "Coleção 3",
+        "CATEGORIA": "Noivas",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "EK1619",
+        "PREÇO_EUR": "1650 €",
+        "COLEÇÃO": "Coleção 3",
+        "CATEGORIA": "Noivas",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "EK1621",
+        "PREÇO_EUR": "1725 €",
+        "COLEÇÃO": "Coleção 3",
+        "CATEGORIA": "Noivas",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "EKCT628",
+        "PREÇO_EUR": "2475 €",
+        "COLEÇÃO": "Coleção 3",
+        "CATEGORIA": "Noivas",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "EKDR2601",
+        "PREÇO_EUR": "1925 €",
+        "COLEÇÃO": "Coleção 3",
+        "CATEGORIA": "Noivas",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "EKDR2609",
+        "PREÇO_EUR": "2125 €",
+        "COLEÇÃO": "Coleção 3",
+        "CATEGORIA": "Noivas",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
+      {
+        "REFERÊNCIA/NOME": "EKDR2610",
+        "PREÇO_EUR": "2225 €",
+        "COLEÇÃO": "Coleção 3",
+        "CATEGORIA": "Noivas",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      }
     ]
   },
   "Noivos": {
     "Coleção 1": [
+      {
+        "REFERÊNCIA/NOME": "(sem referência identificável)",
+        "PREÇO_EUR": "",
+        "COLEÇÃO": "Coleção 1",
+        "CATEGORIA": "Noivos",
+        "URLs_IMAGENS": "",
+        "TOTAL_FOTOS": "0"
+      },
       {
         "REFERÊNCIA/NOME": "078B5091-2A18-2A75-C848-C08910A5565A",
         "PREÇO_EUR": "",
