@@ -191,6 +191,24 @@ button {
   font-style: normal;
 }
 
+.logo-link {
+  display: inline-block;
+  height: 50px;
+  transition: transform var(--transition-base);
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  max-width: 150px;
+  display: block;
+}
+
+.logo-link:hover {
+  transform: scale(1.05);
+}
+
 .nav-menu {
   list-style: none;
   display: flex;
