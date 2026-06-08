@@ -126,7 +126,7 @@ class ProductLoader {
       <div class="product-card" data-category="${categoryClass}" data-aos="fade-up">
         <div class="product-image">
           ${mainImage
-            ? `<img src="${mainImage}" alt="${name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'; this.parentElement.style.display='flex';">`
+            ? `<img src="${mainImage}" alt="${name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.querySelector('.image-placeholder').style.display='flex';">`
             : ''}
           <div class="image-placeholder" style="display:${mainImage ? 'none' : 'flex'};">
             <span>${emoji}</span>
