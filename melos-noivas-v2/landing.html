@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Melos Noivas - Criador de Momentos Perfeitos. Vestidos de noiva premium, ternos sofisticados e experiências personalizadas desde 2008.">
+  <meta name="keywords" content="vestidos noiva luxury, ternos noivo premium, customização nupcial, Penafiel">
+  
+  <title>Melos Noivas — Luxury Bridal Experience</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Lora:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="design-polish.css">
+  
+  <style>
+    /* ========== LUXURY LANDING PAGE ========== */
+    :root {
+      --luxury-dark: #0a0a0a;
+      --luxury-gold: #d4af37;
+      --luxury-light: #faf8f3;
+      --luxury-accent: #8B2E2E;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: 'Lora', serif;
+      background: var(--luxury-light);
+      color: #333;
+      line-height: 1.8;
+    }
+
+    /* ========== HERO SECTION - ÉPICO ========== */
+    .luxury-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0a0a0a 0%, #2a1a1a 100%);
+      padding-top: 0;
+    }
+
+    .luxury-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.1), transparent),
+                  radial-gradient(circle at 70% 30%, rgba(139, 46, 46, 0.1), transparent);
+      animation: floatBg 20s ease infinite;
+    }
+
+    @keyframes floatBg {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+
+    .luxury-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      max-width: 800px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .luxury-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 10vw, 96px);
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #d4af37, #faf8f3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: slideInDown 1s ease-out;
+    }
+
+    .luxury-hero p {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 40px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      animation: fadeInUp 1s ease-out 0.2s backwards;
+    }
+
+    .luxury-cta {
+      display: inline-flex;
+      gap: 24px;
+      animation: fadeInUp 1s ease-out 0.4s backwards;
+    }
+
+    .btn-luxury {
+      padding: 18px 48px;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: 2px solid var(--luxury-gold);
+      background: var(--luxury-gold);
+      color: var(--luxury-dark);
+      border-radius: 0;
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-luxury::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--luxury-dark);
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+      z-index: -1;
+    }
+
+    .btn-luxury:hover {
+      color: var(--luxury-gold);
+      transform: translateY(-4px);
+    }
+
+    .btn-luxury:hover::before {
+      transform: translateX(0);
+    }
+
+    .btn-luxury-outline {
+      background: transparent;
+      color: var(--luxury-gold);
+    }
+
+    /* ========== SECTION STYLING ========== */
+    section {
+      padding: 120px 60px;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 80px 30px;
+      }
+    }
+
+    /* ========== ABOUT SECTION ========== */
+    .luxury-about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      margin-bottom: 32px;
+      color: var(--luxury-dark);
+      font-weight: 700;
+    }
+
+    .about-content p {
+      font-size: 16px;
+      line-height: 1.9;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .about-image {
+      width: 100%;
+      height: 500px;
+      background: linear-gradient(135deg, #fae8e8, #f5e6e6);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ========== SERVICES GRID ========== */
+    .luxury-services {
+      background: var(--luxury-light);
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .services-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      margin-bottom: 24px;
+      color: var(--luxury-dark);
+    }
+
+    .services-header p {
+      font-size: 18px;
+      color: #888;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 48px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 48px;
+      border-radius: 4px;
+      border-left: 4px solid var(--luxury-gold);
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .service-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(139, 46, 46, 0.15);
+    }
+
+    .service-icon {
+      font-size: 48px;
+      margin-bottom: 24px;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      margin-bottom: 16px;
+      color: var(--luxury-dark);
+    }
+
+    .service-card p {
+      font-size: 15px;
+      color: #888;
+      line-height: 1.8;
+    }
+
+    /* ========== PORTFOLIO SECTION ========== */
+    .luxury-portfolio {
+      background: white;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      height: 350px;
+      background: linear-gradient(135deg, #fae8e8, #f5e6e6);
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(139, 46, 46, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-text {
+      color: white;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    .luxury-testimonials {
+      background: var(--luxury-dark);
+      color: white;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 48px;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 48px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 4px;
+      backdrop-filter: blur(10px);
+      transition: all 0.4s ease;
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--luxury-gold);
+      background: rgba(212, 175, 55, 0.1);
+    }
+
+    .stars {
+      color: var(--luxury-gold);
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-text {
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      color: rgba(255, 255, 255, 0.9);
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--luxury-gold);
+      font-weight: 600;
+    }
+
+    /* ========== CTA SECTION ========== */
+    .luxury-cta-section {
+      background: linear-gradient(135deg, var(--luxury-accent) 0%, #0a0a0a 100%);
+      color: white;
+      text-align: center;
+      padding: 120px 60px;
+    }
+
+    .luxury-cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+
+    .luxury-cta-section p {
+      font-size: 18px;
+      margin-bottom: 48px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--luxury-dark);
+      color: white;
+      padding: 60px;
+      text-align: center;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    footer p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ========== ANIMATIONS ========== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-content h2 {
+        font-size: 36px;
+      }
+
+      .luxury-cta {
+        flex-direction: column;
+      }
+
+      .btn-luxury {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav style="position: fixed; top: 0; width: 100%; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding: 20px 60px; display: flex; justify-content: space-between; align-items: center;">
+    <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--luxury-gold); letter-spacing: 2px;">MELOS</div>
+    <div style="display: flex; gap: 40px; color: white; font-size: 14px; letter-spacing: 1px; text-transform: uppercase;">
+      <a href="#about" style="color: white; text-decoration: none; transition: color 0.3s;">About</a>
+      <a href="#services" style="color: white; text-decoration: none; transition: color 0.3s;">Services</a>
+      <a href="colecoes.html" style="color: white; text-decoration: none; transition: color 0.3s;">Collections</a>
+      <a href="#contact" style="color: var(--luxury-gold); text-decoration: none;">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="luxury-hero">
+    <div class="luxury-hero-content">
+      <h1>O Seu Momento Perfeito</h1>
+      <p>Criador de Experiências Nupciais Inesquecíveis desde 2008</p>
+      <div class="luxury-cta">
+        <button class="btn-luxury">Agendar Consulta</button>
+        <button class="btn-luxury btn-luxury-outline">Ver Coleções</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="luxury-about">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2>Experiência Luxury desde 2008</h2>
+          <p>Na Melos Noivas, entendemos que o seu dia especial merece perfeição em cada detalhe. Com 19 anos de experiência, transformamos sonhos nupciais em realidade.</p>
+          <p>Cada noiva, cada noivo, cada cliente é único. Por isso, oferecemos customização completa, consultoria dedicada e qualidade certificada em cada peça.</p>
+          <p style="margin-top: 40px; color: var(--luxury-gold); font-weight: 600;">500+ Casamentos Realizados | 50+ Marcas Exclusivas | ⭐4.8 Avaliação</p>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=500&fit=crop" alt="Bridal Collection">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="luxury-services">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div class="services-header">
+        <h2>Serviços Premium</h2>
+        <p>Experiências personalizadas para tornar o seu dia inesquecível</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">👰</div>
+          <h3>Vestidos de Noiva</h3>
+          <p>Coleção de vestidos premium de designers internacionais, com customização completa para seu estilo único.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🤵</div>
+          <h3>Ternos de Noivo</h3>
+          <p>Ternos sofisticados e bem ajustados, perfeitos para complementar o look de ensalmo perfeito.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✨</div>
+          <h3>Acessórios Exclusivos</h3>
+          <p>Detalhes que completam o look perfeito, desde tiaras a sapatos, todos selecionados com cuidado.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💎</div>
+          <h3>Consultoria Dedicada</h3>
+          <p>Atendimento personalizado sem pressão, apenas orientação especializada de profissionais experientes.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📐</div>
+          <h3>Customização Completa</h3>
+          <p>Ajustes precisos e personalizações para combinar perfeitamente com seu estilo único e corpo.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎁</div>
+          <h3>Entrega Garantida</h3>
+          <p>Prazos respeitados com qualidade assegurada em cada detalhe, sempre no seu melhor dia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="luxury-portfolio">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 48px; text-align: center; margin-bottom: 80px; color: var(--luxury-dark);">Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=350&fit=crop" alt="Noiva 1">
+          <div class="portfolio-overlay">
+            <div class="portfolio-text">Noiva Elegante</div>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1545103365-b2d0c656dd7c?w=400&h=350&fit=crop" alt="Noiva 2">
+          <div class="portfolio-overlay">
+            <div class="portfolio-text">Noiva Moderna</div>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400&h=350&fit=crop" alt="Noivo">
+          <div class="portfolio-overlay">
+            <div class="portfolio-text">Noivo Premium</div>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1530268729831-4d71bcdd2f8b?w=400&h=350&fit=crop" alt="Noiva 3">
+          <div class="portfolio-overlay">
+            <div class="portfolio-text">Noiva Sofisticada</div>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=350&fit=crop" alt="Acessórios">
+          <div class="portfolio-overlay">
+            <div class="portfolio-text">Acessórios Exclusivos</div>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1580542579312-94651dfd596d?w=400&h=350&fit=crop" alt="Noiva 4">
+          <div class="portfolio-overlay">
+            <div class="portfolio-text">Noiva Radiante</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="luxury-testimonials">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 48px; text-align: center; margin-bottom: 80px;">Histórias de Noivas</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"A experiência na Melos foi extraordinária. Encontrei o vestido dos meus sonhos e o atendimento foi perfeito do início ao fim."</p>
+          <p class="testimonial-author">— Sofia M., Lisboa</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Personalização de luxo. Cada detalhe foi pensado para mim. Sentirei que verdadeiramente escolheu o meu look nupcial perfeito."</p>
+          <p class="testimonial-author">— Mariana R., Porto</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Profissionalismo incomparável. A equipa da Melos fez o meu dia especial ainda mais memorável com seu cuidado e dedicação."</p>
+          <p class="testimonial-author">— Ana S., Covilhã</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="luxury-cta-section">
+    <h2>Pronto para o seu dia perfeito?</h2>
+    <p>Marque uma consulta sem compromissos e deixe-nos ajudar a criar memórias inesquecíveis</p>
+    <button class="btn-luxury">Agendar Agora</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p style="margin-bottom: 20px; color: var(--luxury-gold); font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600;">MELOS NOIVAS</p>
+    <p>Avenida São Miguel Nº 601 | 4575-302 Termas de São Vicente, Penafiel</p>
+    <p style="margin-top: 16px;">+351 916 182 677 | geral@melosnoivas.com</p>
+    <p style="margin-top: 40px; color: rgba(255, 255, 255, 0.5);">&copy; 2024 Melos Noivas. Criador de Momentos Perfeitos.</p>
+  </footer>
+
+  <script>
+    // Smooth scroll para links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // CTA buttons
+    document.querySelectorAll('.btn-luxury').forEach(btn => {
+      btn.addEventListener('click', () => {
+        window.location.href = 'colecoes.html';
+      });
+    });
+  </script>
+</body>
+</html>
