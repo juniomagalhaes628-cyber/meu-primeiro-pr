@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Coleções de vestidos de noiva e ternos de noivo premium em Melos Noivas">
-  <title>Coleções — Melos Noivas</title>
+  <title>As nossas coleções — Melos Noivas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lora:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
-  <link rel="stylesheet" href="design-polish.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="design-polish.css?v=7">
   <style>
     .collections-hero {
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
@@ -22,14 +22,19 @@
     .collections-hero h1 {
       font-size: clamp(40px, 8vw, 60px);
       color: #fff;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
     .collections-hero p {
       font-size: 18px;
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 600px;
+      color: rgba(255, 255, 255, 0.95);
+      max-width: 700px;
       margin: 0 auto;
+      line-height: 1.8;
+      font-weight: 300;
     }
 
     .filter-section {
@@ -48,46 +53,65 @@
     }
 
     .filter-btn {
-      padding: 10px 24px;
+      padding: 11px 28px;
       border: 2px solid var(--border);
-      border-radius: 25px;
+      border-radius: 30px;
       background: #fff;
       color: var(--text);
       font-weight: 500;
       cursor: pointer;
-      transition: all var(--transition-base);
-      font-size: 14px;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
-    .filter-btn:hover,
+    .filter-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(139, 46, 46, 0.12);
+    }
+
     .filter-btn.active {
       background: var(--primary);
       border-color: var(--primary);
       color: #fff;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(139, 46, 46, 0.18);
     }
 
     .collection-section {
-      padding: 80px 0;
+      padding: 100px 0;
       border-bottom: 1px solid var(--border);
+      scroll-margin-top: 120px;
+    }
+
+    .collection-section:first-of-type {
+      padding-top: 80px;
     }
 
     .collection-section:last-of-type {
       border-bottom: none;
+      padding-bottom: 80px;
     }
 
     .collection-title {
-      font-size: 44px;
+      font-size: clamp(32px, 5vw, 48px);
       margin-bottom: 12px;
       color: var(--dark);
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
     .collection-subtitle {
       color: var(--text-light);
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 0.3px;
     }
 
     .products-grid {
@@ -99,14 +123,14 @@
     .product-card {
       background: #fff;
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
-      transition: all var(--transition-base);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
       display: flex;
       flex-direction: column;
       height: 100%;
       animation: fadeInUp 0.6s ease-out backwards;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
     }
 
     .product-card:nth-child(1) { animation-delay: 0s; }
@@ -198,22 +222,24 @@
     }
 
     .product-ref {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 2px;
-      margin-bottom: 10px;
-      font-weight: 600;
+      margin-bottom: 12px;
+      font-weight: 700;
+      opacity: 0.85;
     }
 
     .product-name {
       font-size: 18px;
       color: var(--dark);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       transition: color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
       font-family: 'Playfair Display', serif;
       font-weight: 600;
-      line-height: 1.4;
+      line-height: 1.5;
+      letter-spacing: 0.3px;
     }
 
     .product-card:hover .product-name {
@@ -223,8 +249,9 @@
     .product-description {
       font-size: 13px;
       color: var(--text-light);
-      margin-bottom: 12px;
-      line-height: 1.6;
+      margin-bottom: 14px;
+      line-height: 1.65;
+      font-weight: 300;
     }
 
     .product-price {
@@ -242,36 +269,50 @@
     }
 
     .btn-small {
-      padding: 12px 20px;
+      padding: 13px 22px;
       font-size: 12px;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
       width: 100%;
       text-align: center;
       background: var(--primary);
       color: #fff;
       border: 2px solid var(--primary);
-      border-radius: 25px;
+      border-radius: 28px;
       font-weight: 600;
-      transition: all var(--transition-base);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
       text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(139, 46, 46, 0.15);
     }
 
     .btn-small:hover {
       background: var(--primary-dark);
       border-color: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(139, 46, 46, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(139, 46, 46, 0.25);
+    }
+
+    .btn-small:active {
+      transform: translateY(-1px);
     }
 
     .empty-state {
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
       color: var(--text-light);
     }
 
     .empty-state h3 {
       margin-bottom: 12px;
       color: var(--dark);
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .empty-state p {
+      font-size: 14px;
+      line-height: 1.6;
     }
 
     @media (max-width: 768px) {
@@ -281,16 +322,50 @@
 
       .collections-hero h1 {
         font-size: 32px;
+        margin-bottom: 16px;
+      }
+
+      .collections-hero p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .collection-section {
+        padding: 60px 0;
+      }
+
+      .collection-title {
+        font-size: 28px;
+        margin-bottom: 8px;
+      }
+
+      .collection-subtitle {
+        margin-bottom: 40px;
+        font-size: 14px;
       }
 
       .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 16px;
       }
 
       .product-image {
-        height: 240px;
-        font-size: 60px;
+        height: 200px;
+        font-size: 50px;
+      }
+
+      .product-info {
+        padding: 20px;
+      }
+
+      .product-name {
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+
+      .product-price {
+        font-size: 18px;
+        margin-bottom: 12px;
       }
 
       .filter-group {
@@ -298,8 +373,56 @@
       }
 
       .filter-btn {
-        padding: 8px 16px;
-        font-size: 12px;
+        padding: 9px 18px;
+        font-size: 11px;
+        letter-spacing: 0.8px;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        transform: translateY(-2px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .collections-hero {
+        padding: 60px 16px 32px;
+        margin-top: 40px;
+      }
+
+      .collections-hero h1 {
+        font-size: 24px;
+      }
+
+      .collections-hero p {
+        font-size: 14px;
+      }
+
+      .collection-section {
+        padding: 40px 0;
+      }
+
+      .collection-title {
+        font-size: 22px;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+      }
+
+      .product-image {
+        height: 160px;
+        font-size: 40px;
+      }
+
+      .product-ref {
+        font-size: 10px;
+      }
+
+      .btn-small {
+        padding: 10px 16px;
+        font-size: 11px;
       }
     }
   </style>
@@ -337,8 +460,8 @@
 
   <!-- HERO -->
   <section class="collections-hero">
-    <h1>Nossas Coleções</h1>
-    <p>Descubra os designs premium que transformarão seu grande dia</p>
+    <h1>As nossas coleções</h1>
+    <p>Descubra os designs premium e sofisticados criados para tornar seu grande dia inesquecível. Cada peça é uma declaração de elegância e bom gosto.</p>
   </section>
 
   <!-- FILTERS -->
