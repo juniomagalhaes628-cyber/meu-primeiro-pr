@@ -1,0 +1,140 @@
+/* ========== EMIL KOWALSKI DESIGN PHILOSOPHY ========== */
+/* UI Polish | Component Design | Animation Decisions | Invisible Details */
+
+/* ========== PRODUCT CARDS - ELEGANCE & POLISH ========== */
+.product-card {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  border-radius: 16px !important;
+  overflow: hidden;
+  border: 1px solid rgba(139, 46, 46, 0.1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 
+              0 4px 16px rgba(139, 46, 46, 0.05) !important;
+}
+
+/* Subtle gradient overlay - invisible detail */
+.product-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(212, 175, 55, 0.01) 100%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Elegant hover state - scaled lift */
+.product-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(139, 46, 46, 0.15), 
+              0 2px 4px rgba(0, 0, 0, 0.08) !important;
+  border-color: var(--primary) !important;
+}
+
+/* ========== PRODUCT IMAGES - REFINED TRANSITIONS ========== */
+.product-image {
+  border-radius: 16px 16px 0 0 !important;
+}
+
+.product-image img {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.12);
+}
+
+/* ========== BUTTON - PREMIUM INTERACTION ========== */
+.btn-small {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px !important;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  box-shadow: 0 4px 12px rgba(139, 46, 46, 0.2) !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+}
+
+/* Shine effect on button */
+.btn-small::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+
+.btn-small:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(139, 46, 46, 0.3) !important;
+}
+
+.btn-small:hover::before {
+  transform: translateX(100%);
+}
+
+/* ========== TEXT - COLOR TRANSITIONS ========== */
+.product-name {
+  transition: color 0.3s ease;
+}
+
+.product-card:hover .product-name {
+  color: var(--primary);
+}
+
+.product-description {
+  transition: color 0.3s ease;
+}
+
+/* ========== ANIMATION REFINEMENTS ========== */
+@keyframes slideInSmooth {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-card {
+  animation: slideInSmooth 0.6s ease-out backwards;
+}
+
+.product-card:nth-child(1) { animation-delay: 0.05s; }
+.product-card:nth-child(2) { animation-delay: 0.1s; }
+.product-card:nth-child(3) { animation-delay: 0.15s; }
+.product-card:nth-child(4) { animation-delay: 0.2s; }
+.product-card:nth-child(5) { animation-delay: 0.25s; }
+.product-card:nth-child(6) { animation-delay: 0.3s; }
+.product-card:nth-child(n+7) { animation-delay: 0.35s; }
+
+/* ========== INTERACTIVE STATES ========== */
+.product-card {
+  cursor: pointer;
+}
+
+.btn-small {
+  cursor: pointer;
+}
+
+.btn-small:active {
+  transform: translateY(0) !important;
+}
+
+/* ========== RESPONSIVE REFINEMENTS ========== */
+@media (max-width: 768px) {
+  .product-card:hover {
+    transform: translateY(-8px) scale(1.01);
+  }
+
+  .product-card:hover .product-image img {
+    transform: scale(1.08);
+  }
+}
