@@ -122,22 +122,13 @@ class ProductLoader {
 
     const emoji = categoryEmoji[category] || '✨';
 
-    // Fallback images por categoria
-    const fallbackImages = {
-      'noivas': 'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=500&fit=crop',
-      'noivos': 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400&h=500&fit=crop',
-      'acessórios': 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=500&fit=crop'
-    };
-
-    const displayImage = mainImage || fallbackImages[categoryClass] || fallbackImages['acessórios'];
-
     return `
       <div class="product-card" data-category="${categoryClass}" data-aos="fade-up">
         <div class="product-image">
-          <img src="${displayImage}" alt="${name}" loading="lazy"
-               onerror="this.src='${fallbackImages[categoryClass] || fallbackImages['acessórios']}'; this.style.display='block';"
-               style="width:100%;height:100%;object-fit:cover;">
-          <div class="image-placeholder" id="placeholder-${name.replace(/\s+/g, '-')}" style="display:none; position:absolute; inset:0;">
+          ${mainImage
+            ? `<img src="${mainImage}" alt="${name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">`
+            : ''}
+          <div class="image-placeholder" style="display:${mainImage ? 'none' : 'flex'};">
             <span>${emoji}</span>
           </div>
         </div>
@@ -189,12 +180,8 @@ class ProductLoader {
     };
 
     Object.entries(categoryMapping).forEach(([categoryName, containerId]) => {
-      console.log(`  Renderizando ${categoryName} em #${containerId}`);
       if (this.categories[categoryName]) {
-        console.log(`    ✅ ${Object.keys(this.categories[categoryName]).join(', ')}`);
         this.renderCategory(containerId, categoryName);
-      } else {
-        console.warn(`    ❌ ${categoryName} não encontrada`);
       }
     });
 
@@ -280,22 +267,18 @@ class ProductLoader {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', async () => {
-  console.log('🚀 Iniciando ProductLoader...');
   const loader = new ProductLoader();
 
   // Tentar carregar do CSV local
   let products = [];
   try {
-    console.log('📄 Tentando carregar CSV...');
     products = await loader.loadCSV('./produtos.csv');
     if (products.length === 0) throw new Error('CSV vazio');
-    console.log(`✅ CSV carregado com ${products.length} produtos`);
   } catch (e) {
     console.warn('⚠️ CSV não disponível, usando dados fallback:', e.message);
 
     // Usar fallback com dados em JS
     if (typeof PRODUTOS_FALLBACK !== 'undefined') {
-      console.log('📦 Usando PRODUTOS_FALLBACK...');
       // Converter dados estruturados para formato esperado
       Object.entries(PRODUTOS_FALLBACK).forEach(([category, collections]) => {
         Object.entries(collections).forEach(([collection, items]) => {
@@ -307,22 +290,14 @@ document.addEventListener('DOMContentLoaded', async () => {
       loader.organizeByCategory();
       products = loader.products;
       console.log(`✅ Usando ${products.length} produtos fallback!`);
-    } else {
-      console.error('❌ PRODUTOS_FALLBACK não definido!');
     }
   }
 
-  console.log('📊 Categorias encontradas:', Object.keys(loader.categories));
-
   if (products.length > 0) {
-    console.log('🎨 Renderizando categorias...');
     loader.renderAllCategories();
-    console.log('✅ Categorias renderizadas!');
 
     // Setup filtering
     const filterBtns = document.querySelectorAll('.filter-btn');
-    console.log(`🔘 Encontrados ${filterBtns.length} botões de filtro`);
-
     filterBtns.forEach(btn => {
       btn.addEventListener('click', function() {
         const filter = this.dataset.filter;
