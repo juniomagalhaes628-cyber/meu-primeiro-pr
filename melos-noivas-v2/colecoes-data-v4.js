@@ -118,8 +118,3 @@ function addElegantInteractions() {
 
   console.log(`✨ ${cards.length} interações elegantes ativadas`);
 }
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
