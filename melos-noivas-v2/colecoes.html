@@ -8,33 +8,151 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lora:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=7">
-  <link rel="stylesheet" href="design-polish.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="design-polish.css?v=8">
   <style>
     .collections-hero {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #fff;
-      padding: 120px 32px 60px;
+      position: relative;
+      min-height: 52vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       margin-top: 60px;
+      overflow: hidden;
+      background: var(--primary-dark);
     }
-
-    .collections-hero h1 {
-      font-size: clamp(40px, 8vw, 60px);
+    .collections-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/noivas/colecao-2/AC447_1.jpg');
+      background-size: cover;
+      background-position: center 25%;
+      z-index: 0;
+    }
+    .collections-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(92,31,31,0.82), rgba(139,46,46,0.62));
+      z-index: 1;
+    }
+    .collections-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 80px 32px 60px;
+      max-width: 720px;
+    }
+    .collections-hero-content .page-label {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .collections-hero-content h1 {
+      font-size: clamp(38px, 7vw, 58px);
       color: #fff;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      line-height: 1.1;
     }
-
-    .collections-hero p {
-      font-size: 18px;
-      color: rgba(255, 255, 255, 0.95);
-      max-width: 700px;
-      margin: 0 auto;
+    .collections-hero-content p {
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.92);
+      max-width: 600px;
+      margin: 0 auto 32px;
       line-height: 1.8;
       font-weight: 300;
+    }
+
+    /* Modal */
+    .produto-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 4000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .produto-modal.active { display: flex; }
+    .produto-modal-inner {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 780px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.35);
+    }
+    .produto-modal-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 20px 0 0 20px;
+    }
+    .produto-modal-body {
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .produto-modal-ref {
+      font-size: 11px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .produto-modal-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--dark);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .produto-modal-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .produto-modal-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .produto-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(0,0,0,0.08);
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .produto-modal-close:hover { background: rgba(0,0,0,0.16); }
+    @media (max-width: 640px) {
+      .produto-modal-inner { grid-template-columns: 1fr; }
+      .produto-modal-img { border-radius: 20px 20px 0 0; aspect-ratio: 4/3; }
+      .produto-modal-body { padding: 24px 20px; }
     }
 
     .filter-section {
@@ -460,8 +578,14 @@
 
   <!-- HERO -->
   <section class="collections-hero">
-    <h1>As nossas coleções</h1>
-    <p>Descubra os designs premium e sofisticados criados para tornar seu grande dia inesquecível. Cada peça é uma declaração de elegância e bom gosto.</p>
+    <div class="collections-hero-bg"></div>
+    <div class="collections-hero-overlay"></div>
+    <div class="collections-hero-content">
+      <span class="page-label">Melos Noivas</span>
+      <h1>As nossas coleções</h1>
+      <p>Designs premium e sofisticados criados para tornar o seu grande dia verdadeiramente inesquecível. Cada peça é uma declaração de elegância.</p>
+      <a href="contacto.html" class="btn btn-primary">Marcar Consulta</a>
+    </div>
   </section>
 
   <!-- FILTERS -->
@@ -492,16 +616,40 @@
     </section>
   </main>
 
+  <!-- PRODUCT MODAL -->
+  <div class="produto-modal" id="produtoModal" role="dialog" aria-modal="true">
+    <div class="produto-modal-inner">
+      <button class="produto-modal-close" onclick="closeModal()" aria-label="Fechar">✕</button>
+      <img class="produto-modal-img" id="modalImg" src="" alt="">
+      <div class="produto-modal-body">
+        <div class="produto-modal-ref" id="modalRef"></div>
+        <div class="produto-modal-name" id="modalName"></div>
+        <div class="produto-modal-price" id="modalPrice"></div>
+        <div class="produto-modal-desc" id="modalDesc">Peça premium da nossa coleção. Disponível em diferentes tamanhos e com possibilidade de customização e ajustes.</div>
+        <a id="modalCta" href="contacto.html" class="btn btn-primary" style="width:100%;justify-content:center;">
+          Marcar Prova
+        </a>
+        <a href="contacto.html" class="btn" style="width:100%;justify-content:center;margin-top:10px;border:2px solid var(--border);color:var(--text);background:transparent;">
+          Pedir Informações
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h4>Melos Noivas</h4>
-          <p>Loja de vestidos de noiva premium, ternos de noivo sofisticados e acessórios exclusivos desde 2008.</p>
-          <div class="social-links">
+          <div class="logo" style="margin-bottom:20px;">
+            <span class="logo-main">Melos</span>
+            <span class="logo-sub">noivas</span>
+          </div>
+          <p>Atelier de vestidos de noiva premium, fatos de noivo sofisticados e acessórios exclusivos em Penafiel, desde 2008.</p>
+          <div class="social-links" style="margin-top:16px;">
             <a href="https://instagram.com/melosnoivas" target="_blank" rel="noopener">Instagram</a>
             <a href="https://facebook.com/melosnoivas" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://wa.me/351916182677" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
         <div class="footer-section">
@@ -512,18 +660,14 @@
             <li><a href="sobre.html">Sobre Nós</a></li>
             <li><a href="contacto.html">Contacto</a></li>
           </ul>
+          <a href="contacto.html" class="btn btn-primary" style="margin-top:24px;display:inline-flex;padding:12px 24px;font-size:13px;">Marcar Consulta</a>
         </div>
         <div class="footer-section">
           <h4>Contacte-nos</h4>
-          <p>
-            <strong>Morada:</strong><br>
-            Avenida São Miguel Nº 601<br>
-            4575-302 Termas de São Vicente, Penafiel
-          </p>
-          <p>
-            <strong>Telefone:</strong><br>
-            <a href="tel:+351916182677">+351 916 182 677</a>
-          </p>
+          <p><strong>Morada:</strong><br>Avenida São Miguel Nº 601<br>4575-302 Termas de São Vicente, Penafiel</p>
+          <p style="margin-top:12px;"><strong>Telefone:</strong><br><a href="tel:+351916182677">+351 916 182 677</a></p>
+          <p style="margin-top:12px;"><strong>Email:</strong><br><a href="mailto:geral@melosnoivas.com">geral@melosnoivas.com</a></p>
+          <p style="margin-top:12px;"><strong>Horário:</strong><br>Seg–Sex: 10:00–19:00<br>Sábado: 09:00–18:00</p>
         </div>
       </div>
       <div class="footer-bottom">
@@ -532,8 +676,46 @@
     </div>
   </footer>
 
-  <script src="app.js?v=5"></script>
-  <script src="dados-produtos.js?v=5"></script>
-  <script src="colecoes-data-v4.js?v=5"></script>
+  <script src="app.js?v=8"></script>
+  <script src="dados-produtos.js?v=8"></script>
+  <script src="colecoes-data-v4.js?v=8"></script>
+  <script>
+    const produtoModal = document.getElementById('produtoModal');
+
+    function openModal(name, price, imgSrc, ref) {
+      document.getElementById('modalName').textContent = name;
+      document.getElementById('modalPrice').textContent = price || 'Sob consulta';
+      document.getElementById('modalImg').src = imgSrc || '';
+      document.getElementById('modalImg').alt = name;
+      document.getElementById('modalRef').textContent = ref ? 'Ref. ' + ref : '';
+      document.getElementById('modalCta').href = 'contacto.html?produto=' + encodeURIComponent(name);
+      produtoModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      produtoModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    produtoModal.addEventListener('click', e => {
+      if (e.target === produtoModal) closeModal();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Delegate click on product images to open modal
+    document.addEventListener('click', e => {
+      const card = e.target.closest('.product-card');
+      if (!card) return;
+      const img = card.querySelector('img');
+      const name = card.querySelector('.product-name')?.textContent || '';
+      const price = card.querySelector('.product-price')?.textContent || '';
+      const ref = card.querySelector('.product-ref')?.textContent || '';
+      if (img && name) openModal(name, price, img.src, ref);
+    });
+  </script>
 </body>
 </html>

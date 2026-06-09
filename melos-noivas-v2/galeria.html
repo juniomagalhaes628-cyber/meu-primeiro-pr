@@ -3,273 +3,347 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Galeria de fotos — Melos Noivas">
+  <meta name="description" content="Galeria de casamentos Melos Noivas — vestidos de noiva, fatos de noivo e momentos inesquecíveis em Penafiel">
   <title>Galeria — Melos Noivas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lora:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="design-polish.css?v=7">
   <style>
+    /* ── HERO ── */
     .gallery-hero {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #fff;
-      padding: 120px 32px 60px;
+      position: relative;
+      min-height: 56vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       margin-top: 60px;
-    }
-
-    .gallery-hero h1 {
-      font-size: clamp(40px, 8vw, 60px);
-      color: #fff;
-      margin-bottom: 16px;
-    }
-
-    .gallery-hero p {
-      font-size: 18px;
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .gallery-section {
-      padding: 80px 0;
-      background: #fff;
-    }
-
-    .gallery-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .gallery-item {
-      position: relative;
       overflow: hidden;
-      border-radius: 12px;
-      cursor: pointer;
-      aspect-ratio: 1;
-      background: linear-gradient(135deg, var(--primary-light), rgba(212, 175, 55, 0.1));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 80px;
-      transition: all var(--transition-base);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      border: 1px solid var(--border);
+      background: var(--primary-dark);
     }
-
-    .gallery-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-    }
-
-    .gallery-item::before {
-      content: '';
+    .gallery-hero-bg {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
-      opacity: 0;
-      transition: opacity var(--transition-base);
+      background-image: url('images/noivas/colecao-1/ML2946_1.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      z-index: 0;
+    }
+    .gallery-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(92,31,31,0.80), rgba(139,46,46,0.60));
       z-index: 1;
     }
-
-    .gallery-item:hover::before {
-      opacity: 1;
-    }
-
-    .gallery-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity var(--transition-fast);
-      z-index: 2;
-    }
-
-    .gallery-item:hover .gallery-overlay {
-      opacity: 1;
-    }
-
-    .gallery-icon {
-      font-size: 32px;
-      color: #fff;
-    }
-
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.95);
-      z-index: 2000;
-      opacity: 0;
-      transition: opacity var(--transition-base);
-    }
-
-    .lightbox.active {
-      display: flex;
-      opacity: 1;
-    }
-
-    .lightbox-content {
+    .gallery-hero-content {
       position: relative;
-      width: 90%;
-      height: 90%;
-      max-width: 1000px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: auto;
+      z-index: 2;
+      padding: 80px 32px 60px;
+      max-width: 720px;
     }
-
-    .lightbox-image {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      animation: fadeInUp 0.3s ease-out;
-    }
-
-    .lightbox-text {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-      color: #fff;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 16px;
-      border-radius: 8px;
-      backdrop-filter: blur(10px);
-      animation: fadeInUp 0.3s ease-out 0.1s backwards;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 32px;
-      color: #fff;
-      background: none;
-      border: none;
-      cursor: pointer;
-      transition: color var(--transition-fast);
-      z-index: 2001;
-    }
-
-    .lightbox-close:hover {
+    .gallery-hero-content .page-label {
+      display: inline-block;
       color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
-
-    .lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 40px;
+    .gallery-hero-content h1 {
+      font-size: clamp(38px, 7vw, 60px);
       color: #fff;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 20px;
-      transition: color var(--transition-fast);
-      z-index: 2001;
+      margin-bottom: 18px;
+      line-height: 1.1;
+    }
+    .gallery-hero-content p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.90);
+      max-width: 540px;
+      margin: 0 auto 32px;
+      line-height: 1.8;
+      font-weight: 300;
     }
 
-    .lightbox-nav:hover {
-      color: var(--accent);
+    /* ── FILTERS ── */
+    .gallery-section {
+      padding: 80px 0 100px;
+      background: #fff;
     }
-
-    .lightbox-prev {
-      left: 20px;
-    }
-
-    .lightbox-next {
-      right: 20px;
-    }
-
-    .lightbox-counter {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      color: #fff;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-size: 14px;
-      backdrop-filter: blur(10px);
-      z-index: 2001;
-    }
-
-    .filter-gallery {
+    .filter-bar {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 40px;
+      margin-bottom: 56px;
     }
-
-    .filter-gallery .filter-btn {
-      padding: 10px 24px;
+    .filter-btn {
+      padding: 11px 28px;
       border: 2px solid var(--border);
-      border-radius: 25px;
+      border-radius: 30px;
       background: #fff;
       color: var(--text);
       font-weight: 500;
       cursor: pointer;
-      transition: all var(--transition-base);
-      font-size: 14px;
+      transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-
-    .filter-gallery .filter-btn:hover,
-    .filter-gallery .filter-btn.active {
+    .filter-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+    .filter-btn.active {
       background: var(--primary);
       border-color: var(--primary);
       color: #fff;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(139,46,46,0.2);
     }
 
+    /* ── MASONRY GRID ── */
+    .masonry-grid {
+      columns: 4;
+      column-gap: 18px;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 18px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.09);
+      transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .masonry-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(139,46,46,0.15);
+    }
+    .masonry-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .masonry-item:hover img {
+      transform: scale(1.04);
+    }
+    .masonry-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(92,31,31,0.75) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+    .masonry-item:hover .masonry-overlay { opacity: 1; }
+    .masonry-caption {
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .masonry-caption span {
+      display: block;
+      font-family: 'Lora', serif;
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 4px;
+    }
+    .masonry-zoom {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: scale(0.7);
+      transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+      color: var(--primary);
+      font-size: 14px;
+    }
+    .masonry-item:hover .masonry-zoom {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ── EMPTY STATE ── */
+    .gallery-empty {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--text-light);
+      display: none;
+    }
+    .gallery-empty h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+
+    /* ── MID CTA ── */
+    .gallery-cta-strip {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 56px 40px;
+      text-align: center;
+      margin: 60px 0;
+    }
+    .gallery-cta-strip h2 {
+      font-size: clamp(24px,3vw,36px);
+      color: var(--dark);
+      margin-bottom: 14px;
+    }
+    .gallery-cta-strip p {
+      font-size: 16px;
+      color: var(--text-light);
+      max-width: 500px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+    .gallery-cta-strip .cta-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      z-index: 3000;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-inner {
+      position: relative;
+      width: 90vw;
+      max-width: 960px;
+      max-height: 82vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 8px;
+      animation: fadeIn 0.3s ease-out;
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      font-size: 28px;
+      color: #fff;
+      background: rgba(255,255,255,0.12);
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+      transition: background 0.2s;
+      z-index: 3001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.22); }
+    .lightbox-nav {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.12);
+      border: none;
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      transition: background 0.2s;
+      z-index: 3001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox-nav:hover { background: rgba(255,255,255,0.22); }
+    .lightbox-prev { left: 20px; }
+    .lightbox-next { right: 20px; }
+    .lightbox-footer {
+      margin-top: 18px;
+      text-align: center;
+    }
+    .lightbox-counter {
+      color: rgba(255,255,255,0.55);
+      font-size: 13px;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .lightbox-title {
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+    }
+    .lightbox-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 10px 24px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 24px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .lightbox-cta:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) { .masonry-grid { columns: 3; } }
     @media (max-width: 768px) {
-      .gallery-hero {
-        padding: 80px 20px 40px;
-      }
-
-      .gallery-hero h1 {
-        font-size: 32px;
-      }
-
-      .gallery-container {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 12px;
-      }
-
-      .gallery-item {
-        font-size: 40px;
-      }
-
-      .lightbox-content {
-        width: 95%;
-        height: 95%;
-      }
-
-      .lightbox-nav {
-        font-size: 24px;
-        padding: 10px;
-      }
-
-      .lightbox-prev {
-        left: 10px;
-      }
-
-      .lightbox-next {
-        right: 10px;
-      }
+      .masonry-grid { columns: 2; column-gap: 12px; }
+      .masonry-item { margin-bottom: 12px; }
+      .gallery-hero-content { padding: 60px 20px 40px; }
+      .gallery-cta-strip { padding: 40px 20px; }
+      .lightbox-nav { display: none; }
+    }
+    @media (max-width: 480px) {
+      .masonry-grid { columns: 2; }
     }
   </style>
   <link rel="icon" type="image/svg+xml" href="logo.svg">
 </head>
 <body>
+
   <!-- NAVIGATION -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -278,9 +352,7 @@
         <span class="logo-sub">noivas</span>
       </div>
       <button class="nav-toggle" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu" id="navMenu">
         <li><a href="index.html" class="nav-link">Home</a></li>
@@ -292,7 +364,7 @@
             <li><a href="colecoes.html#acessorios">Acessórios</a></li>
           </ul>
         </li>
-        <li><a href="#" class="nav-link">Galeria</a></li>
+        <li><a href="galeria.html" class="nav-link">Galeria</a></li>
         <li><a href="sobre.html" class="nav-link">Sobre</a></li>
         <li><a href="contacto.html" class="nav-link btn-cta">Contacto</a></li>
       </ul>
@@ -301,119 +373,181 @@
 
   <!-- HERO -->
   <section class="gallery-hero">
-    <h1>Galeria de Casamentos</h1>
-    <p>Momentos inesquecíveis que temos o privilégio de fazer parte</p>
+    <div class="gallery-hero-bg"></div>
+    <div class="gallery-hero-overlay"></div>
+    <div class="gallery-hero-content">
+      <span class="page-label">Melos Noivas</span>
+      <h1>Galeria de Casamentos</h1>
+      <p>Cada imagem é uma história de amor que tivemos o privilégio de fazer parte. Deixe-se inspirar.</p>
+      <a href="contacto.html" class="btn btn-primary">Marcar Consulta</a>
+    </div>
   </section>
 
-  <!-- GALLERY SECTION -->
+  <!-- GALLERY -->
   <section class="gallery-section">
     <div class="container">
-      <div class="filter-gallery">
+
+      <!-- FILTERS -->
+      <div class="filter-bar">
         <button class="filter-btn active" data-filter="todos">Todos</button>
         <button class="filter-btn" data-filter="noivas">Noivas</button>
         <button class="filter-btn" data-filter="noivos">Noivos</button>
-        <button class="filter-btn" data-filter="casal">Casais</button>
         <button class="filter-btn" data-filter="detalhes">Detalhes</button>
       </div>
 
-      <div class="gallery-container">
-        <div class="gallery-item" data-category="noivas" data-title="Vestido Elegante" data-aos="fade-up">
-          <span>👰</span>
-          <div class="gallery-overlay">
-            <span class="gallery-icon">🔍</span>
-          </div>
+      <!-- MASONRY GRID -->
+      <div class="masonry-grid" id="masonryGrid">
+        <!-- Noivas -->
+        <div class="masonry-item" data-category="noivas" data-title="Vestido de Noiva — Coleção Premium">
+          <img src="images/noivas/colecao-1/ML2902_1.jpg" alt="Vestido de Noiva ML2902" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivas</span>Coleção Premium</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivas" data-title="Vestido de Noiva Elegante">
+          <img src="images/noivas/colecao-1/ML2923_1.jpg" alt="Vestido de Noiva ML2923" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivas</span>Elegância Clássica</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivas" data-title="Vestido de Noiva Sofisticado">
+          <img src="images/noivas/colecao-1/ML2946_1.jpg" alt="Vestido de Noiva ML2946" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivas</span>Sofisticação Nupcial</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivas" data-title="Vestido de Noiva Moderno">
+          <img src="images/noivas/colecao-1/ML2977_1.jpg" alt="Vestido de Noiva ML2977" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivas</span>Design Contemporâneo</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivas" data-title="Vestido de Noiva Romântico">
+          <img src="images/noivas/colecao-1/ML2990_1.jpg" alt="Vestido de Noiva ML2990" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivas</span>Romance Eterno</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivas" data-title="Vestido de Noiva Exclusivo">
+          <img src="images/noivas/colecao-1/RJ69922_071_1.jpg" alt="Vestido de Noiva RJ69922" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivas</span>Exclusividade Total</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivas" data-title="Vestido de Noiva Premium">
+          <img src="images/noivas/colecao-2/AC447_1.jpg" alt="Vestido de Noiva AC447" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivas</span>Coleção Especial</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivas" data-title="Vestido de Noiva Renda">
+          <img src="images/noivas/colecao-1/MT8365_0022_1.jpg" alt="Vestido de Noiva MT8365" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivas</span>Renda Delicada</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivas" data-title="Vestido de Noiva Minimalista">
+          <img src="images/noivas/colecao-1/VI53055_0007_1.jpg" alt="Vestido de Noiva VI53055" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivas</span>Minimalismo Elegante</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivas" data-title="Vestido de Noiva Sofisticado">
+          <img src="images/noivas/colecao-1/ML3471W_1.jpg" alt="Vestido de Noiva ML3471W" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivas</span>Alta Costura</div></div>
+          <div class="masonry-zoom">⤢</div>
         </div>
 
-        <div class="gallery-item" data-category="noivas" data-title="Coleção Premium" data-aos="fade-up">
-          <span>💍</span>
-          <div class="gallery-overlay">
-            <span class="gallery-icon">🔍</span>
-          </div>
+        <!-- Noivos -->
+        <div class="masonry-item" data-category="noivos" data-title="Fato de Noivo Clássico">
+          <img src="images/noivos/colecao-1/126-LOOK-LARGE_1.jpg" alt="Fato de Noivo 126" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivos</span>Elegância Masculina</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivos" data-title="Fato de Noivo Premium">
+          <img src="images/noivos/colecao-1/129-LOOK-LARGE_1.jpg" alt="Fato de Noivo 129" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivos</span>Sofisticação Premium</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivos" data-title="Fato de Noivo Moderno">
+          <img src="images/noivos/colecao-1/133-LOOK-LARGE_1.jpg" alt="Fato de Noivo 133" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivos</span>Look Contemporâneo</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivos" data-title="Fato de Noivo Elegante">
+          <img src="images/noivos/colecao-1/136-LOOK-LARGE_1.jpg" alt="Fato de Noivo 136" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivos</span>Estilo Refinado</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivos" data-title="Fato de Noivo Exclusivo">
+          <img src="images/noivos/colecao-1/147-LOOK-LARGE_1.jpg" alt="Fato de Noivo 147" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivos</span>Exclusividade</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivos" data-title="Fato de Noivo Customizado">
+          <img src="images/noivos/colecao-1/1AJA101.260_1.jpg" alt="Fato de Noivo 1AJA" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivos</span>Customização Total</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivos" data-title="Fato de Noivo Premium">
+          <img src="images/noivos/colecao-1/3712-PRODUCT-LARGE_1.jpg" alt="Fato de Noivo 3712" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivos</span>Premium Collection</div></div>
+          <div class="masonry-zoom">⤢</div>
+        </div>
+        <div class="masonry-item" data-category="noivos" data-title="Fato de Noivo Sofisticado">
+          <img src="images/noivos/colecao-1/4106-PRODUCT-LARGE_1.jpg" alt="Fato de Noivo 4106" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Noivos</span>Alta Alfaiataria</div></div>
+          <div class="masonry-zoom">⤢</div>
         </div>
 
-        <div class="gallery-item" data-category="noivos" data-title="Fato Premium" data-aos="fade-up">
-          <span>🤵</span>
-          <div class="gallery-overlay">
-            <span class="gallery-icon">🔍</span>
-          </div>
+        <!-- Detalhes -->
+        <div class="masonry-item" data-category="detalhes" data-title="Acessório Exclusivo">
+          <img src="images/acessorios/galeria/2923-A005_20114_1.jpg" alt="Acessório 2923" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Detalhes</span>Acessório Exclusivo</div></div>
+          <div class="masonry-zoom">⤢</div>
         </div>
-
-        <div class="gallery-item" data-category="casal" data-title="Momento Especial" data-aos="fade-up">
-          <span>💑</span>
-          <div class="gallery-overlay">
-            <span class="gallery-icon">🔍</span>
-          </div>
+        <div class="masonry-item" data-category="detalhes" data-title="Acessório Premium">
+          <img src="images/acessorios/galeria/63136_10228_08568_18BE191B-FA7C-441F-A028-E8803B7F14FE_720X_1.jpg" alt="Acessório Premium" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Detalhes</span>Detalhes Únicos</div></div>
+          <div class="masonry-zoom">⤢</div>
         </div>
-
-        <div class="gallery-item" data-category="detalhes" data-title="Acessórios" data-aos="fade-up">
-          <span>💎</span>
-          <div class="gallery-overlay">
-            <span class="gallery-icon">🔍</span>
-          </div>
+        <div class="masonry-item" data-category="detalhes" data-title="Peças Exclusivas">
+          <img src="images/acessorios/galeria/63152_10228_07415_979AB2BC-C449-4463-80B3-FEA433EC5620_720X_1.jpg" alt="Acessório especial" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Detalhes</span>Peças Únicas</div></div>
+          <div class="masonry-zoom">⤢</div>
         </div>
-
-        <div class="gallery-item" data-category="noivas" data-title="Detalhe do Véu" data-aos="fade-up">
-          <span>✨</span>
-          <div class="gallery-overlay">
-            <span class="gallery-icon">🔍</span>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="noivos" data-title="Gravata Customizada" data-aos="fade-up">
-          <span>🎩</span>
-          <div class="gallery-overlay">
-            <span class="gallery-icon">🔍</span>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="casal" data-title="Casal Elegante" data-aos="fade-up">
-          <span>👫</span>
-          <div class="gallery-overlay">
-            <span class="gallery-icon">🔍</span>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="detalhes" data-title="Sapato Noiva" data-aos="fade-up">
-          <span>👠</span>
-          <div class="gallery-overlay">
-            <span class="gallery-icon">🔍</span>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="noivas" data-title="Renda Francesa" data-aos="fade-up">
-          <span>🌹</span>
-          <div class="gallery-overlay">
-            <span class="gallery-icon">🔍</span>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="noivos" data-title="Ternos Clássicos" data-aos="fade-up">
-          <span>👔</span>
-          <div class="gallery-overlay">
-            <span class="gallery-icon">🔍</span>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="casal" data-title="Dia Perfeito" data-aos="fade-up">
-          <span>💕</span>
-          <div class="gallery-overlay">
-            <span class="gallery-icon">🔍</span>
-          </div>
+        <div class="masonry-item" data-category="detalhes" data-title="Véu e Acessórios">
+          <img src="images/noivas/colecao-1/MT8092CAPA_1.jpg" alt="Capa Noiva MT8092" loading="lazy">
+          <div class="masonry-overlay"><div class="masonry-caption"><span>Detalhes</span>Véu e Capas</div></div>
+          <div class="masonry-zoom">⤢</div>
         </div>
       </div>
+
+      <div class="gallery-empty" id="galleryEmpty">
+        <h3>Nenhum resultado encontrado</h3>
+        <p>Tente outro filtro ou <a href="colecoes.html">explore as nossas coleções</a>.</p>
+      </div>
+
+      <!-- MID CTA -->
+      <div class="gallery-cta-strip" data-aos="fade-up">
+        <h2>Quer ver mais? Visite o nosso atelier.</h2>
+        <p>As fotografias mostram uma parte da nossa coleção. Na loja, poderá experimentar pessoalmente e descobrir a peça que sempre sonhou.</p>
+        <div class="cta-btns">
+          <a href="contacto.html" class="btn btn-primary">
+            <span>Marcar Consulta</span>
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M7 10h10m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+          <a href="https://wa.me/351916182677" target="_blank" rel="noopener" class="btn btn-secondary" style="border-color:var(--primary);color:var(--primary);">WhatsApp</a>
+          <a href="colecoes.html" class="btn btn-secondary" style="border-color:var(--border);color:var(--text);">Ver Coleções</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-    <div class="lightbox-counter" id="lightboxCounter">1 / 12</div>
-    <button class="lightbox-nav lightbox-prev" onclick="previousImage()">❮</button>
-    <button class="lightbox-nav lightbox-next" onclick="nextImage()">❯</button>
-
-    <div class="lightbox-content">
-      <div style="font-size: 120px;" id="lightboxImage">👰</div>
-      <div class="lightbox-text" id="lightboxText">Vestido Elegante</div>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Fechar">✕</button>
+    <button class="lightbox-nav lightbox-prev" onclick="prevImage()" aria-label="Anterior">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" onclick="nextImage()" aria-label="Seguinte">&#8250;</button>
+    <div class="lightbox-inner">
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    </div>
+    <div class="lightbox-footer">
+      <span class="lightbox-counter" id="lightboxCounter"></span>
+      <div class="lightbox-title" id="lightboxTitle"></div>
+      <a href="contacto.html" class="lightbox-cta">Marcar Prova</a>
     </div>
   </div>
 
@@ -422,32 +556,33 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h4>Melos Noivas</h4>
-          <p>Loja de vestidos de noiva premium, ternos de noivo sofisticados e acessórios exclusivos desde 2008.</p>
-          <div class="social-links">
+          <div class="logo" style="margin-bottom:20px;">
+            <span class="logo-main">Melos</span>
+            <span class="logo-sub">noivas</span>
+          </div>
+          <p>Atelier de vestidos de noiva premium, fatos de noivo sofisticados e acessórios exclusivos em Penafiel, desde 2008.</p>
+          <div class="social-links" style="margin-top:16px;">
             <a href="https://instagram.com/melosnoivas" target="_blank" rel="noopener">Instagram</a>
             <a href="https://facebook.com/melosnoivas" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://wa.me/351916182677" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
         <div class="footer-section">
           <h4>Links Rápidos</h4>
           <ul>
             <li><a href="colecoes.html">Coleções</a></li>
-            <li><a href="#">Galeria</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
             <li><a href="sobre.html">Sobre Nós</a></li>
             <li><a href="contacto.html">Contacto</a></li>
           </ul>
+          <a href="contacto.html" class="btn btn-primary" style="margin-top:24px;display:inline-flex;padding:12px 24px;font-size:13px;">Marcar Consulta</a>
         </div>
         <div class="footer-section">
           <h4>Contacte-nos</h4>
-          <p>
-            <strong>Telefone:</strong><br>
-            <a href="tel:+351916182677">+351 916 182 677</a>
-          </p>
-          <p style="margin-top: 12px;">
-            <strong>Email:</strong><br>
-            <a href="mailto:geral@melosnoivas.com">geral@melosnoivas.com</a>
-          </p>
+          <p><strong>Morada:</strong><br>Avenida São Miguel Nº 601<br>4575-302 Termas de São Vicente, Penafiel</p>
+          <p style="margin-top:12px;"><strong>Telefone:</strong><br><a href="tel:+351916182677">+351 916 182 677</a></p>
+          <p style="margin-top:12px;"><strong>Email:</strong><br><a href="mailto:geral@melosnoivas.com">geral@melosnoivas.com</a></p>
+          <p style="margin-top:12px;"><strong>Horário:</strong><br>Seg–Sex: 10:00–19:00<br>Sábado: 09:00–18:00</p>
         </div>
       </div>
       <div class="footer-bottom">
@@ -458,87 +593,75 @@
 
   <script src="app.js"></script>
   <script>
-    let currentImageIndex = 0;
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    const items = Array.from(document.querySelectorAll('.masonry-item'));
+    const filterBtns = document.querySelectorAll('.filter-btn');
     const lightbox = document.getElementById('lightbox');
-    const filterBtns = document.querySelectorAll('.filter-gallery .filter-btn');
+    const lbImg = document.getElementById('lightboxImg');
+    const lbTitle = document.getElementById('lightboxTitle');
+    const lbCounter = document.getElementById('lightboxCounter');
+    let current = 0;
+    let visible = [...items];
 
-    galleryItems.forEach((item, index) => {
-      item.addEventListener('click', function() {
-        const visibleItems = Array.from(galleryItems).filter(el => el.style.display !== 'none');
-        const visibleIndex = visibleItems.indexOf(this);
-        if (visibleIndex !== -1) {
-          currentImageIndex = visibleIndex;
-          openLightbox(this);
-        }
+    // Filter logic
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        let count = 0;
+        items.forEach(item => {
+          const show = filter === 'todos' || item.dataset.category === filter;
+          item.style.display = show ? '' : 'none';
+          if (show) count++;
+        });
+        visible = items.filter(i => i.style.display !== 'none');
+        document.getElementById('galleryEmpty').style.display = count === 0 ? 'block' : 'none';
       });
     });
 
-    function openLightbox(item) {
-      const title = item.dataset.title || 'Foto';
-      document.getElementById('lightboxImage').textContent = item.textContent;
-      document.getElementById('lightboxText').textContent = title;
+    // Lightbox
+    items.forEach((item, idx) => {
+      item.addEventListener('click', () => {
+        visible = items.filter(i => i.style.display !== 'none');
+        current = visible.indexOf(item);
+        openLightbox();
+      });
+    });
+
+    function openLightbox() {
+      const item = visible[current];
+      const img = item.querySelector('img');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbTitle.textContent = item.dataset.title || '';
+      lbCounter.textContent = (current + 1) + ' / ' + visible.length;
       lightbox.classList.add('active');
-      updateCounter();
+      document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
       lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      lbImg.src = '';
     }
 
     function nextImage() {
-      const visibleItems = Array.from(galleryItems).filter(el => el.style.display !== 'none');
-      currentImageIndex = (currentImageIndex + 1) % visibleItems.length;
-      openLightbox(visibleItems[currentImageIndex]);
+      current = (current + 1) % visible.length;
+      openLightbox();
     }
 
-    function previousImage() {
-      const visibleItems = Array.from(galleryItems).filter(el => el.style.display !== 'none');
-      currentImageIndex = (currentImageIndex - 1 + visibleItems.length) % visibleItems.length;
-      openLightbox(visibleItems[currentImageIndex]);
+    function prevImage() {
+      current = (current - 1 + visible.length) % visible.length;
+      openLightbox();
     }
 
-    function updateCounter() {
-      const visibleItems = Array.from(galleryItems).filter(el => el.style.display !== 'none');
-      document.getElementById('lightboxCounter').textContent = (currentImageIndex + 1) + ' / ' + visibleItems.length;
-    }
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 
-    // Close lightbox on background click
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', e => {
       if (!lightbox.classList.contains('active')) return;
       if (e.key === 'ArrowRight') nextImage();
-      if (e.key === 'ArrowLeft') previousImage();
+      if (e.key === 'ArrowLeft') prevImage();
       if (e.key === 'Escape') closeLightbox();
-    });
-
-    // Filter functionality
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', function() {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-
-        const filter = this.dataset.filter;
-        let visibleCount = 0;
-
-        galleryItems.forEach(item => {
-          const category = item.dataset.category;
-          if (filter === 'todos' || category === filter) {
-            item.style.display = 'flex';
-            visibleCount++;
-            setTimeout(() => item.style.opacity = '1', 10);
-          } else {
-            item.style.opacity = '0';
-            setTimeout(() => item.style.display = 'none', 300);
-          }
-        });
-
-        currentImageIndex = 0;
-      });
     });
   </script>
 </body>

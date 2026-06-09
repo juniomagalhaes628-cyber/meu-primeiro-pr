@@ -3,267 +3,316 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contacte Melos Noivas para agendar sua consulta">
+  <meta name="description" content="Contacte a Melos Noivas para marcar a sua consulta em Penafiel — telefone, WhatsApp e email">
   <title>Contacto — Melos Noivas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lora:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="design-polish.css?v=7">
   <style>
+    /* ── HERO ── */
     .contact-hero {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #fff;
-      padding: 120px 32px 60px;
+      position: relative;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       margin-top: 60px;
+      overflow: hidden;
+      background: var(--primary-dark);
     }
-
-    .contact-hero h1 {
-      font-size: clamp(40px, 8vw, 60px);
+    .contact-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/noivas/colecao-1/ML2902_1.jpg');
+      background-size: cover;
+      background-position: center 20%;
+      z-index: 0;
+    }
+    .contact-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(92,31,31,0.84), rgba(139,46,46,0.68));
+      z-index: 1;
+    }
+    .contact-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 80px 32px 60px;
+      max-width: 700px;
+    }
+    .contact-hero-content .page-label {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .contact-hero-content h1 {
+      font-size: clamp(36px, 7vw, 58px);
       color: #fff;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      line-height: 1.1;
     }
-
-    .contact-hero p {
-      font-size: 18px;
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 600px;
+    .contact-hero-content p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.90);
+      max-width: 520px;
       margin: 0 auto;
+      line-height: 1.8;
+      font-weight: 300;
     }
 
-    .contact-section {
-      padding: 80px 0;
+    /* ── QUICK CONTACT BUTTONS ── */
+    .quick-contact {
+      background: var(--cream);
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border);
     }
+    .quick-contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .quick-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 32px 20px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+      text-align: center;
+      border: 2px solid transparent;
+    }
+    .quick-btn-icon {
+      font-size: 32px;
+      line-height: 1;
+    }
+    .quick-btn-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      opacity: 0.75;
+    }
+    .quick-btn-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      line-height: 1.2;
+    }
+    .quick-btn:hover { transform: translateY(-6px); }
 
+    .quick-btn-phone {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(139,46,46,0.25);
+    }
+    .quick-btn-phone:hover { background: var(--primary-dark); box-shadow: 0 16px 40px rgba(139,46,46,0.35); }
+
+    .quick-btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.25);
+    }
+    .quick-btn-whatsapp:hover { background: #1ebe5d; box-shadow: 0 16px 40px rgba(37,211,102,0.35); }
+
+    .quick-btn-maps {
+      background: #fff;
+      color: var(--dark);
+      border-color: var(--border);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .quick-btn-maps:hover { border-color: var(--primary); box-shadow: 0 12px 32px rgba(139,46,46,0.12); }
+
+    /* ── CONTACT SECTION ── */
+    .contact-section { padding: 100px 0; }
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
       align-items: start;
     }
 
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
+    /* Info column */
+    .contact-info { display: flex; flex-direction: column; gap: 24px; }
+    .contact-info-title {
+      font-size: clamp(26px,3vw,36px);
+      color: var(--dark);
+      margin-bottom: 8px;
     }
-
+    .contact-info-desc {
+      font-size: 15px;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
     .contact-item {
-      padding: 24px;
+      padding: 22px 24px;
       background: var(--cream);
       border-radius: 12px;
       border: 1px solid var(--border);
-      transition: all var(--transition-base);
+      transition: all 0.3s ease;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
     }
-
     .contact-item:hover {
-      background: linear-gradient(135deg, var(--primary-light), rgba(212, 175, 55, 0.05));
       border-color: var(--primary);
-      transform: translateY(-4px);
+      background: linear-gradient(135deg, #fff, var(--primary-light));
+      transform: translateX(4px);
     }
-
-    .contact-item-icon {
-      font-size: 28px;
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .contact-item h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-      color: var(--dark);
-    }
-
-    .contact-item p {
-      color: var(--text-light);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .contact-item a {
-      color: var(--primary);
-      font-weight: 600;
-      transition: color var(--transition-fast);
-    }
-
-    .contact-item a:hover {
-      color: var(--primary-dark);
-    }
-
-    .hours-list {
-      list-style: none;
-    }
-
+    .contact-item-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .contact-item-body h3 { font-size: 15px; color: var(--dark); margin-bottom: 6px; font-weight: 700; }
+    .contact-item-body p { font-size: 14px; color: var(--text-light); line-height: 1.7; }
+    .contact-item-body a { color: var(--primary); font-weight: 600; }
+    .contact-item-body a:hover { color: var(--primary-dark); }
+    .hours-list { list-style: none; }
     .hours-list li {
       display: flex;
       justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      font-size: 14px;
+      padding: 6px 0;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
     }
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-list strong { color: var(--dark); }
 
-    .hours-list li:last-child {
-      border-bottom: none;
-    }
-
-    .hours-list strong {
-      color: var(--dark);
-    }
-
+    /* Form column */
     .form-box {
       background: #fff;
-      padding: 40px;
-      border-radius: 12px;
+      padding: 48px;
+      border-radius: 20px;
       border: 1px solid var(--border);
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.07);
     }
-
-    .form-box h2 {
-      font-size: 28px;
-      margin-bottom: 24px;
-      color: var(--dark);
+    .form-box-header { margin-bottom: 32px; }
+    .form-box-header .section-label {
+      display: block;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
+    .form-box-header h2 { font-size: 28px; color: var(--dark); margin-bottom: 8px; }
+    .form-box-header p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
 
-    .form-group {
-      margin-bottom: 20px;
-    }
-
+    .form-group { margin-bottom: 20px; }
     .form-group label {
       display: block;
-      font-size: 13px;
+      font-size: 12px;
       color: var(--text);
       margin-bottom: 8px;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.8px;
     }
-
     .form-group input,
     .form-group textarea,
     .form-group select {
       width: 100%;
       padding: 13px 16px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
       font-family: inherit;
       font-size: 14px;
       background: #fafafa;
-      transition: all var(--transition-fast);
+      transition: all 0.2s ease;
+      color: var(--dark);
     }
-
     .form-group input:focus,
     .form-group textarea:focus,
     .form-group select:focus {
       outline: none;
       border-color: var(--primary);
       background: #fff;
-      box-shadow: 0 0 0 3px rgba(139, 46, 46, 0.1);
+      box-shadow: 0 0 0 3px rgba(139,46,46,0.08);
     }
-
-    .form-group input.error,
-    .form-group textarea.error,
-    .form-group select.error {
-      border-color: #e74c3c;
-      background: rgba(231, 76, 60, 0.05);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
     .form-submit {
+      width: 100%;
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: #fff;
       border: none;
-      padding: 15px 32px;
-      border-radius: 8px;
-      font-size: 15px;
-      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
       cursor: pointer;
-      transition: all var(--transition-base);
-      width: 100%;
-      box-shadow: 0 4px 16px rgba(139, 46, 46, 0.25);
+      transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+      box-shadow: 0 6px 20px rgba(139,46,46,0.25);
+      margin-top: 8px;
     }
-
     .form-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(139, 46, 46, 0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(139,46,46,0.35);
     }
 
-    .form-submit:active {
-      transform: translateY(0);
-    }
-
-    .form-note {
-      font-size: 12px;
+    .form-gdpr {
+      font-size: 11px;
       color: var(--text-light);
-      margin-top: 16px;
+      margin-top: 14px;
+      line-height: 1.6;
       text-align: center;
     }
+    .form-gdpr a { color: var(--primary); }
 
-    .map-section {
-      margin-top: 80px;
-      padding-top: 80px;
-      border-top: 1px solid var(--border);
+    /* Success message */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
     }
+    .form-success-icon { font-size: 56px; margin-bottom: 16px; }
+    .form-success h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .form-success p { font-size: 15px; color: var(--text-light); line-height: 1.7; }
 
+    /* MAP */
+    .map-section { padding: 0 0 100px; }
+    .map-section h2 { text-align: center; font-size: clamp(26px,3vw,36px); color: var(--dark); margin-bottom: 32px; }
     .map-container {
-      width: 100%;
-      height: 500px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      width: 100%; height: 460px;
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+      border: 1px solid var(--border);
     }
+    .map-container iframe { width: 100%; height: 100%; border: none; }
 
-    .map-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .quick-contact-grid { grid-template-columns: 1fr; gap: 14px; }
+      .quick-btn { flex-direction: row; justify-content: flex-start; padding: 20px 24px; gap: 16px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
     }
-
     @media (max-width: 768px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .contact-hero {
-        padding: 80px 20px 40px;
-      }
-
-      .contact-hero h1 {
-        font-size: 32px;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .form-box {
-        padding: 24px;
-      }
-
-      .form-box h2 {
-        font-size: 24px;
-      }
-
-      .map-container {
-        height: 350px;
-      }
+      .contact-hero-content { padding: 60px 20px 40px; }
+      .form-box { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-section { padding: 60px 0; }
+      .map-section { padding: 0 0 60px; }
     }
   </style>
   <link rel="icon" type="image/svg+xml" href="logo.svg">
 </head>
 <body>
+
   <!-- NAVIGATION -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -272,9 +321,7 @@
         <span class="logo-sub">noivas</span>
       </div>
       <button class="nav-toggle" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu" id="navMenu">
         <li><a href="index.html" class="nav-link">Home</a></li>
@@ -288,139 +335,187 @@
         </li>
         <li><a href="galeria.html" class="nav-link">Galeria</a></li>
         <li><a href="sobre.html" class="nav-link">Sobre</a></li>
-        <li><a href="#" class="nav-link btn-cta">Contacto</a></li>
+        <li><a href="contacto.html" class="nav-link btn-cta">Contacto</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="contact-hero">
-    <h1>Entre em Contacto</h1>
-    <p>Marque uma consulta e deixe-nos ajudar a tornar seu dia especial</p>
+    <div class="contact-hero-bg"></div>
+    <div class="contact-hero-overlay"></div>
+    <div class="contact-hero-content">
+      <span class="page-label">Estamos à sua espera</span>
+      <h1>Marque a Sua Consulta</h1>
+      <p>Contacte-nos e agende a sua visita ao atelier — sem compromisso, com toda a atenção dedicada a si.</p>
+    </div>
   </section>
 
-  <!-- CONTACT SECTION -->
+  <!-- QUICK CONTACT BUTTONS -->
+  <section class="quick-contact">
+    <div class="container">
+      <div class="quick-contact-grid">
+        <a href="tel:+351916182677" class="quick-btn quick-btn-phone">
+          <div class="quick-btn-icon">📞</div>
+          <div>
+            <div class="quick-btn-label">Ligar Agora</div>
+            <div class="quick-btn-value">+351 916 182 677</div>
+          </div>
+        </a>
+        <a href="https://wa.me/351916182677?text=Olá!%20Gostaria%20de%20marcar%20uma%20consulta%20na%20Melos%20Noivas." target="_blank" rel="noopener" class="quick-btn quick-btn-whatsapp">
+          <div class="quick-btn-icon">💬</div>
+          <div>
+            <div class="quick-btn-label">Enviar WhatsApp</div>
+            <div class="quick-btn-value">Resposta rápida</div>
+          </div>
+        </a>
+        <a href="https://www.google.com/maps/search/Avenida+São+Miguel+601+Penafiel" target="_blank" rel="noopener" class="quick-btn quick-btn-maps">
+          <div class="quick-btn-icon">📍</div>
+          <div>
+            <div class="quick-btn-label">Abrir no Google Maps</div>
+            <div class="quick-btn-value">Av. São Miguel Nº 601</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT + FORM -->
   <section class="contact-section">
     <div class="container">
       <div class="contact-grid">
-        <!-- CONTACT INFO -->
+
+        <!-- INFO -->
         <div class="contact-info" data-aos="fade-up">
-          <div class="contact-item">
-            <span class="contact-item-icon">📍</span>
-            <h3>Morada</h3>
-            <p>
-              Avenida São Miguel Nº 601<br>
-              4575-302 Termas de São Vicente<br>
-              Penafiel, Portugal
-            </p>
+          <div>
+            <h2 class="contact-info-title">Visite-nos em Penafiel</h2>
+            <p class="contact-info-desc">O nosso atelier recebe-o com toda a atenção que o seu grande dia merece. Consultas por marcação prévia.</p>
           </div>
 
           <div class="contact-item">
-            <span class="contact-item-icon">🕒</span>
-            <h3>Horário de Funcionamento</h3>
-            <ul class="hours-list">
-              <li>
-                <strong>Segunda a Sexta</strong>
-                <span>10:00 - 19:00</span>
-              </li>
-              <li>
-                <strong>Sábado</strong>
-                <span>09:00 - 18:00</span>
-              </li>
-              <li>
-                <strong>Domingo</strong>
-                <span>Encerrado</span>
-              </li>
-            </ul>
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-body">
+              <h3>Morada</h3>
+              <p>Avenida São Miguel Nº 601<br>4575-302 Termas de São Vicente<br>Penafiel, Portugal</p>
+            </div>
           </div>
 
           <div class="contact-item">
-            <span class="contact-item-icon">📞</span>
-            <h3>Telefone</h3>
-            <p>
-              <a href="tel:+351916182677">+351 916 182 677</a>
-            </p>
-            <p style="margin-top: 12px; font-size: 13px;">Chamadas de segunda a sexta, das 10:00 às 19:00</p>
+            <div class="contact-item-icon">🕒</div>
+            <div class="contact-item-body">
+              <h3>Horário de Funcionamento</h3>
+              <ul class="hours-list">
+                <li><strong>Segunda a Sexta</strong><span>10:00 – 19:00</span></li>
+                <li><strong>Sábado</strong><span>09:00 – 18:00</span></li>
+                <li><strong>Domingo</strong><span>Encerrado</span></li>
+              </ul>
+            </div>
           </div>
 
           <div class="contact-item">
-            <span class="contact-item-icon">📧</span>
-            <h3>Email</h3>
-            <p>
-              <a href="mailto:geral@melosnoivas.com">geral@melosnoivas.com</a>
-            </p>
-            <p style="margin-top: 12px; font-size: 13px;">Respondemos em até 24 horas</p>
+            <div class="contact-item-icon">📧</div>
+            <div class="contact-item-body">
+              <h3>Email</h3>
+              <p><a href="mailto:geral@melosnoivas.com">geral@melosnoivas.com</a></p>
+              <p style="margin-top:6px;">Respondemos em até 24 horas</p>
+            </div>
           </div>
 
           <div class="contact-item">
-            <span class="contact-item-icon">🌐</span>
-            <h3>Redes Sociais</h3>
-            <p>
-              <a href="https://instagram.com/melosnoivas" target="_blank" rel="noopener">Instagram</a><br>
-              <a href="https://facebook.com/melosnoivas" target="_blank" rel="noopener">Facebook</a>
-            </p>
+            <div class="contact-item-icon">📱</div>
+            <div class="contact-item-body">
+              <h3>Redes Sociais</h3>
+              <p>
+                <a href="https://instagram.com/melosnoivas" target="_blank" rel="noopener">@melosnoivas no Instagram</a><br>
+                <a href="https://facebook.com/melosnoivas" target="_blank" rel="noopener">Melos Noivas no Facebook</a>
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- FORM -->
-        <form class="form-box" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-aos="fade-up" data-aos-delay="200">
-          <h2>Formulário de Contacto</h2>
+        <div data-aos="fade-up" data-aos-delay="150">
+          <form class="form-box" id="contactForm"
+            action="https://formsubmit.co/geral@melosnoivas.com"
+            method="POST">
 
-          <input type="hidden" name="form-name" value="contacto">
-          <p class="hide"><label>Não preencher: <input name="bot-field"></label></p>
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="Nova consulta — Melos Noivas">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="contacto.html?enviado=1">
+            <input type="text" name="_honey" style="display:none">
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="nome">Nome Completo *</label>
-              <input type="text" id="nome" name="nome" required>
+            <div class="form-box-header">
+              <span class="section-label">Formulário</span>
+              <h2>Pedido de Consulta</h2>
+              <p>Preencha os seus dados e entraremos em contacto para confirmar a marcação.</p>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome *</label>
+                <input type="text" id="nome" name="nome" placeholder="O seu nome" required>
+              </div>
+              <div class="form-group">
+                <label for="telefone">Telefone *</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="+351 9XX XXX XXX" required>
+              </div>
             </div>
 
             <div class="form-group">
-              <label for="telefone">Telefone *</label>
-              <input type="tel" id="telefone" name="telefone" required>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="email@exemplo.com">
             </div>
+
+            <div class="form-group">
+              <label for="tipo">Tipo de Serviço *</label>
+              <select id="tipo" name="tipo" required>
+                <option value="">— Selecione —</option>
+                <option value="Vestido de Noiva">Vestido de Noiva</option>
+                <option value="Fato de Noivo">Fato de Noivo</option>
+                <option value="Noiva + Noivo">Noiva + Noivo</option>
+                <option value="Acessórios">Acessórios</option>
+                <option value="Customização">Customização / Alterações</option>
+                <option value="Outro">Outro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="data_casamento">Data Prevista do Casamento</label>
+              <input type="date" id="data_casamento" name="data_casamento">
+            </div>
+
+            <div class="form-group">
+              <label for="mensagem">Mensagem *</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Conte-nos mais sobre o seu grande dia..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Enviar Pedido de Consulta</button>
+
+            <p class="form-gdpr">
+              Ao submeter este formulário, aceita que os seus dados sejam utilizados exclusivamente para responder ao seu pedido, em conformidade com o <a href="#" onclick="return false;">RGPD</a>. Os seus dados não serão partilhados com terceiros.
+            </p>
+          </form>
+
+          <!-- Success message (shown when ?enviado=1 in URL) -->
+          <div class="form-box form-success" id="formSuccess">
+            <div class="form-success-icon">✅</div>
+            <h3>Pedido enviado com sucesso!</h3>
+            <p>Obrigado pelo seu contacto. Entraremos em contacto consigo em breve para confirmar a sua consulta.</p>
+            <a href="index.html" class="btn btn-primary" style="margin-top:24px;">Voltar ao Início</a>
           </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
-          </div>
-
-          <div class="form-group">
-            <label for="tipo">Tipo de Serviço *</label>
-            <select id="tipo" name="tipo" required>
-              <option value="">-- Selecione --</option>
-              <option value="noiva">Vestido de Noiva</option>
-              <option value="noivo">Fato de Noivo</option>
-              <option value="ambos">Noiva + Noivo</option>
-              <option value="acessorios">Acessórios</option>
-              <option value="customizacao">Customização</option>
-              <option value="alteracoes">Alterações</option>
-              <option value="outro">Outro</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="data">Data Preferida da Consulta</label>
-            <input type="date" id="data" name="data">
-          </div>
-
-          <div class="form-group">
-            <label for="mensagem">Mensagem *</label>
-            <textarea id="mensagem" name="mensagem" required placeholder="Conte-nos mais sobre o seu grande dia..."></textarea>
-          </div>
-
-          <button type="submit" class="form-submit">Enviar Pedido</button>
-          <p class="form-note">* Campos obrigatórios. Respondemos em até 24 horas.</p>
-        </form>
-      </div>
-
-      <!-- MAP SECTION -->
-      <div class="map-section">
-        <h2 style="text-align: center; margin-bottom: 32px; color: var(--dark);">Localização</h2>
-        <div class="map-container">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3066.4819831850024!2d-8.282938923529413!3d40.90545297154158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3e8a1e8a1e8a1e7%3A0x1e8a1e8a1e8a1e8a!2sAv.%20S%C3%A3o%20Miguel%2C%20601%2C%204575-302%20Termas%20de%20S%C3%A3o%20Vicente%2C%20Penafiel!5e0!3m2!1spt-PT!2spt!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="map-section">
+    <div class="container">
+      <h2>Como Chegar</h2>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3066.4819831850024!2d-8.282938923529413!3d40.90545297154158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3e8a1e8a1e8a1e7%3A0x1e8a1e8a1e8a1e8a!2sAv.%20S%C3%A3o%20Miguel%2C%20601%2C%204575-302%20Termas%20de%20S%C3%A3o%20Vicente%2C%20Penafiel!5e0!3m2!1spt-PT!2spt!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização Melos Noivas"></iframe>
       </div>
     </div>
   </section>
@@ -430,11 +525,15 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h4>Melos Noivas</h4>
-          <p>Loja de vestidos de noiva premium, ternos de noivo sofisticados e acessórios exclusivos desde 2008.</p>
-          <div class="social-links">
+          <div class="logo" style="margin-bottom:20px;">
+            <span class="logo-main">Melos</span>
+            <span class="logo-sub">noivas</span>
+          </div>
+          <p>Atelier de vestidos de noiva premium, fatos de noivo sofisticados e acessórios exclusivos em Penafiel, desde 2008.</p>
+          <div class="social-links" style="margin-top:16px;">
             <a href="https://instagram.com/melosnoivas" target="_blank" rel="noopener">Instagram</a>
             <a href="https://facebook.com/melosnoivas" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://wa.me/351916182677" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
         <div class="footer-section">
@@ -443,19 +542,16 @@
             <li><a href="colecoes.html">Coleções</a></li>
             <li><a href="galeria.html">Galeria</a></li>
             <li><a href="sobre.html">Sobre Nós</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
           </ul>
+          <a href="contacto.html" class="btn btn-primary" style="margin-top:24px;display:inline-flex;padding:12px 24px;font-size:13px;">Marcar Consulta</a>
         </div>
         <div class="footer-section">
           <h4>Contacte-nos</h4>
-          <p>
-            <strong>Telefone:</strong><br>
-            <a href="tel:+351916182677">+351 916 182 677</a>
-          </p>
-          <p style="margin-top: 12px;">
-            <strong>Email:</strong><br>
-            <a href="mailto:geral@melosnoivas.com">geral@melosnoivas.com</a>
-          </p>
+          <p><strong>Morada:</strong><br>Avenida São Miguel Nº 601<br>4575-302 Termas de São Vicente, Penafiel</p>
+          <p style="margin-top:12px;"><strong>Telefone:</strong><br><a href="tel:+351916182677">+351 916 182 677</a></p>
+          <p style="margin-top:12px;"><strong>Email:</strong><br><a href="mailto:geral@melosnoivas.com">geral@melosnoivas.com</a></p>
+          <p style="margin-top:12px;"><strong>Horário:</strong><br>Seg–Sex: 10:00–19:00<br>Sábado: 09:00–18:00</p>
         </div>
       </div>
       <div class="footer-bottom">
@@ -465,10 +561,14 @@
   </footer>
 
   <script src="app.js"></script>
-  <style>
-    .hide {
-      display: none;
+  <script>
+    // Show success message if redirected back after form submission
+    if (window.location.search.includes('enviado=1')) {
+      document.getElementById('contactForm').style.display = 'none';
+      const success = document.getElementById('formSuccess');
+      success.style.display = 'block';
+      window.scrollTo({ top: success.offsetTop - 100, behavior: 'smooth' });
     }
-  </style>
+  </script>
 </body>
 </html>
