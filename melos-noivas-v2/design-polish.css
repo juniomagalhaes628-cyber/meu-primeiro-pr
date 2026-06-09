@@ -1,98 +1,79 @@
-/* ========== EMIL KOWALSKI DESIGN PHILOSOPHY ========== */
-/* UI Polish | Component Design | Animation Decisions | Invisible Details */
+/* Design Polish - Premium UI/UX Enhancements */
+/* Emil Kowalski UI Philosophy Implementation */
 
-/* ========== PRODUCT CARDS - ELEGANCE & POLISH ========== */
+:root {
+  --transition-smooth: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-base: 0.3s var(--transition-smooth);
+  --shadow-hover: 0 20px 60px rgba(139, 46, 46, 0.15);
+  --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Product Card Polish */
 .product-card {
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  position: relative;
-  border-radius: 16px !important;
+  transition: all var(--transition-base);
+  border: 1px solid var(--border, #ddd);
+  border-radius: 12px;
+  background: #fff;
   overflow: hidden;
-  border: 1px solid rgba(139, 46, 46, 0.1) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 
-              0 4px 16px rgba(139, 46, 46, 0.05) !important;
 }
 
-/* Subtle gradient overlay - invisible detail */
-.product-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, transparent 0%, rgba(212, 175, 55, 0.01) 100%);
-  pointer-events: none;
-  z-index: 10;
-}
-
-/* Elegant hover state - scaled lift */
 .product-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 8px 32px rgba(139, 46, 46, 0.15), 
-              0 2px 4px rgba(0, 0, 0, 0.08) !important;
-  border-color: var(--primary) !important;
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary, #8B2E2E);
 }
 
-/* ========== PRODUCT IMAGES - REFINED TRANSITIONS ========== */
-.product-image {
-  border-radius: 16px 16px 0 0 !important;
-}
-
-.product-image img {
-  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.product-card:hover .product-image img {
-  transform: scale(1.12);
-}
-
-/* ========== BUTTON - PREMIUM INTERACTION ========== */
-.btn-small {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px !important;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-  box-shadow: 0 4px 12px rgba(139, 46, 46, 0.2) !important;
-  font-weight: 600 !important;
-  letter-spacing: 1px !important;
-}
-
-/* Shine effect on button */
-.btn-small::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.2), 
-    transparent);
-  transform: translateX(-100%);
-  transition: transform 0.5s ease;
-  pointer-events: none;
-}
-
-.btn-small:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px rgba(139, 46, 46, 0.3) !important;
-}
-
-.btn-small:hover::before {
-  transform: translateX(100%);
-}
-
-/* ========== TEXT - COLOR TRANSITIONS ========== */
 .product-name {
-  transition: color 0.3s ease;
+  transition: color 0.3s var(--transition-smooth);
 }
 
 .product-card:hover .product-name {
-  color: var(--primary);
+  color: var(--primary, #8B2E2E);
 }
 
-.product-description {
-  transition: color 0.3s ease;
+/* Button Polish */
+.btn-small,
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
 }
 
-/* ========== ANIMATION REFINEMENTS ========== */
-@keyframes slideInSmooth {
+.btn-small:hover,
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(139, 46, 46, 0.2);
+}
+
+/* Shine Effect for Buttons */
+.btn-small::after,
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s var(--transition-smooth);
+  pointer-events: none;
+}
+
+.btn-small:hover::after,
+.btn:hover::after {
+  left: 100%;
+}
+
+/* Animation Stagger */
+.product-card:nth-child(1) { animation-delay: 0s; }
+.product-card:nth-child(2) { animation-delay: 0.1s; }
+.product-card:nth-child(3) { animation-delay: 0.2s; }
+.product-card:nth-child(4) { animation-delay: 0.3s; }
+.product-card:nth-child(5) { animation-delay: 0.4s; }
+.product-card:nth-child(6) { animation-delay: 0.5s; }
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -104,37 +85,85 @@
 }
 
 .product-card {
-  animation: slideInSmooth 0.6s ease-out backwards;
+  animation: fadeInUp 0.6s ease-out backwards;
 }
 
-.product-card:nth-child(1) { animation-delay: 0.05s; }
-.product-card:nth-child(2) { animation-delay: 0.1s; }
-.product-card:nth-child(3) { animation-delay: 0.15s; }
-.product-card:nth-child(4) { animation-delay: 0.2s; }
-.product-card:nth-child(5) { animation-delay: 0.25s; }
-.product-card:nth-child(6) { animation-delay: 0.3s; }
-.product-card:nth-child(n+7) { animation-delay: 0.35s; }
-
-/* ========== INTERACTIVE STATES ========== */
-.product-card {
-  cursor: pointer;
+/* Float Animation for Backgrounds */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-.btn-small {
-  cursor: pointer;
+.image-placeholder {
+  animation: float 3s ease-in-out infinite;
 }
 
-.btn-small:active {
-  transform: translateY(0) !important;
+/* Filter Button Polish */
+.filter-btn {
+  transition: all var(--transition-base);
 }
 
-/* ========== RESPONSIVE REFINEMENTS ========== */
+.filter-btn:hover,
+.filter-btn.active {
+  transform: translateY(-2px);
+}
+
+/* Subtle Overlay Effects */
+.product-image::before {
+  transition: opacity var(--transition-base);
+}
+
+.product-card:hover .product-image::before {
+  opacity: 1;
+}
+
+/* Image Zoom Effect */
+.product-image img {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.08);
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .product-card:hover {
-    transform: translateY(-8px) scale(1.01);
+    transform: translateY(-8px);
   }
 
-  .product-card:hover .product-image img {
-    transform: scale(1.08);
+  .btn-small,
+  .btn {
+    font-size: 12px;
+    padding: 10px 16px;
   }
+
+  .product-card {
+    animation: fadeInUp 0.4s ease-out backwards;
+  }
+}
+
+/* Section Transitions */
+.collection-section {
+  transition: opacity 0.4s ease-out;
+}
+
+/* Smooth Link Transitions */
+a {
+  transition: color 0.2s var(--transition-smooth);
+}
+
+/* Text Selection Polish */
+::selection {
+  background-color: var(--primary, #8B2E2E);
+  color: #fff;
+}
+
+::-moz-selection {
+  background-color: var(--primary, #8B2E2E);
+  color: #fff;
 }

@@ -1,5 +1,6 @@
-
-# Claude Code Skills
 .agents/
 .claude/
 skills-lock.json
+node_modules/
+.DS_Store
+*.log
