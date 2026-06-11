@@ -1,0 +1,236 @@
+/* ========== LUA FASHION — ANIMAÇÕES ========== */
+
+/* ---- KEYFRAMES BASE (herdados de melos-noivas) ---- */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ---- KEYFRAMES NOVOS (Lua Fashion) ---- */
+
+/* Lua crescente nasce ao carregar */
+@keyframes moonrise {
+  0%   { opacity: 0; transform: translateY(40px) scale(0.7) rotate(-15deg); filter: blur(8px); }
+  60%  { filter: blur(0px); }
+  100% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); filter: blur(0px); }
+}
+
+/* Partículas a flutuar */
+@keyframes floatParticle {
+  0%,100% { transform: translateY(0) translateX(0); opacity: 0.4; }
+  25%     { transform: translateY(-20px) translateX(8px); opacity: 0.8; }
+  75%     { transform: translateY(-12px) translateX(-6px); opacity: 0.6; }
+}
+
+/* Shimmer dourado */
+@keyframes shimmerGold {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+/* Barra marquee */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Pulse dourado nos badges */
+@keyframes pulseBadge {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,169,81,0.4); }
+  50%       { box-shadow: 0 0 0 6px rgba(200,169,81,0); }
+}
+
+/* Bounce do ícone de carrinho */
+@keyframes cartBounce {
+  0%  { transform: scale(1); }
+  30% { transform: scale(1.35) rotate(-8deg); }
+  60% { transform: scale(0.92) rotate(4deg); }
+  100%{ transform: scale(1) rotate(0deg); }
+}
+
+/* Glow dourado contínuo */
+@keyframes goldGlow {
+  0%,100% { box-shadow: 0 0 20px rgba(200,169,81,0.15), 0 0 40px rgba(200,169,81,0.05); }
+  50%     { box-shadow: 0 0 35px rgba(200,169,81,0.3),  0 0 70px rgba(200,169,81,0.1); }
+}
+
+/* Float suave */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-14px); }
+}
+
+/* Linha que cresce */
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Reveal com clip-path (produto entra de baixo) */
+@keyframes clipReveal {
+  from { clip-path: inset(100% 0 0 0); }
+  to   { clip-path: inset(0% 0 0 0); }
+}
+
+/* Toast de notificação */
+@keyframes toastIn {
+  from { transform: translateY(-100px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes toastOut {
+  from { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(-100px); opacity: 0; }
+}
+
+/* Spin de carregamento */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ---- CLASSES DE ANIMAÇÃO (data-aos) ---- */
+
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+[data-aos="fade-up"]    { transform: translateY(28px); }
+[data-aos="fade-down"]  { transform: translateY(-28px); }
+[data-aos="fade-left"]  { transform: translateX(28px); }
+[data-aos="fade-right"] { transform: translateX(-28px); }
+[data-aos="zoom-in"]    { transform: scale(0.9); }
+[data-aos="flip"]       { transform: rotateY(30deg); }
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1) rotateY(0);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+/* Stagger delays */
+[data-aos-delay="100"].aos-animate  { transition-delay: 0.1s; }
+[data-aos-delay="150"].aos-animate  { transition-delay: 0.15s; }
+[data-aos-delay="200"].aos-animate  { transition-delay: 0.2s; }
+[data-aos-delay="250"].aos-animate  { transition-delay: 0.25s; }
+[data-aos-delay="300"].aos-animate  { transition-delay: 0.3s; }
+[data-aos-delay="350"].aos-animate  { transition-delay: 0.35s; }
+[data-aos-delay="400"].aos-animate  { transition-delay: 0.4s; }
+[data-aos-delay="500"].aos-animate  { transition-delay: 0.5s; }
+
+/* ---- REVEAL CLASS ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- HERO STAGGERED ENTRANCE ---- */
+.hero-animate-1 { animation: fadeInUp 0.9s ease-out 0.1s both; }
+.hero-animate-2 { animation: fadeInUp 0.9s ease-out 0.25s both; }
+.hero-animate-3 { animation: fadeInUp 0.9s ease-out 0.4s both; }
+.hero-animate-4 { animation: fadeInUp 0.9s ease-out 0.55s both; }
+.hero-animate-5 { animation: fadeInUp 0.9s ease-out 0.7s both; }
+
+/* ---- MOON SVG ---- */
+.moon-svg {
+  animation: moonrise 2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  filter: drop-shadow(0 0 20px rgba(200,169,81,0.5));
+}
+
+/* ---- PARTÍCULAS ---- */
+.moon-particle { animation: floatParticle var(--duration, 5s) ease-in-out var(--delay, 0s) infinite; }
+.moon-particle:nth-child(1) { --duration: 6s;   --delay: 0s; }
+.moon-particle:nth-child(2) { --duration: 8s;   --delay: 0.5s; }
+.moon-particle:nth-child(3) { --duration: 5.5s; --delay: 1s; }
+.moon-particle:nth-child(4) { --duration: 7s;   --delay: 1.5s; }
+.moon-particle:nth-child(5) { --duration: 6.5s; --delay: 0.8s; }
+.moon-particle:nth-child(6) { --duration: 9s;   --delay: 2s; }
+
+/* ---- SHIMMER DE PREÇO ---- */
+.price-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.price-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(200,169,81,0.35) 50%, transparent 100%);
+  background-size: 400px 100%;
+  animation: shimmerGold 1.2s ease-out 1 forwards;
+  pointer-events: none;
+}
+
+/* ---- FLOAT (glass card, destaque) ---- */
+.anim-float { animation: float 6s ease-in-out infinite; }
+
+/* ---- GOLD GLOW ---- */
+.anim-gold-glow { animation: goldGlow 3s ease-in-out infinite; }
+
+/* ---- CART BOUNCE ---- */
+.cart-bounce { animation: cartBounce 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97); }
+
+/* ---- RIPPLE ---- */
+.btn { position: relative; overflow: hidden; }
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  transform: scale(0);
+  animation: rippleAnim 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes rippleAnim {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* ---- PREFERS REDUCED MOTION ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .moon-particle,
+  .anim-float,
+  .anim-gold-glow {
+    animation: none !important;
+  }
+}

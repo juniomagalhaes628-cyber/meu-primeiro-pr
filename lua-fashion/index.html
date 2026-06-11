@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lua Fashion — Moda Feminina em Penafiel</title>
+  <meta name="description" content="Lua Fashion — boutique de moda feminina em Penafiel. Descobre as últimas tendências, novas coleções e compra online. Envio para todo o Portugal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+
+  <!-- BARRA DE AVISO -->
+  <div class="announcement-bar" role="marquee" aria-label="Anúncios">
+    <div class="marquee-track" aria-hidden="true">
+      <span>Nova Coleção Disponível</span>
+      <span>Envio Gratuito em Compras acima de €50</span>
+      <span>Loja Física em Galegos, Penafiel</span>
+      <span>Seg–Sáb: 9h30–12h30 | 14h–19h</span>
+      <span>Nova Coleção Disponível</span>
+      <span>Envio Gratuito em Compras acima de €50</span>
+      <span>Loja Física em Galegos, Penafiel</span>
+      <span>Seg–Sáb: 9h30–12h30 | 14h–19h</span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navegação principal">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Lua Fashion — Início">
+        <svg class="nav-logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 3C11.5 3 7.5 5.5 5.3 9.2C7.1 8.4 9.1 8 11.2 8C19.5 8 26.2 14.7 26.2 23C26.2 25.1 25.8 27.1 25 28.9C28.7 26.7 31.2 22.7 31.2 18.2C31.2 10.5 24.5 3.8 16.8 3C16.5 3 16.3 3 16 3Z"/>
+        </svg>
+        <span class="nav-logo-text">Lua <span>Fashion</span></span>
+      </a>
+
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="index.html" class="nav-link">Início</a></li>
+        <li><a href="loja.html" class="nav-link">Loja</a></li>
+        <li><a href="loja.html?cat=novidades" class="nav-link">Nova Coleção</a></li>
+        <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
+        <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="loja.html" class="nav-action-btn" title="Pesquisar" aria-label="Pesquisar">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </a>
+        <a href="carrinho.html" class="nav-action-btn cart-icon-btn" title="Carrinho" aria-label="Carrinho de compras">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge" id="cartBadge" aria-label="Itens no carrinho">0</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Banner principal">
+    <div class="hero-bg"></div>
+    <div class="hero-img" id="heroParallax" style="background-image:url('images/hero/hero-main.jpg');" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Partículas de lua -->
+    <div class="hero-particles" aria-hidden="true">
+      <div class="moon-particle"></div>
+      <div class="moon-particle"></div>
+      <div class="moon-particle"></div>
+      <div class="moon-particle"></div>
+      <div class="moon-particle"></div>
+      <div class="moon-particle"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-eyebrow hero-animate-1">Desde 2014 · Penafiel</div>
+        <h1 class="hero-title hero-animate-2">
+          A tua moda.<br>
+          <span class="highlight">A tua escolha.</span>
+        </h1>
+        <p class="hero-subtitle hero-animate-3">
+          Descobre as últimas tendências em moda feminina. Nova coleção disponível — peças únicas para cada momento da tua vida.
+        </p>
+        <div class="hero-cta hero-animate-4">
+          <a href="loja.html" class="btn btn-primary btn-lg btn-magnetic">Ver Coleção</a>
+          <a href="loja.html?cat=novidades" class="btn btn-outline btn-lg">Nova Coleção</a>
+        </div>
+        <div class="hero-stats hero-animate-5">
+          <div class="hero-stat">
+            <div class="hero-stat-num"><span>10</span>+</div>
+            <div class="hero-stat-label">Anos de Moda</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num"><span>500</span>+</div>
+            <div class="hero-stat-label">Clientes Felizes</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num"><span>100</span>+</div>
+            <div class="hero-stat-label">Peças em Stock</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Moon SVG -->
+      <div class="hero-moon" aria-hidden="true">
+        <div class="moon-svg-wrap">
+          <div class="moon-ring"></div>
+          <div class="moon-ring"></div>
+          <svg class="moon-svg" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" width="280" height="280">
+            <defs>
+              <radialGradient id="moonGrad" cx="35%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#E8C97A"/>
+                <stop offset="50%" stop-color="#C8A951"/>
+                <stop offset="100%" stop-color="#8B6F2E"/>
+              </radialGradient>
+              <filter id="moonGlow">
+                <feGaussianBlur stdDeviation="4" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <path filter="url(#moonGlow)"
+              d="M140 20C100 20 68 52 68 92C68 132 100 164 140 164C152 164 163 161 173 155C163 178 141 195 115 195C80 195 52 167 52 132C52 97 80 69 115 69C120 69 125 70 130 71C116 62 100 56 82 56C47 56 18 85 18 120C18 155 47 184 82 184C107 184 129 169 140 148C155 164 175 174 197 174C231 174 260 145 260 111C260 77 231 48 197 48C183 48 170 52 160 60C155 38 149 20 140 20Z"
+              fill="url(#moonGrad)"
+              opacity="0.9"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIAS -->
+  <section class="section" aria-label="Categorias">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow" data-aos="fade-up">Explorar</span>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Comprar por Categoria</h2>
+        <p class="section-desc" data-aos="fade-up" data-aos-delay="200">Do casual ao elegante — encontra a peça certa para cada momento.</p>
+      </div>
+
+      <div class="categorias-grid">
+        <div class="cat-card" data-aos="zoom-in" data-aos-delay="100" onclick="window.location='loja.html?cat=vestidos'" tabindex="0" role="button" aria-label="Ver Vestidos">
+          <img class="cat-card-img" src="images/categorias/vestidos.jpg" alt="Vestidos" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+          <div class="cat-card-overlay"></div>
+          <div class="cat-card-content">
+            <div class="cat-card-label">Explorar</div>
+            <div class="cat-card-name">Vestidos</div>
+            <div class="cat-card-cta">Ver tudo →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-aos="zoom-in" data-aos-delay="150" onclick="window.location='loja.html?cat=tops'" tabindex="0" role="button" aria-label="Ver Tops">
+          <img class="cat-card-img" src="images/categorias/tops.jpg" alt="Tops e Blusas" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+          <div class="cat-card-overlay"></div>
+          <div class="cat-card-content">
+            <div class="cat-card-label">Explorar</div>
+            <div class="cat-card-name">Tops & Blusas</div>
+            <div class="cat-card-cta">Ver tudo →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-aos="zoom-in" data-aos-delay="200" onclick="window.location='loja.html?cat=casacos'" tabindex="0" role="button" aria-label="Ver Casacos">
+          <img class="cat-card-img" src="images/categorias/casacos.jpg" alt="Casacos" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+          <div class="cat-card-overlay"></div>
+          <div class="cat-card-content">
+            <div class="cat-card-label">Explorar</div>
+            <div class="cat-card-name">Casacos</div>
+            <div class="cat-card-cta">Ver tudo →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-aos="zoom-in" data-aos-delay="250" onclick="window.location='loja.html?cat=conjuntos'" tabindex="0" role="button" aria-label="Ver Conjuntos">
+          <img class="cat-card-img" src="images/categorias/conjuntos.jpg" alt="Conjuntos" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+          <div class="cat-card-overlay"></div>
+          <div class="cat-card-content">
+            <div class="cat-card-label">Explorar</div>
+            <div class="cat-card-name">Conjuntos</div>
+            <div class="cat-card-cta">Ver tudo →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOVA COLEÇÃO DESTAQUE -->
+  <section class="section" style="padding-top:0" aria-label="Nova Coleção">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow" data-aos="fade-up">Em Destaque</span>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Nova Coleção 🌙</h2>
+        <p class="section-desc" data-aos="fade-up" data-aos-delay="200">As peças mais recentes acabaram de chegar. Sê a primeira a descobrir.</p>
+      </div>
+
+      <div class="products-grid" id="featuredGrid">
+        <!-- Preenchido por JS abaixo -->
+      </div>
+
+      <div style="text-align:center; margin-top:40px;" data-aos="fade-up">
+        <a href="loja.html" class="btn btn-outline btn-lg">Ver Toda a Coleção</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BANNER -->
+  <div class="stats-banner" aria-label="Números da loja">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" data-aos="fade-up">
+          <div class="stat-number">10<em>+</em></div>
+          <div class="stat-label">Anos de Experiência</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-number">500<em>+</em></div>
+          <div class="stat-label">Clientes Satisfeitas</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-number">345<em>k</em></div>
+          <div class="stat-label">Seguidoras no Facebook</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat-number">100<em>+</em></div>
+          <div class="stat-label">Peças em Coleção</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BESTSELLERS (Carrossel) -->
+  <section class="section" aria-label="Mais vendidos">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:32px; flex-wrap:wrap; gap:16px;">
+        <div>
+          <span class="section-eyebrow" data-aos="fade-right">As Favoritas</span>
+          <h2 class="section-title" data-aos="fade-right" data-aos-delay="100">Mais Vendidas</h2>
+        </div>
+        <div class="carousel-nav" data-aos="fade-left">
+          <button class="carousel-btn" id="carouselPrev" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="carousel-btn" id="carouselNext" aria-label="Próximo">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="carousel-wrap">
+        <div class="carousel-track" id="bestsellersTrack" role="list" aria-label="Carrossel de produtos">
+          <!-- Preenchido por JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE / BANNER -->
+  <section class="section" style="padding:0;" aria-label="Sobre a Lua Fashion">
+    <div class="about-banner">
+      <div class="about-banner-img">
+        <img src="images/sobre/loja-exterior.jpg" alt="Loja Lua Fashion em Penafiel" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+      </div>
+      <div class="about-banner-content">
+        <span class="section-eyebrow" data-aos="fade-right">A Nossa História</span>
+        <h2 class="section-title" data-aos="fade-right" data-aos-delay="100" style="text-align:left">Uma Boutique com Alma</h2>
+        <p class="about-banner-text" data-aos="fade-right" data-aos-delay="200">
+          A Lua Fashion nasceu com uma missão simples: trazer moda de tendência ao coração de Penafiel, tornando-a acessível e especial.
+        </p>
+        <p class="about-banner-text" data-aos="fade-right" data-aos-delay="250" style="margin-top:-8px">
+          Com mais de 10 anos a vestir as mulheres da nossa região, temos hoje uma loja física em Galegos, Penafiel, e uma presença digital que nos permite servir todo o Portugal.
+        </p>
+        <div data-aos="fade-right" data-aos-delay="300">
+          <a href="sobre.html" class="btn btn-primary">Saber Mais</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL FEED -->
+  <section class="section" aria-label="Instagram Lua Fashion">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow" data-aos="fade-up">Instagram</span>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">@luafashion2014</h2>
+        <p class="section-desc" data-aos="fade-up" data-aos-delay="200">Segue-nos para os looks mais recentes e inspiração diária.</p>
+      </div>
+      <div class="social-grid">
+        <div class="social-item" data-aos="fade-up" data-aos-delay="50">
+          <img src="images/social/social-1.jpg" alt="Lua Fashion Instagram" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+          <div class="social-item-overlay">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2z"/></svg>
+          </div>
+        </div>
+        <div class="social-item" data-aos="fade-up" data-aos-delay="100">
+          <img src="images/social/social-2.jpg" alt="Lua Fashion Instagram" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+          <div class="social-item-overlay">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2z"/></svg>
+          </div>
+        </div>
+        <div class="social-item" data-aos="fade-up" data-aos-delay="150">
+          <img src="images/social/social-3.jpg" alt="Lua Fashion Instagram" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+          <div class="social-item-overlay">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2z"/></svg>
+          </div>
+        </div>
+        <div class="social-item" data-aos="fade-up" data-aos-delay="200">
+          <img src="images/social/social-4.jpg" alt="Lua Fashion Instagram" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+          <div class="social-item-overlay">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2z"/></svg>
+          </div>
+        </div>
+        <div class="social-item" data-aos="fade-up" data-aos-delay="250">
+          <img src="images/social/social-5.jpg" alt="Lua Fashion Instagram" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+          <div class="social-item-overlay">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2z"/></svg>
+          </div>
+        </div>
+        <div class="social-item" data-aos="fade-up" data-aos-delay="300">
+          <img src="images/social/social-6.jpg" alt="Lua Fashion Instagram" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+          <div class="social-item-overlay">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2z"/></svg>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:28px;" data-aos="fade-up">
+        <a href="https://www.instagram.com/luafashion2014/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+          Seguir no Instagram →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section" aria-label="Newsletter">
+    <div class="container">
+      <span class="section-eyebrow" data-aos="fade-up">Fica a par</span>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Recebe as Novidades 🌙</h2>
+      <p class="section-desc" data-aos="fade-up" data-aos-delay="200" style="max-width:440px; margin:0 auto">
+        Subscreve e sê a primeira a saber das novas coleções, promoções e saldos exclusivos.
+      </p>
+      <form class="newsletter-form" data-aos="fade-up" data-aos-delay="300" netlify name="newsletter" method="POST" onsubmit="handleNewsletter(event)">
+        <input type="hidden" name="form-name" value="newsletter">
+        <input type="email" name="email" class="newsletter-input" placeholder="O teu email..." required aria-label="Email para newsletter">
+        <button type="submit" class="newsletter-btn">Subscrever</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="Lua Fashion">
+            <svg class="nav-logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16 3C11.5 3 7.5 5.5 5.3 9.2C7.1 8.4 9.1 8 11.2 8C19.5 8 26.2 14.7 26.2 23C26.2 25.1 25.8 27.1 25 28.9C28.7 26.7 31.2 22.7 31.2 18.2C31.2 10.5 24.5 3.8 16.8 3C16.5 3 16.3 3 16 3Z"/>
+            </svg>
+            <span class="nav-logo-text">Lua <span>Fashion</span></span>
+          </a>
+          <p class="footer-tagline">Boutique de moda feminina em Penafiel. A tua moda, a tua escolha.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/luafashion.oldroes" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook Lua Fashion">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/luafashion2014/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram Lua Fashion">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Loja</div>
+          <ul class="footer-links" role="list">
+            <li><a href="loja.html" class="footer-link">Todos os Produtos</a></li>
+            <li><a href="loja.html?cat=novidades" class="footer-link">Nova Coleção</a></li>
+            <li><a href="loja.html?cat=vestidos" class="footer-link">Vestidos</a></li>
+            <li><a href="loja.html?cat=casacos" class="footer-link">Casacos</a></li>
+            <li><a href="loja.html?cat=conjuntos" class="footer-link">Conjuntos</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Ajuda</div>
+          <ul class="footer-links" role="list">
+            <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+            <li><a href="sobre.html" class="footer-link">Sobre Nós</a></li>
+            <li><a href="carrinho.html" class="footer-link">O Meu Carrinho</a></li>
+            <li><a href="#politicas" class="footer-link">Trocas & Devoluções</a></li>
+            <li><a href="#envios" class="footer-link">Política de Envios</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Contacto</div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Av. 25 de Abril, Nº35<br>4560-126 Galegos, Penafiel</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Seg–Sáb: 9h30–12h30 / 14h–19h<br>Domingo: Encerrado</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© <span id="year"></span> Lua Fashion. Todos os direitos reservados.</p>
+        <div class="footer-payments" aria-label="Métodos de pagamento aceites">
+          <span class="payment-icon">MB WAY</span>
+          <span class="payment-icon">MB REF</span>
+          <span class="payment-icon">VISA</span>
+          <span class="payment-icon">MC</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST (criado dinamicamente em app.js) -->
+
+  <!-- SCRIPTS -->
+  <script src="dados-produtos.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // ---- HOMEPAGE: preencher grelhas ----
+    document.addEventListener('DOMContentLoaded', () => {
+      // Destaque: 8 produtos com novo=true ou destaque=true
+      const featured = PRODUTOS.filter(p => p.destaque || p.novo).slice(0, 8);
+      const featuredGrid = document.getElementById('featuredGrid');
+      if (featuredGrid) {
+        featuredGrid.innerHTML = featured.map((p, i) => {
+          const delay = (i % 4) * 100;
+          const badgesHTML = [
+            p.novo      ? '<span class="badge badge-new">Novo</span>' : '',
+            p.precoPrev ? `<span class="badge badge-sale">-${Math.round((1-p.preco/p.precoPrev)*100)}%</span>` : ''
+          ].filter(Boolean).join('');
+          const priceHTML = p.precoPrev
+            ? `<span class="price-current">€${p.preco.toFixed(2)}</span><span class="price-prev">€${p.precoPrev.toFixed(2)}</span>`
+            : `<span class="price-current">€${p.preco.toFixed(2)}</span>`;
+
+          return `
+            <div class="product-card" data-aos="fade-up" data-aos-delay="${delay}" onclick="window.location='loja.html'" style="cursor:pointer">
+              <div class="product-card-img-wrap">
+                <img class="product-card-img product-card-img-main" src="${p.imagens[0]}" alt="${p.nome}" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+                <img class="product-card-img product-card-img-hover" src="${p.imagens[1]||p.imagens[0]}" alt="${p.nome}" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+                ${badgesHTML ? `<div class="product-badges">${badgesHTML}</div>` : ''}
+                <button class="product-quick-add" onclick="event.stopPropagation();window.location='loja.html'" aria-label="Ver produto">Ver Produto</button>
+              </div>
+              <div class="product-card-info">
+                <div class="product-card-category">${p.categoria.charAt(0).toUpperCase()+p.categoria.slice(1)}</div>
+                <h3 class="product-card-name">${p.nome}</h3>
+                <div class="product-card-price price-shimmer">${priceHTML}</div>
+              </div>
+            </div>`;
+        }).join('');
+
+        // Re-observar animações
+        featuredGrid.querySelectorAll('[data-aos]').forEach(el => {
+          const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('aos-animate'); obs.unobserve(e.target); } });
+          }, { threshold: 0.05 });
+          obs.observe(el);
+        });
+      }
+
+      // Bestsellers no carrossel
+      const bestsellers = PRODUTOS.filter(p => p.bestseller);
+      const track = document.getElementById('bestsellersTrack');
+      if (track && bestsellers.length > 0) {
+        track.innerHTML = bestsellers.map(p => {
+          const priceHTML = p.precoPrev
+            ? `<span class="price-current">€${p.preco.toFixed(2)}</span><span class="price-prev">€${p.precoPrev.toFixed(2)}</span>`
+            : `<span class="price-current">€${p.preco.toFixed(2)}</span>`;
+          return `
+            <div class="product-card" role="listitem" onclick="window.location='loja.html'" style="cursor:pointer">
+              <div class="product-card-img-wrap">
+                <img class="product-card-img product-card-img-main" src="${p.imagens[0]}" alt="${p.nome}" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+                <img class="product-card-img product-card-img-hover" src="${p.imagens[1]||p.imagens[0]}" alt="${p.nome}" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+                <span class="badge badge-best" style="position:absolute;top:12px;left:12px;">★ Popular</span>
+              </div>
+              <div class="product-card-info">
+                <div class="product-card-category">${p.categoria.charAt(0).toUpperCase()+p.categoria.slice(1)}</div>
+                <h3 class="product-card-name">${p.nome}</h3>
+                <div class="product-card-price">${priceHTML}</div>
+              </div>
+            </div>`;
+        }).join('');
+
+        // Navegação do carrossel
+        const prev = document.getElementById('carouselPrev');
+        const next = document.getElementById('carouselNext');
+        const scrollAmount = 240;
+
+        if (prev) prev.addEventListener('click', () => track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
+        if (next) next.addEventListener('click', () => track.scrollBy({ left:  scrollAmount, behavior: 'smooth' }));
+      }
+    });
+
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const input = e.target.querySelector('input[type="email"]');
+      if (input && input.value) {
+        window.LF && window.LF.showToast('Subscrito com sucesso! Obrigada 🌙');
+        input.value = '';
+      }
+    }
+  </script>
+</body>
+</html>
