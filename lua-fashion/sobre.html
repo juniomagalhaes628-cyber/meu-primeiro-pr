@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nós — Lua Fashion | Boutique em Penafiel</title>
+  <meta name="description" content="Conhece a história da Lua Fashion — boutique de moda feminina em Penafiel, Portugal. Mais de 10 anos a vestir as mulheres da nossa região.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+
+  <!-- BARRA DE AVISO -->
+  <div class="announcement-bar" role="marquee" aria-label="Anúncios">
+    <div class="marquee-track" aria-hidden="true">
+      <span>Nova Coleção Disponível</span>
+      <span>Envio Gratuito em Compras acima de €50</span>
+      <span>Loja Física em Galegos, Penafiel</span>
+      <span>Nova Coleção Disponível</span>
+      <span>Envio Gratuito em Compras acima de €50</span>
+      <span>Loja Física em Galegos, Penafiel</span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navegação principal">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Lua Fashion — Início">
+        <svg class="nav-logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 3C11.5 3 7.5 5.5 5.3 9.2C7.1 8.4 9.1 8 11.2 8C19.5 8 26.2 14.7 26.2 23C26.2 25.1 25.8 27.1 25 28.9C28.7 26.7 31.2 22.7 31.2 18.2C31.2 10.5 24.5 3.8 16.8 3C16.5 3 16.3 3 16 3Z"/>
+        </svg>
+        <span class="nav-logo-text">Lua <span>Fashion</span></span>
+      </a>
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="index.html" class="nav-link">Início</a></li>
+        <li><a href="loja.html" class="nav-link">Loja</a></li>
+        <li><a href="loja.html?cat=novidades" class="nav-link">Nova Coleção</a></li>
+        <li><a href="sobre.html" class="nav-link active">Sobre Nós</a></li>
+        <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="carrinho.html" class="nav-action-btn cart-icon-btn" aria-label="Carrinho">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO DA PÁGINA -->
+  <div class="about-hero">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Início</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Sobre Nós</span>
+    </nav>
+    <span class="section-eyebrow" data-aos="fade-up">A Nossa História</span>
+    <h1 class="section-title" data-aos="fade-up" data-aos-delay="100" style="font-size:clamp(2rem,5vw,3.5rem);">
+      Uma Boutique<br>com <span style="color:var(--lf-gold);font-style:italic;">Alma</span>
+    </h1>
+    <p class="section-desc" data-aos="fade-up" data-aos-delay="200" style="max-width:520px;margin:0 auto;">
+      Desde Oldrões, Penafiel, temos vindo a crescer com a nossa comunidade — vestindo mulheres que acreditam que a moda é uma forma de se expressar.
+    </p>
+  </div>
+
+  <!-- BANNER SOBRE -->
+  <section class="about-banner">
+    <div class="about-banner-img" data-aos="fade-right">
+      <img src="images/sobre/loja-interior.jpg" alt="Interior da Loja Lua Fashion em Penafiel" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+    </div>
+    <div class="about-banner-content">
+      <span class="section-eyebrow">Quem Somos</span>
+      <h2 class="section-title" data-aos="fade-left" style="text-align:left">Lua Fashion 🌙</h2>
+      <p class="about-banner-text" data-aos="fade-left" data-aos-delay="100">
+        A Lua Fashion nasceu em Oldrões, Penafiel, com uma missão simples: trazer moda de tendência acessível a todas as mulheres da nossa região. Começámos pequenos — com paixão, bom gosto e muita dedicação.
+      </p>
+      <p class="about-banner-text" data-aos="fade-left" data-aos-delay="150">
+        Hoje, com mais de 10 anos de história, temos uma loja física moderna em Galegos, Penafiel, e agora este espaço online para servir clientes em todo o Portugal. O nosso símbolo — a lua crescente 🌙 — representa crescimento, beleza e o brilho de cada mulher que nos visita.
+      </p>
+      <div data-aos="fade-left" data-aos-delay="200">
+        <a href="loja.html" class="btn btn-primary">Descobrir a Coleção</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section class="section" aria-label="Os nossos valores">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow" data-aos="fade-up">O que nos move</span>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Os Nossos Valores</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:28px;">
+        <div class="reveal" style="background:var(--lf-dark);border:1px solid var(--lf-border-sub);border-radius:var(--radius);padding:32px;text-align:center;">
+          <div style="font-size:2.5rem;margin-bottom:16px;">🌙</div>
+          <h3 style="font-family:var(--font-title);font-size:1.2rem;margin-bottom:12px;color:var(--lf-gold)">Qualidade</h3>
+          <p style="font-family:var(--font-body);font-size:1rem;color:var(--lf-text-mid);line-height:1.7;">Selecionamos cada peça com cuidado. A qualidade do tecido, o caimento e os acabamentos são a nossa prioridade.</p>
+        </div>
+        <div class="reveal" style="background:var(--lf-dark);border:1px solid var(--lf-border-sub);border-radius:var(--radius);padding:32px;text-align:center;">
+          <div style="font-size:2.5rem;margin-bottom:16px;">✨</div>
+          <h3 style="font-family:var(--font-title);font-size:1.2rem;margin-bottom:12px;color:var(--lf-gold)">Tendência</h3>
+          <p style="font-family:var(--font-body);font-size:1rem;color:var(--lf-text-mid);line-height:1.7;">Estamos sempre atentas às últimas tendências para que a nossa coleção seja relevante, moderna e atemporal.</p>
+        </div>
+        <div class="reveal" style="background:var(--lf-dark);border:1px solid var(--lf-border-sub);border-radius:var(--radius);padding:32px;text-align:center;">
+          <div style="font-size:2.5rem;margin-bottom:16px;">💛</div>
+          <h3 style="font-family:var(--font-title);font-size:1.2rem;margin-bottom:12px;color:var(--lf-gold)">Comunidade</h3>
+          <p style="font-family:var(--font-body);font-size:1rem;color:var(--lf-text-mid);line-height:1.7;">Somos uma loja local, com um coração enorme. A nossa comunidade no Facebook e Instagram é a prova disso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section" style="background:var(--lf-dark);border-top:1px solid var(--lf-border-sub);border-bottom:1px solid var(--lf-border-sub);" aria-label="História da Lua Fashion">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow" data-aos="fade-up">A Nossa Jornada</span>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Uma Década de Moda</h2>
+      </div>
+
+      <div class="timeline" role="list">
+        <div class="timeline-item reveal" role="listitem">
+          <div class="timeline-content" style="background:var(--lf-dark-card);padding:20px;border-radius:var(--radius);border:1px solid var(--lf-border-sub);">
+            <div class="timeline-title">Início em Oldrões</div>
+            <div class="timeline-desc">A Lua Fashion abre as suas portas em Oldrões, Penafiel — uma boutique pequena com uma grande visão.</div>
+          </div>
+          <div class="timeline-year" aria-label="Ano 2014">2014</div>
+          <div class="timeline-empty"></div>
+        </div>
+
+        <div class="timeline-item reveal" role="listitem">
+          <div class="timeline-empty"></div>
+          <div class="timeline-year" aria-label="Ano 2017">2017</div>
+          <div class="timeline-content" style="background:var(--lf-dark-card);padding:20px;border-radius:var(--radius);border:1px solid var(--lf-border-sub);">
+            <div class="timeline-title">Segunda Loja em Penafiel</div>
+            <div class="timeline-desc">O crescimento leva-nos a abrir uma segunda loja em Penafiel, servindo uma clientela cada vez maior.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" role="listitem">
+          <div class="timeline-content" style="background:var(--lf-dark-card);padding:20px;border-radius:var(--radius);border:1px solid var(--lf-border-sub);">
+            <div class="timeline-title">300k Seguidoras no Facebook</div>
+            <div class="timeline-desc">A nossa comunidade digital cresce exponencialmente — ultrapassamos os 300.000 likes no Facebook.</div>
+          </div>
+          <div class="timeline-year" aria-label="Ano 2020">2020</div>
+          <div class="timeline-empty"></div>
+        </div>
+
+        <div class="timeline-item reveal" role="listitem">
+          <div class="timeline-empty"></div>
+          <div class="timeline-year" aria-label="Ano 2022">2022</div>
+          <div class="timeline-content" style="background:var(--lf-dark-card);padding:20px;border-radius:var(--radius);border:1px solid var(--lf-border-sub);">
+            <div class="timeline-title">Nova Loja em Galegos</div>
+            <div class="timeline-desc">Mudamos para um espaço maior e mais moderno na Av. 25 de Abril, em Galegos, Penafiel.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" role="listitem">
+          <div class="timeline-content" style="background:var(--lf-dark-card);padding:20px;border-radius:var(--radius);border:1px solid var(--lf-border);background:linear-gradient(135deg,var(--lf-dark-card),rgba(200,169,81,0.05));">
+            <div class="timeline-title" style="color:var(--lf-gold)">E-commerce Próprio 🌙</div>
+            <div class="timeline-desc">Lançamos o nosso website de e-commerce — para te servir em todo o Portugal, com a mesma qualidade de sempre.</div>
+          </div>
+          <div class="timeline-year" style="background:linear-gradient(135deg,var(--lf-gold),var(--lf-gold-light));" aria-label="Ano 2025">2025</div>
+          <div class="timeline-empty"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-banner" aria-label="Números da loja">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" data-aos="fade-up">
+          <div class="stat-number">10<em>+</em></div>
+          <div class="stat-label">Anos de Experiência</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-number">345<em>k</em></div>
+          <div class="stat-label">Seguidoras Facebook</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-number">3.7<em>k</em></div>
+          <div class="stat-label">Seguidores Instagram</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat-number">500<em>+</em></div>
+          <div class="stat-label">Clientes Satisfeitas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA FINAL -->
+  <section class="section" style="text-align:center;" aria-label="Convite para a loja">
+    <div class="container">
+      <span class="section-eyebrow" data-aos="fade-up">Pronta para descobrir?</span>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100" style="max-width:520px;margin:0 auto 20px;">Vem conhecer a nova coleção 🌙</h2>
+      <p class="section-desc" data-aos="fade-up" data-aos-delay="200" style="max-width:400px;margin:0 auto 36px;">Loja física em Galegos, Penafiel — ou compra online com envio para todo o Portugal.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;" data-aos="fade-up" data-aos-delay="300">
+        <a href="loja.html" class="btn btn-primary btn-lg">Ver Coleção</a>
+        <a href="contacto.html" class="btn btn-outline btn-lg">Falar Connosco</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom:16px;display:flex;" aria-label="Lua Fashion">
+            <svg class="nav-logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16 3C11.5 3 7.5 5.5 5.3 9.2C7.1 8.4 9.1 8 11.2 8C19.5 8 26.2 14.7 26.2 23C26.2 25.1 25.8 27.1 25 28.9C28.7 26.7 31.2 22.7 31.2 18.2C31.2 10.5 24.5 3.8 16.8 3C16.5 3 16.3 3 16 3Z"/>
+            </svg>
+            <span class="nav-logo-text">Lua <span>Fashion</span></span>
+          </a>
+          <p class="footer-tagline">Boutique de moda feminina em Penafiel. A tua moda, a tua escolha.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Loja</div>
+          <ul class="footer-links" role="list">
+            <li><a href="loja.html" class="footer-link">Todos os Produtos</a></li>
+            <li><a href="loja.html?cat=vestidos" class="footer-link">Vestidos</a></li>
+            <li><a href="loja.html?cat=casacos" class="footer-link">Casacos</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Empresa</div>
+          <ul class="footer-links" role="list">
+            <li><a href="sobre.html" class="footer-link">Sobre Nós</a></li>
+            <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contacto</div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Av. 25 de Abril, Nº35<br>Galegos, Penafiel</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© <span id="year"></span> Lua Fashion. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="dados-produtos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

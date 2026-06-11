@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="533" viewBox="0 0 400 533">
+  <rect width="400" height="533" fill="#1A1A1A"/>
+  <rect x="160" y="210" width="80" height="80" rx="4" fill="none" stroke="#C8A951" stroke-width="1.5" opacity="0.4"/>
+  <path d="M185 250 L200 235 L215 250" fill="none" stroke="#C8A951" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="215" cy="243" r="5" fill="none" stroke="#C8A951" stroke-width="1.5" opacity="0.4"/>
+  <path d="M160 270 L175 255 L195 275 L210 260 L240 290 L160 290 Z" fill="#C8A951" opacity="0.1"/>
+  <text x="200" y="320" font-family="Inter,sans-serif" font-size="11" fill="#C8A951" opacity="0.5" text-anchor="middle" letter-spacing="2">LUA FASHION</text>
+</svg>
