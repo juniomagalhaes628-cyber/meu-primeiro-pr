@@ -106,29 +106,9 @@
         </div>
       </div>
 
-      <!-- Moon SVG -->
+      <!-- Moon 3D (Three.js) -->
       <div class="hero-moon" aria-hidden="true">
-        <div class="moon-svg-wrap">
-          <div class="moon-ring"></div>
-          <div class="moon-ring"></div>
-          <svg class="moon-svg" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" width="280" height="280">
-            <defs>
-              <radialGradient id="moonGrad" cx="35%" cy="35%" r="65%">
-                <stop offset="0%" stop-color="#E8C97A"/>
-                <stop offset="50%" stop-color="#C8A951"/>
-                <stop offset="100%" stop-color="#8B6F2E"/>
-              </radialGradient>
-              <filter id="moonGlow">
-                <feGaussianBlur stdDeviation="4" result="blur"/>
-                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-            </defs>
-            <path filter="url(#moonGlow)"
-              d="M140 20C100 20 68 52 68 92C68 132 100 164 140 164C152 164 163 161 173 155C163 178 141 195 115 195C80 195 52 167 52 132C52 97 80 69 115 69C120 69 125 70 130 71C116 62 100 56 82 56C47 56 18 85 18 120C18 155 47 184 82 184C107 184 129 169 140 148C155 164 175 174 197 174C231 174 260 145 260 111C260 77 231 48 197 48C183 48 170 52 160 60C155 38 149 20 140 20Z"
-              fill="url(#moonGrad)"
-              opacity="0.9"/>
-          </svg>
-        </div>
+        <canvas id="lf-moon-canvas"></canvas>
       </div>
     </div>
   </section>
@@ -415,8 +395,10 @@
   <!-- TOAST (criado dinamicamente em app.js) -->
 
   <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.min.js"></script>
   <script src="dados-produtos.js"></script>
   <script src="app.js"></script>
+  <script src="three-scene.js"></script>
   <script>
     // ---- HOMEPAGE: preencher grelhas ----
     document.addEventListener('DOMContentLoaded', () => {

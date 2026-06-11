@@ -534,7 +534,7 @@ ul,ol { list-style: none; }
   margin-top: 4px;
 }
 
-/* Moon SVG */
+/* Moon 3D canvas */
 .hero-moon {
   display: flex;
   align-items: center;
@@ -542,25 +542,13 @@ ul,ol { list-style: none; }
   flex-shrink: 0;
 }
 
-.moon-svg-wrap {
-  position: relative;
-  width: 280px;
-  height: 280px;
-}
-
-.moon-ring {
-  position: absolute;
-  inset: -20px;
-  border-radius: 50%;
-  border: 1px solid rgba(200,169,81,0.12);
-  animation: float 8s ease-in-out infinite;
-}
-
-.moon-ring:nth-child(2) {
-  inset: -40px;
-  border-color: rgba(200,169,81,0.06);
-  animation-duration: 11s;
-  animation-direction: reverse;
+#lf-moon-canvas {
+  display: block;
+  width: 320px;
+  height: 320px;
+  filter: drop-shadow(0 0 32px rgba(200, 169, 81, 0.40))
+          drop-shadow(0 0 80px rgba(200, 169, 81, 0.15));
+  animation: fadeIn 1.4s ease-out 0.3s both;
 }
 
 /* ========== SECÇÕES GERAIS ========== */
@@ -1878,6 +1866,7 @@ ul,ol { list-style: none; }
   .about-banner-img { aspect-ratio: 16/9; }
   .hero-content { grid-template-columns: 1fr; }
   .hero-moon { display: none; }
+  #lf-moon-canvas { width: 200px; height: 200px; }
   .modal-inner { grid-template-columns: 1fr; }
   .modal-gallery { aspect-ratio: 4/3; border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
   .social-grid { grid-template-columns: repeat(3, 1fr); }
