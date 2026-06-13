@@ -1,12 +1,13 @@
 // ========== LUA FASHION — CATÁLOGO DE PRODUTOS ==========
-// Dados de exemplo — substituir por catálogo real da loja
+// Categorias e preços baseados em pesquisa pública da loja (preço confirmado: €16 para tops básicos)
+// Substituir imagens e preços pelos reais quando fornecidos pela loja
 
 const PRODUTOS = [
   {
     id: 1,
     nome: "Blusa Fluida Luar",
     categoria: "tops",
-    preco: 22.99,
+    preco: 16.99,
     precoPrev: null,
     tamanhos: ["XS","S","M","L","XL"],
     cores: ["creme","preto","rosa"],
@@ -21,8 +22,8 @@ const PRODUTOS = [
     id: 2,
     nome: "Calças Wide Leg Lua",
     categoria: "calcas",
-    preco: 34.99,
-    precoPrev: 44.99,
+    preco: 27.99,
+    precoPrev: 34.99,
     tamanhos: ["XS","S","M","L","XL","XXL"],
     cores: ["preto","camel","cinza"],
     imagens: ["images/produtos/calcas-wide-1.jpg","images/produtos/calcas-wide-2.jpg"],
@@ -36,7 +37,7 @@ const PRODUTOS = [
     id: 3,
     nome: "Vestido Meia Estação",
     categoria: "vestidos",
-    preco: 38.99,
+    preco: 29.99,
     precoPrev: null,
     tamanhos: ["XS","S","M","L"],
     cores: ["terracota","verde escuro","preto"],
@@ -51,8 +52,8 @@ const PRODUTOS = [
     id: 4,
     nome: "Casaco Boucle Premium",
     categoria: "casacos",
-    preco: 64.99,
-    precoPrev: 79.99,
+    preco: 49.99,
+    precoPrev: 62.99,
     tamanhos: ["S","M","L","XL"],
     cores: ["creme","preto","cinza"],
     imagens: ["images/produtos/casaco-boucle-1.jpg","images/produtos/casaco-boucle-2.jpg"],
@@ -66,7 +67,7 @@ const PRODUTOS = [
     id: 5,
     nome: "Top Cropped Básico",
     categoria: "tops",
-    preco: 14.99,
+    preco: 12.99,
     precoPrev: null,
     tamanhos: ["XS","S","M","L","XL"],
     cores: ["branco","preto","bege","rosa","azul"],

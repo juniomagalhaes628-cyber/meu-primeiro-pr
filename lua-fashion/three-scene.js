@@ -22,10 +22,10 @@
 
   /* ---------- Luzes ---------- */
   /* Ambiente quente — dourado lunar subtil */
-  scene.add(new THREE.AmbientLight(0xfff4cc, 0.45));
+  scene.add(new THREE.AmbientLight(0xfff0f5, 0.45));
 
   /* Direcional — luar vindo de cima-esquerda */
-  const dirLight = new THREE.DirectionalLight(0xffeedd, 1.5);
+  const dirLight = new THREE.DirectionalLight(0xffffff, 1.5);
   dirLight.position.set(-3.5, 4, 4);
   scene.add(dirLight);
 
@@ -35,7 +35,7 @@
   scene.add(rimLight);
 
   /* Point light dourada — halo/glow pulsante */
-  const pointLight = new THREE.PointLight(0xC8A951, 2.0, 14);
+  const pointLight = new THREE.PointLight(0xD4567A, 2.0, 14);
   pointLight.position.set(0.6, 0.4, 3.2);
   scene.add(pointLight);
 
@@ -47,10 +47,10 @@
   moonGroup.add(new THREE.Mesh(
     new THREE.SphereGeometry(1.6, 80, 80),
     new THREE.MeshStandardMaterial({
-      color:             0xC8A951,
+      color:             0xD4567A,
       metalness:         0.82,
       roughness:         0.18,
-      emissive:          0x7A5C20,
+      emissive:          0x8B2048,
       emissiveIntensity: 0.20,
     })
   ));
@@ -71,14 +71,14 @@
   /* Anel interior — dourado, anima em sentido contrário */
   const ring1 = new THREE.Mesh(
     new THREE.TorusGeometry(2.05, 0.014, 16, 160),
-    new THREE.MeshBasicMaterial({ color: 0xC8A951, transparent: true, opacity: 0.22 })
+    new THREE.MeshBasicMaterial({ color: 0xD4567A, transparent: true, opacity: 0.22 })
   );
   moonGroup.add(ring1);
 
   /* Anel exterior — mais subtil */
   const ring2 = new THREE.Mesh(
     new THREE.TorusGeometry(2.45, 0.007, 16, 160),
-    new THREE.MeshBasicMaterial({ color: 0xE8C97A, transparent: true, opacity: 0.10 })
+    new THREE.MeshBasicMaterial({ color: 0xF0A0B8, transparent: true, opacity: 0.10 })
   );
   moonGroup.add(ring2);
 
@@ -97,7 +97,7 @@
   const goldGeo = new THREE.BufferGeometry();
   goldGeo.setAttribute('position', new THREE.BufferAttribute(gPos, 3));
   const goldParticles = new THREE.Points(goldGeo, new THREE.PointsMaterial({
-    color: 0xE8C97A, size: 0.048, transparent: true, opacity: 0.65, sizeAttenuation: true,
+    color: 0xF0A0B8, size: 0.048, transparent: true, opacity: 0.65, sizeAttenuation: true,
   }));
   scene.add(goldParticles);
 
