@@ -1,4 +1,4 @@
-/* ========== LUA FASHION — THREE.JS HERO SCENE ========== */
+/* ========== LUA FASHION — THREE.JS FASHION HERO SCENE ========== */
 (function () {
   'use strict';
 
@@ -13,155 +13,207 @@
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   renderer.setSize(SIZE, SIZE);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.setClearColor(0x000000, 0); /* fundo 100% transparente */
+  renderer.setClearColor(0x000000, 0);
 
-  /* ---------- Cena & Câmara (1:1 aspect ratio) ---------- */
+  /* ---------- Cena & Câmara (1:1) ---------- */
   const scene  = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
-  camera.position.z = 5.8;
+  camera.position.z = 6.5;
 
   /* ---------- Luzes ---------- */
-  /* Ambiente quente — dourado lunar subtil */
-  scene.add(new THREE.AmbientLight(0xfff0f5, 0.45));
+  scene.add(new THREE.AmbientLight(0xfff0f5, 0.75));
 
-  /* Direcional — luar vindo de cima-esquerda */
-  const dirLight = new THREE.DirectionalLight(0xffffff, 1.5);
-  dirLight.position.set(-3.5, 4, 4);
+  const dirLight = new THREE.DirectionalLight(0xffffff, 1.1);
+  dirLight.position.set(-2, 3, 4);
   scene.add(dirLight);
 
-  /* Rim light frio atrás — separa a lua do fundo */
-  const rimLight = new THREE.DirectionalLight(0xaaccff, 0.35);
-  rimLight.position.set(3, -2, -3);
+  const rimLight = new THREE.DirectionalLight(0x4455AA, 0.30);
+  rimLight.position.set(3, -2, -2);
   scene.add(rimLight);
 
-  /* Point light dourada — halo/glow pulsante */
-  const pointLight = new THREE.PointLight(0xD4567A, 2.0, 14);
-  pointLight.position.set(0.6, 0.4, 3.2);
+  const pointLight = new THREE.PointLight(0xD4567A, 2.2, 16);
+  pointLight.position.set(0, 0.3, 3.5);
   scene.add(pointLight);
 
-  /* ---------- Grupo da Lua ---------- */
-  const moonGroup = new THREE.Group();
-  scene.add(moonGroup);
+  /* ---------- Grupo principal (tilt com o rato) ---------- */
+  const mainGroup = new THREE.Group();
+  scene.add(mainGroup);
 
-  /* Esfera dourada principal — metalness alto para aspecto premium */
-  moonGroup.add(new THREE.Mesh(
-    new THREE.SphereGeometry(1.6, 80, 80),
+  /* ====== TECIDO DE SEDA (fundo ondulante) ====== */
+  const SILK_SEG = 22;
+  const silkGeo = new THREE.PlaneGeometry(4.8, 5.8, SILK_SEG, SILK_SEG);
+  const silkPos = silkGeo.attributes.position;
+  const silkOrigZ = new Float32Array(silkPos.count);
+  for (let i = 0; i < silkPos.count; i++) silkOrigZ[i] = silkPos.getZ(i);
+
+  const silkMesh = new THREE.Mesh(
+    silkGeo,
     new THREE.MeshStandardMaterial({
-      color:             0xD4567A,
-      metalness:         0.82,
-      roughness:         0.18,
-      emissive:          0x8B2048,
-      emissiveIntensity: 0.20,
+      color:       0xF0A0B8,
+      side:        THREE.DoubleSide,
+      metalness:   0.22,
+      roughness:   0.28,
+      transparent: true,
+      opacity:     0.30,
     })
+  );
+  silkMesh.position.z = -0.55;
+  mainGroup.add(silkMesh);
+
+  /* ====== BORBOLETA 3D ====== */
+  const butterflyGroup = new THREE.Group();
+  mainGroup.add(butterflyGroup);
+
+  /* Forma de asa (lado direito — a esquerda é espelhada via scale.x = -1) */
+  function createWingShape() {
+    const s = new THREE.Shape();
+    s.moveTo(0, 0.12);
+    s.bezierCurveTo(0.25,  0.65,  1.70,  1.45, 1.48,  0.88); /* borda superior */
+    s.bezierCurveTo(2.10,  0.52,  1.92, -0.18, 1.08, -0.14); /* recorte lateral */
+    s.bezierCurveTo(1.30, -0.58,  1.50, -1.30, 0.92, -1.08); /* asa inferior */
+    s.bezierCurveTo(0.52, -1.52,  0.10, -0.72, 0,     0.12); /* retorno ao corpo */
+    return s;
+  }
+
+  const wingGeo = new THREE.ShapeGeometry(createWingShape(), 30);
+  const wingMat = new THREE.MeshStandardMaterial({
+    color:             0xD4567A,
+    side:              THREE.DoubleSide,
+    metalness:         0.32,
+    roughness:         0.38,
+    transparent:       true,
+    opacity:           0.92,
+    emissive:          0x7B1A38,
+    emissiveIntensity: 0.18,
+  });
+
+  const wingR = new THREE.Mesh(wingGeo, wingMat);
+  butterflyGroup.add(wingR);
+
+  const wingL = new THREE.Mesh(wingGeo, wingMat.clone());
+  wingL.scale.x = -1; /* espelha geometria para o lado esquerdo */
+  butterflyGroup.add(wingL);
+
+  /* Corpo */
+  butterflyGroup.add(new THREE.Mesh(
+    new THREE.CylinderGeometry(0.072, 0.048, 1.15, 8),
+    new THREE.MeshStandardMaterial({ color: 0x8B1A38, metalness: 0.58, roughness: 0.32 })
   ));
 
-  /* "Mordida" negra deslocada — cria a forma crescente */
-  const bite = new THREE.Mesh(
-    new THREE.SphereGeometry(1.58, 80, 80),
-    new THREE.MeshStandardMaterial({
-      color:      0x080808,
-      metalness:  0,
-      roughness:  1,
-    })
-  );
-  bite.position.set(1.28, 0.08, 0.12);
-  bite.renderOrder = 1;
-  moonGroup.add(bite);
+  /* Antenas */
+  const antMat = new THREE.MeshBasicMaterial({ color: 0x8B1A38 });
+  [[-1, -0.07], [1, 0.07]].forEach(([dir, xOff]) => {
+    const pts = [
+      new THREE.Vector3(xOff,                0.57, 0),
+      new THREE.Vector3(xOff + dir * 0.22,   0.88, 0.04),
+      new THREE.Vector3(xOff + dir * 0.34,   1.04, 0.08),
+    ];
+    butterflyGroup.add(new THREE.Mesh(
+      new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 6, 0.013, 4),
+      antMat
+    ));
+    const ball = new THREE.Mesh(new THREE.SphereGeometry(0.044, 6, 6), antMat);
+    ball.position.copy(pts[2]);
+    butterflyGroup.add(ball);
+  });
 
-  /* Anel interior — dourado, anima em sentido contrário */
-  const ring1 = new THREE.Mesh(
-    new THREE.TorusGeometry(2.05, 0.014, 16, 160),
-    new THREE.MeshBasicMaterial({ color: 0xD4567A, transparent: true, opacity: 0.22 })
-  );
-  moonGroup.add(ring1);
+  butterflyGroup.position.y = 0.18;
 
-  /* Anel exterior — mais subtil */
-  const ring2 = new THREE.Mesh(
-    new THREE.TorusGeometry(2.45, 0.007, 16, 160),
-    new THREE.MeshBasicMaterial({ color: 0xF0A0B8, transparent: true, opacity: 0.10 })
-  );
-  moonGroup.add(ring2);
-
-  /* ---------- Partículas douradas (poeira de luar) ---------- */
-  const GOLD_COUNT = 280;
-  const gPos = new Float32Array(GOLD_COUNT * 3);
-  for (let i = 0; i < GOLD_COUNT; i++) {
-    /* Distribuição esférica ao redor da lua */
-    const r   = 2.6 + Math.random() * 3.8;
-    const th  = Math.random() * Math.PI * 2;
-    const phi = Math.acos(2 * Math.random() - 1);
-    gPos[i * 3]     = r * Math.sin(phi) * Math.cos(th);
-    gPos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(th);
-    gPos[i * 3 + 2] = r * Math.cos(phi);
+  /* ====== GLITTER ROSA (sobe continuamente) ====== */
+  const GLITTER_N = 360;
+  const gPos = new Float32Array(GLITTER_N * 3);
+  const gVel = new Float32Array(GLITTER_N);
+  for (let i = 0; i < GLITTER_N; i++) {
+    gPos[i * 3]     = (Math.random() - 0.5) * 11;
+    gPos[i * 3 + 1] = (Math.random() - 0.5) * 11;
+    gPos[i * 3 + 2] = -2.5 - Math.random() * 4.5;
+    gVel[i]         = 0.003 + Math.random() * 0.005;
   }
-  const goldGeo = new THREE.BufferGeometry();
-  goldGeo.setAttribute('position', new THREE.BufferAttribute(gPos, 3));
-  const goldParticles = new THREE.Points(goldGeo, new THREE.PointsMaterial({
-    color: 0xF0A0B8, size: 0.048, transparent: true, opacity: 0.65, sizeAttenuation: true,
-  }));
-  scene.add(goldParticles);
+  const gBuf = new THREE.BufferAttribute(gPos, 3);
+  const glitterGeo = new THREE.BufferGeometry();
+  glitterGeo.setAttribute('position', gBuf);
+  scene.add(new THREE.Points(
+    glitterGeo,
+    new THREE.PointsMaterial({ color: 0xF8D0E0, size: 0.066, transparent: true, opacity: 0.80, sizeAttenuation: true })
+  ));
 
-  /* ---------- Estrelas brancas de fundo ---------- */
-  const STAR_COUNT = 500;
-  const sPos = new Float32Array(STAR_COUNT * 3);
-  for (let i = 0; i < STAR_COUNT; i++) {
-    sPos[i * 3]     = (Math.random() - 0.5) * 44;
-    sPos[i * 3 + 1] = (Math.random() - 0.5) * 44;
-    sPos[i * 3 + 2] = -6 - Math.random() * 22;
+  /* Camada de brilhos navy subtis */
+  const bPos = new Float32Array(140 * 3);
+  for (let i = 0; i < 140; i++) {
+    bPos[i * 3]     = (Math.random() - 0.5) * 11;
+    bPos[i * 3 + 1] = (Math.random() - 0.5) * 11;
+    bPos[i * 3 + 2] = -4 - Math.random() * 3;
   }
-  const starGeo = new THREE.BufferGeometry();
-  starGeo.setAttribute('position', new THREE.BufferAttribute(sPos, 3));
-  const stars = new THREE.Points(starGeo, new THREE.PointsMaterial({
-    color: 0xffffff, size: 0.016, transparent: true, opacity: 0.32,
-  }));
-  scene.add(stars);
+  const blueGeo = new THREE.BufferGeometry();
+  blueGeo.setAttribute('position', new THREE.BufferAttribute(bPos, 3));
+  scene.add(new THREE.Points(
+    blueGeo,
+    new THREE.PointsMaterial({ color: 0x8899CC, size: 0.044, transparent: true, opacity: 0.42, sizeAttenuation: true })
+  ));
 
   /* ---------- Mouse / Touch tilt ---------- */
-  let targetRotX = 0;
-  let targetRotY = 0;
+  let targetRotX = 0, targetRotY = 0;
   const hero = document.querySelector('.hero');
-
   if (hero) {
-    hero.addEventListener('mousemove', (e) => {
+    hero.addEventListener('mousemove', e => {
       const r = hero.getBoundingClientRect();
-      targetRotX = -((e.clientY - r.top)  / r.height - 0.5) * 0.42;
-      targetRotY =  ((e.clientX - r.left) / r.width  - 0.5) * 0.42;
+      targetRotX = -((e.clientY - r.top)  / r.height - 0.5) * 0.38;
+      targetRotY =  ((e.clientX - r.left) / r.width  - 0.5) * 0.38;
     });
     hero.addEventListener('mouseleave', () => { targetRotX = 0; targetRotY = 0; });
-    hero.addEventListener('touchmove', (e) => {
-      const t = e.touches[0];
-      const r = hero.getBoundingClientRect();
-      targetRotX = -((t.clientY - r.top)  / r.height - 0.5) * 0.26;
-      targetRotY =  ((t.clientX - r.left) / r.width  - 0.5) * 0.26;
+    hero.addEventListener('touchmove', e => {
+      const t = e.touches[0], r = hero.getBoundingClientRect();
+      targetRotX = -((t.clientY - r.top)  / r.height - 0.5) * 0.24;
+      targetRotY =  ((t.clientX - r.left) / r.width  - 0.5) * 0.24;
     }, { passive: true });
   }
 
   /* ---------- Loop de animação ---------- */
-  let clock = 0;
-  let rafId;
+  let clock = 0, rafId;
 
   function animate() {
     rafId = requestAnimationFrame(animate);
-    clock += 0.011;
+    clock += 0.013;
 
-    /* Lua: tilt suave (lerp) + rotação contínua */
-    moonGroup.rotation.x += (targetRotX - moonGroup.rotation.x) * 0.055;
-    moonGroup.rotation.y += (targetRotY - moonGroup.rotation.y) * 0.055;
-    moonGroup.rotation.z += 0.0014;
+    /* Tilt suave do grupo (lerp) */
+    mainGroup.rotation.x += (targetRotX - mainGroup.rotation.x) * 0.055;
+    mainGroup.rotation.y += (targetRotY - mainGroup.rotation.y) * 0.055;
 
-    /* Anéis: contrarrotam para dar profundidade */
-    ring1.rotation.z -= 0.0008;
-    ring2.rotation.z += 0.0005;
+    /* Asas: bater de borboleta (oscila entre aberto e semi-fechado) */
+    const flapAngle = 0.36 + Math.sin(clock * 2.3) * 0.36;
+    wingR.rotation.y = flapAngle;
+    wingL.rotation.y = flapAngle; /* scale.x=-1 já espelha o efeito visual */
 
-    /* Partículas douradas: órbita lenta */
-    goldParticles.rotation.y += 0.0008;
-    goldParticles.rotation.x  = Math.sin(clock * 0.10) * 0.05;
+    /* Borboleta: flutuação suave + ligeiro balanço */
+    butterflyGroup.position.y = 0.18 + Math.sin(clock * 0.88) * 0.09;
+    butterflyGroup.rotation.z = Math.sin(clock * 0.55) * 0.036;
 
-    /* Estrelas: deriva imperceptível */
-    stars.rotation.y += 0.00018;
+    /* Tecido de seda: ondas por deslocamento de vértices */
+    for (let i = 0; i < silkPos.count; i++) {
+      const x = silkPos.getX(i);
+      const y = silkPos.getY(i);
+      silkPos.setZ(i,
+        silkOrigZ[i]
+        + Math.sin(x * 1.1  + clock)             * 0.20
+        + Math.sin(y * 0.82 + clock * 0.88)      * 0.15
+        + Math.sin((x - y)  * 0.56 + clock * 0.72) * 0.10
+      );
+    }
+    silkPos.needsUpdate = true;
+    silkMesh.rotation.z += 0.00045;
 
-    /* PointLight: pulso — lua "respira" */
-    pointLight.intensity = 1.8 + Math.sin(clock * 0.85) * 0.55;
+    /* Glitter: sobe e reaparece em baixo */
+    for (let i = 0; i < GLITTER_N; i++) {
+      gPos[i * 3 + 1] += gVel[i];
+      if (gPos[i * 3 + 1] > 6) {
+        gPos[i * 3 + 1] = -6;
+        gPos[i * 3]     = (Math.random() - 0.5) * 11;
+      }
+    }
+    gBuf.needsUpdate = true;
+
+    /* Pulso de luz rosa */
+    pointLight.intensity = 1.85 + Math.sin(clock * 0.8) * 0.52;
 
     renderer.render(scene, camera);
   }
@@ -169,13 +221,9 @@
   animate();
 
   /* ---------- Parar quando fora do viewport (poupa bateria) ---------- */
-  new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-      if (!rafId) animate();
-    } else {
-      cancelAnimationFrame(rafId);
-      rafId = null;
-    }
+  new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) { if (!rafId) animate(); }
+    else { cancelAnimationFrame(rafId); rafId = null; }
   }).observe(canvas);
 
   /* ---------- Parar quando tab em background ---------- */
@@ -195,7 +243,8 @@
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     cancelAnimationFrame(rafId);
     rafId = null;
-    moonGroup.rotation.z = 0.4;
+    wingR.rotation.y = 0.3;
+    wingL.rotation.y = 0.3;
     renderer.render(scene, camera);
   }
 
