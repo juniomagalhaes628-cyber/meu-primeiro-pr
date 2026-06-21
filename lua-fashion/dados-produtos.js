@@ -1,6 +1,9 @@
 // ========== LUA FASHION — CATÁLOGO DE PRODUTOS ==========
-// Categorias e preços baseados em pesquisa pública da loja (preço confirmado: €16 para tops básicos)
-// Substituir imagens e preços pelos reais quando fornecidos pela loja
+// Imagens: Unsplash CDN (gratuito, sem API key)
+// Substituir pelos preços e imagens reais quando fornecidos pela loja
+
+const BASE = 'https://images.unsplash.com/';
+const Q    = '?w=500&h=700&fit=crop&q=80';
 
 const PRODUTOS = [
   {
@@ -11,7 +14,10 @@ const PRODUTOS = [
     precoPrev: null,
     tamanhos: ["XS","S","M","L","XL"],
     cores: ["creme","preto","rosa"],
-    imagens: ["images/produtos/blusa-fluida-1.jpg","images/produtos/blusa-fluida-2.jpg"],
+    imagens: [
+      BASE + "photo-1485462537746-965f33f7f6a7" + Q,
+      BASE + "photo-1434389677669-e08b4cac3105" + Q
+    ],
     novo: true,
     destaque: true,
     bestseller: false,
@@ -26,7 +32,10 @@ const PRODUTOS = [
     precoPrev: 34.99,
     tamanhos: ["XS","S","M","L","XL","XXL"],
     cores: ["preto","camel","cinza"],
-    imagens: ["images/produtos/calcas-wide-1.jpg","images/produtos/calcas-wide-2.jpg"],
+    imagens: [
+      BASE + "photo-1473966968600-fa801b869a1a" + Q,
+      BASE + "photo-1584370848010-d7fe6bc767ec" + Q
+    ],
     novo: false,
     destaque: true,
     bestseller: true,
@@ -41,7 +50,10 @@ const PRODUTOS = [
     precoPrev: null,
     tamanhos: ["XS","S","M","L"],
     cores: ["terracota","verde escuro","preto"],
-    imagens: ["images/produtos/vestido-meia-1.jpg","images/produtos/vestido-meia-2.jpg"],
+    imagens: [
+      BASE + "photo-1496747611176-843222e1e57c" + Q,
+      BASE + "photo-1572804013427-4d7ca7268217" + Q
+    ],
     novo: true,
     destaque: false,
     bestseller: false,
@@ -56,7 +68,10 @@ const PRODUTOS = [
     precoPrev: 62.99,
     tamanhos: ["S","M","L","XL"],
     cores: ["creme","preto","cinza"],
-    imagens: ["images/produtos/casaco-boucle-1.jpg","images/produtos/casaco-boucle-2.jpg"],
+    imagens: [
+      BASE + "photo-1548712000-b94dae0b7c26" + Q,
+      BASE + "photo-1544022613-e87ca75a784a" + Q
+    ],
     novo: false,
     destaque: true,
     bestseller: true,
@@ -71,7 +86,10 @@ const PRODUTOS = [
     precoPrev: null,
     tamanhos: ["XS","S","M","L","XL"],
     cores: ["branco","preto","bege","rosa","azul"],
-    imagens: ["images/produtos/top-cropped-1.jpg","images/produtos/top-cropped-2.jpg"],
+    imagens: [
+      BASE + "photo-4wxz1lj_n2I" + Q,
+      BASE + "photo-SgIQxcePMco" + Q
+    ],
     novo: false,
     destaque: false,
     bestseller: true,
@@ -86,7 +104,10 @@ const PRODUTOS = [
     precoPrev: 36.99,
     tamanhos: ["XS","S","M","L","XL"],
     cores: ["dourado","vinho","verde sage"],
-    imagens: ["images/produtos/saia-plissada-1.jpg","images/produtos/saia-plissada-2.jpg"],
+    imagens: [
+      BASE + "photo-1583846783214-7229a7a8c0e5" + Q,
+      BASE + "photo-1515886657613-9f3515b0c78f" + Q
+    ],
     novo: false,
     destaque: true,
     bestseller: false,
@@ -101,7 +122,10 @@ const PRODUTOS = [
     precoPrev: null,
     tamanhos: ["XS","S","M","L","XL"],
     cores: ["preto","creme","cinza escuro"],
-    imagens: ["images/produtos/blazer-oversized-1.jpg","images/produtos/blazer-oversized-2.jpg"],
+    imagens: [
+      BASE + "photo-1539109136881-3be0616acf4b" + Q,
+      BASE + "photo-1581044777550-4cfa60707c03" + Q
+    ],
     novo: true,
     destaque: true,
     bestseller: false,
@@ -116,7 +140,10 @@ const PRODUTOS = [
     precoPrev: null,
     tamanhos: ["XS","S","M","L","XL","XXL"],
     cores: ["branco","bege","azul marinho"],
-    imagens: ["images/produtos/calcas-linho-1.jpg","images/produtos/calcas-linho-2.jpg"],
+    imagens: [
+      BASE + "photo-QpvMdWqFe1s" + Q,
+      BASE + "photo-1583744946564-b52ac1c389c8" + Q
+    ],
     novo: true,
     destaque: false,
     bestseller: false,
@@ -131,7 +158,10 @@ const PRODUTOS = [
     precoPrev: 52.99,
     tamanhos: ["S","M","L","XL"],
     cores: ["floral bege","azul índigo","verde"],
-    imagens: ["images/produtos/vestido-maxi-1.jpg","images/produtos/vestido-maxi-2.jpg"],
+    imagens: [
+      BASE + "photo-1469334031218-e382a71b716b" + Q,
+      BASE + "photo-1502716119720-b23a93e5fe1b" + Q
+    ],
     novo: false,
     destaque: true,
     bestseller: true,
@@ -146,7 +176,10 @@ const PRODUTOS = [
     precoPrev: null,
     tamanhos: ["XS","S","M","L","XL"],
     cores: ["camel","cinza","vinho","branco"],
-    imagens: ["images/produtos/camisola-v-1.jpg","images/produtos/camisola-v-2.jpg"],
+    imagens: [
+      BASE + "photo-Rqv98K5kHyw" + Q,
+      BASE + "photo-bPZHv3OVVcY" + Q
+    ],
     novo: false,
     destaque: false,
     bestseller: true,
@@ -161,7 +194,10 @@ const PRODUTOS = [
     precoPrev: 65.99,
     tamanhos: ["XS","S","M","L","XL"],
     cores: ["bege","preto","rosa pó"],
-    imagens: ["images/produtos/conjunto-lua-1.jpg","images/produtos/conjunto-lua-2.jpg"],
+    imagens: [
+      BASE + "photo-1490481651871-ab68de25d43d" + Q,
+      BASE + "photo-1544005313-94ddf0286df2" + Q
+    ],
     novo: true,
     destaque: true,
     bestseller: false,
@@ -176,7 +212,10 @@ const PRODUTOS = [
     precoPrev: null,
     tamanhos: ["S","M","L","XL"],
     cores: ["creme","cinza","terracota","verde escuro"],
-    imagens: ["images/produtos/cardigan-tricot-1.jpg","images/produtos/cardigan-tricot-2.jpg"],
+    imagens: [
+      BASE + "photo-qFDf9mQK0uQ" + Q,
+      BASE + "photo-3rkvjdFxW-k" + Q
+    ],
     novo: false,
     destaque: false,
     bestseller: true,
@@ -191,7 +230,10 @@ const PRODUTOS = [
     precoPrev: 32.99,
     tamanhos: ["XS","S","M","L"],
     cores: ["preto","branco","castanho"],
-    imagens: ["images/produtos/saia-asim-1.jpg","images/produtos/saia-asim-2.jpg"],
+    imagens: [
+      BASE + "photo-1591369822096-ffd140ec948f" + Q,
+      BASE + "photo-1549062572-544a64fb0c56" + Q
+    ],
     novo: false,
     destaque: false,
     bestseller: false,
@@ -206,7 +248,10 @@ const PRODUTOS = [
     precoPrev: null,
     tamanhos: ["XS","S","M","L"],
     cores: ["dourado","preto","champagne"],
-    imagens: ["images/produtos/vestido-cocktail-1.jpg","images/produtos/vestido-cocktail-2.jpg"],
+    imagens: [
+      BASE + "photo-1580618672591-eb180b1a973f" + Q,
+      BASE + "photo-1515886657613-9f3515b0c78f" + Q
+    ],
     novo: true,
     destaque: true,
     bestseller: false,
@@ -221,7 +266,10 @@ const PRODUTOS = [
     precoPrev: 44.99,
     tamanhos: ["34","36","38","40","42","44"],
     cores: ["azul escuro","preto","cinza lavado"],
-    imagens: ["images/produtos/jeans-skinny-1.jpg","images/produtos/jeans-skinny-2.jpg"],
+    imagens: [
+      BASE + "photo-1541099649105-f69ad21f3246" + Q,
+      BASE + "photo-1584370848010-d7fe6bc767ec" + Q
+    ],
     novo: false,
     destaque: false,
     bestseller: true,
@@ -236,7 +284,10 @@ const PRODUTOS = [
     precoPrev: 89.99,
     tamanhos: ["XS","S","M","L","XL"],
     cores: ["bege","preto","camel"],
-    imagens: ["images/produtos/trench-coat-1.jpg","images/produtos/trench-coat-2.jpg"],
+    imagens: [
+      BASE + "photo-sCThzW4NxQo" + Q,
+      BASE + "photo-w4Quk-q747E" + Q
+    ],
     novo: false,
     destaque: true,
     bestseller: false,
@@ -251,7 +302,10 @@ const PRODUTOS = [
     precoPrev: null,
     tamanhos: ["XS","S","M","L"],
     cores: ["branco","preto","nude"],
-    imagens: ["images/produtos/top-renda-1.jpg","images/produtos/top-renda-2.jpg"],
+    imagens: [
+      BASE + "photo-_-ncpRI9NvE" + Q,
+      BASE + "photo-eYi76seFZEw" + Q
+    ],
     novo: false,
     destaque: false,
     bestseller: false,
@@ -266,7 +320,10 @@ const PRODUTOS = [
     precoPrev: null,
     tamanhos: ["XS","S","M","L","XL"],
     cores: ["verde militar","preto","bege"],
-    imagens: ["images/produtos/calcas-cargo-1.jpg","images/produtos/calcas-cargo-2.jpg"],
+    imagens: [
+      BASE + "photo-1583744946564-b52ac1c389c8" + Q,
+      BASE + "photo-1473966968600-fa801b869a1a" + Q
+    ],
     novo: true,
     destaque: false,
     bestseller: false,
@@ -281,7 +338,10 @@ const PRODUTOS = [
     precoPrev: 82.99,
     tamanhos: ["XS","S","M","L","XL"],
     cores: ["preto/branco","azul marinho/branco"],
-    imagens: ["images/produtos/fato-riscas-1.jpg","images/produtos/fato-riscas-2.jpg"],
+    imagens: [
+      BASE + "photo-1490481651871-ab68de25d43d" + Q,
+      BASE + "photo-1539109136881-3be0616acf4b" + Q
+    ],
     novo: false,
     destaque: true,
     bestseller: false,
@@ -296,7 +356,10 @@ const PRODUTOS = [
     precoPrev: null,
     tamanhos: ["XS","S","M","L","XL"],
     cores: ["floral rosa","floral azul","floral vinho"],
-    imagens: ["images/produtos/vestido-wrap-1.jpg","images/produtos/vestido-wrap-2.jpg"],
+    imagens: [
+      BASE + "photo-1502716119720-b23a93e5fe1b" + Q,
+      BASE + "photo-1469334031218-e382a71b716b" + Q
+    ],
     novo: false,
     destaque: false,
     bestseller: true,
@@ -311,7 +374,10 @@ const PRODUTOS = [
     precoPrev: 33.99,
     tamanhos: ["XS","S","M","L"],
     cores: ["branco","preto","dourado","vinho"],
-    imagens: ["images/produtos/blusa-seda-1.jpg","images/produtos/blusa-seda-2.jpg"],
+    imagens: [
+      BASE + "photo-zJgcBUtqDTo" + Q,
+      BASE + "photo-1485462537746-965f33f7f6a7" + Q
+    ],
     novo: false,
     destaque: false,
     bestseller: false,
@@ -326,7 +392,10 @@ const PRODUTOS = [
     precoPrev: null,
     tamanhos: ["XS","S","M","L"],
     cores: ["preto","vermelho","dourado"],
-    imagens: ["images/produtos/mini-vestido-1.jpg","images/produtos/mini-vestido-2.jpg"],
+    imagens: [
+      BASE + "photo-1581044777550-4cfa60707c03" + Q,
+      BASE + "photo-1580618672591-eb180b1a973f" + Q
+    ],
     novo: true,
     destaque: false,
     bestseller: false,
@@ -341,7 +410,10 @@ const PRODUTOS = [
     precoPrev: null,
     tamanhos: ["XS","S","M","L","XL"],
     cores: ["creme","preto","azul","rosa"],
-    imagens: ["images/produtos/crop-knit-1.jpg","images/produtos/crop-knit-2.jpg"],
+    imagens: [
+      BASE + "photo-1Pj1Yrpca4A" + Q,
+      BASE + "photo-9lX56_DWfME" + Q
+    ],
     novo: false,
     destaque: false,
     bestseller: true,
@@ -356,7 +428,10 @@ const PRODUTOS = [
     precoPrev: 39.99,
     tamanhos: ["XS","S","M","L","XL"],
     cores: ["preto","cinza","azul marinho","camel"],
-    imagens: ["images/produtos/saia-lapis-1.jpg","images/produtos/saia-lapis-2.jpg"],
+    imagens: [
+      BASE + "photo-1591369822096-ffd140ec948f" + Q,
+      BASE + "photo-1472417583565-cc2a7ded41de" + Q
+    ],
     novo: false,
     destaque: false,
     bestseller: false,
@@ -371,7 +446,10 @@ const PRODUTOS = [
     precoPrev: null,
     tamanhos: ["XS","S","M","L","XL","XXL"],
     cores: ["cinza claro","creme","preto","rosa pó"],
-    imagens: ["images/produtos/loungewear-1.jpg","images/produtos/loungewear-2.jpg"],
+    imagens: [
+      BASE + "photo-1544005313-94ddf0286df2" + Q,
+      BASE + "photo-1490481651871-ab68de25d43d" + Q
+    ],
     novo: true,
     destaque: true,
     bestseller: false,
